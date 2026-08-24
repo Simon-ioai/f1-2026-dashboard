@@ -1,0 +1,49 @@
+# Daily odds snapshot — the data capture. One call to The Odds API
+# (1 credit of the 500/month free plan), appended to /data/odds/ and
+# committed. Runs all season; can be run by hand from the Actions tab.
+name: Snapshot odds
+
+on:
+  schedule:
+    - cron: '0 12 * * *' # 12:00 UTC daily
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+concurrency:
+  group: data-commits
+  cancel-in-progress: false
+
+jobs:
+  snapshot:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+          cache: npm
+
+      - run: npm ci
+
+      - name: Take odds snapshot
+        env:
+          ODDS_API_KEY: ${{ secrets.ODDS_API_KEY }}
+          ODDS_SPORT_KEY: ${{ vars.ODDS_SPORT_KEY }}
+        run: npm run snapshot:odds
+
+      - name: Rebuild derived data
+        if: always() # even a failed quota guard has saved a snapshot worth publishing
+        run: npm run build:derived
+
+      - name: Commit snapshot
+        if: always()
+        run: |
+          git config user.name "odds-bot"
+          git config user.email "actions@users.noreply.github.com"
+          git add data/
+          git diff --cached --quiet || git commit -m "odds snapshot $(date -u +%F)"
+          git pull --rebase origin ${GITHUB_REF_NAME}
+          git push

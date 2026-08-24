@@ -1,0 +1,297 @@
+{
+  "generated_at": "2026-08-24T07:37:42.163Z",
+  "snapshot_days": 0,
+  "points": [],
+  "races": [
+    {
+      "round": 1,
+      "name": "Australian Grand Prix",
+      "circuit": "Albert Park Grand Prix Circuit",
+      "locality": "Melbourne",
+      "country": "Australia",
+      "date": "2026-03-08",
+      "hasSprint": false,
+      "winner": {
+        "driverId": "russell",
+        "code": "RUS",
+        "name": "George Russell",
+        "team": "Mercedes"
+      }
+    },
+    {
+      "round": 2,
+      "name": "Chinese Grand Prix",
+      "circuit": "Shanghai International Circuit",
+      "locality": "Shanghai",
+      "country": "China",
+      "date": "2026-03-15",
+      "hasSprint": true,
+      "winner": {
+        "driverId": "antonelli",
+        "code": "ANT",
+        "name": "Andrea Kimi Antonelli",
+        "team": "Mercedes"
+      }
+    },
+    {
+      "round": 3,
+      "name": "Japanese Grand Prix",
+      "circuit": "Suzuka Circuit",
+      "locality": "Suzuka",
+      "country": "Japan",
+      "date": "2026-03-29",
+      "hasSprint": false,
+      "winner": {
+        "driverId": "antonelli",
+        "code": "ANT",
+        "name": "Andrea Kimi Antonelli",
+        "team": "Mercedes"
+      }
+    },
+    {
+      "round": 4,
+      "name": "Miami Grand Prix",
+      "circuit": "Miami International Autodrome",
+      "locality": "Miami",
+      "country": "USA",
+      "date": "2026-05-03",
+      "hasSprint": true,
+      "winner": {
+        "driverId": "antonelli",
+        "code": "ANT",
+        "name": "Andrea Kimi Antonelli",
+        "team": "Mercedes"
+      }
+    },
+    {
+      "round": 5,
+      "name": "Canadian Grand Prix",
+      "circuit": "Circuit Gilles Villeneuve",
+      "locality": "Montreal",
+      "country": "Canada",
+      "date": "2026-05-24",
+      "hasSprint": true,
+      "winner": {
+        "driverId": "antonelli",
+        "code": "ANT",
+        "name": "Andrea Kimi Antonelli",
+        "team": "Mercedes"
+      }
+    },
+    {
+      "round": 6,
+      "name": "Monaco Grand Prix",
+      "circuit": "Circuit de Monaco",
+      "locality": "Monte Carlo",
+      "country": "Monaco",
+      "date": "2026-06-07",
+      "hasSprint": false,
+      "winner": {
+        "driverId": "antonelli",
+        "code": "ANT",
+        "name": "Andrea Kimi Antonelli",
+        "team": "Mercedes"
+      }
+    },
+    {
+      "round": 7,
+      "name": "Barcelona Grand Prix",
+      "circuit": "Circuit de Barcelona-Catalunya",
+      "locality": "Barcelona",
+      "country": "Spain",
+      "date": "2026-06-14",
+      "hasSprint": false,
+      "winner": {
+        "driverId": "hamilton",
+        "code": "HAM",
+        "name": "Lewis Hamilton",
+        "team": "Ferrari"
+      }
+    },
+    {
+      "round": 8,
+      "name": "Austrian Grand Prix",
+      "circuit": "Red Bull Ring",
+      "locality": "Spielberg",
+      "country": "Austria",
+      "date": "2026-06-28",
+      "hasSprint": false,
+      "winner": {
+        "driverId": "russell",
+        "code": "RUS",
+        "name": "George Russell",
+        "team": "Mercedes"
+      }
+    },
+    {
+      "round": 9,
+      "name": "British Grand Prix",
+      "circuit": "Silverstone Circuit",
+      "locality": "Silverstone",
+      "country": "UK",
+      "date": "2026-07-05",
+      "hasSprint": true,
+      "winner": {
+        "driverId": "leclerc",
+        "code": "LEC",
+        "name": "Charles Leclerc",
+        "team": "Ferrari"
+      }
+    },
+    {
+      "round": 10,
+      "name": "Belgian Grand Prix",
+      "circuit": "Circuit de Spa-Francorchamps",
+      "locality": "Spa",
+      "country": "Belgium",
+      "date": "2026-07-19",
+      "hasSprint": false,
+      "winner": {
+        "driverId": "antonelli",
+        "code": "ANT",
+        "name": "Andrea Kimi Antonelli",
+        "team": "Mercedes"
+      }
+    },
+    {
+      "round": 11,
+      "name": "Hungarian Grand Prix",
+      "circuit": "Hungaroring",
+      "locality": "Budapest",
+      "country": "Hungary",
+      "date": "2026-07-26",
+      "hasSprint": false,
+      "winner": {
+        "driverId": "norris",
+        "code": "NOR",
+        "name": "Lando Norris",
+        "team": "McLaren"
+      }
+    },
+    {
+      "round": 12,
+      "name": "Dutch Grand Prix",
+      "circuit": "Circuit Park Zandvoort",
+      "locality": "Zandvoort",
+      "country": "Netherlands",
+      "date": "2026-08-23",
+      "hasSprint": true,
+      "winner": {
+        "driverId": "norris",
+        "code": "NOR",
+        "name": "Lando Norris",
+        "team": "McLaren"
+      }
+    },
+    {
+      "round": 13,
+      "name": "Italian Grand Prix",
+      "circuit": "Autodromo Nazionale di Monza",
+      "locality": "Monza",
+      "country": "Italy",
+      "date": "2026-09-06",
+      "hasSprint": false,
+      "winner": null
+    },
+    {
+      "round": 14,
+      "name": "Spanish Grand Prix",
+      "circuit": "Madring",
+      "locality": "Madrid",
+      "country": "Spain",
+      "date": "2026-09-13",
+      "hasSprint": false,
+      "winner": null
+    },
+    {
+      "round": 15,
+      "name": "Azerbaijan Grand Prix",
+      "circuit": "Baku City Circuit",
+      "locality": "Baku",
+      "country": "Azerbaijan",
+      "date": "2026-09-26",
+      "hasSprint": false,
+      "winner": null
+    },
+    {
+      "round": 16,
+      "name": "Bahrain Grand Prix in Malaysia",
+      "circuit": "Sepang International Circuit",
+      "locality": "Kuala Lumpur",
+      "country": "Malaysia",
+      "date": "2026-10-04",
+      "hasSprint": false,
+      "winner": null
+    },
+    {
+      "round": 17,
+      "name": "Singapore Grand Prix",
+      "circuit": "Marina Bay Street Circuit",
+      "locality": "Marina Bay",
+      "country": "Singapore",
+      "date": "2026-10-11",
+      "hasSprint": true,
+      "winner": null
+    },
+    {
+      "round": 18,
+      "name": "United States Grand Prix",
+      "circuit": "Circuit of the Americas",
+      "locality": "Austin",
+      "country": "USA",
+      "date": "2026-10-25",
+      "hasSprint": false,
+      "winner": null
+    },
+    {
+      "round": 19,
+      "name": "Mexico City Grand Prix",
+      "circuit": "Autódromo Hermanos Rodríguez",
+      "locality": "Mexico City",
+      "country": "Mexico",
+      "date": "2026-11-01",
+      "hasSprint": false,
+      "winner": null
+    },
+    {
+      "round": 20,
+      "name": "Brazilian Grand Prix",
+      "circuit": "Autódromo José Carlos Pace",
+      "locality": "São Paulo",
+      "country": "Brazil",
+      "date": "2026-11-08",
+      "hasSprint": false,
+      "winner": null
+    },
+    {
+      "round": 21,
+      "name": "Las Vegas Grand Prix",
+      "circuit": "Las Vegas Strip Street Circuit",
+      "locality": "Las Vegas",
+      "country": "USA",
+      "date": "2026-11-22",
+      "hasSprint": false,
+      "winner": null
+    },
+    {
+      "round": 22,
+      "name": "Qatar Grand Prix",
+      "circuit": "Losail International Circuit",
+      "locality": "Lusail",
+      "country": "Qatar",
+      "date": "2026-11-29",
+      "hasSprint": false,
+      "winner": null
+    },
+    {
+      "round": 23,
+      "name": "Abu Dhabi Grand Prix",
+      "circuit": "Yas Marina Circuit",
+      "locality": "Abu Dhabi",
+      "country": "UAE",
+      "date": "2026-12-06",
+      "hasSprint": false,
+      "winner": null
+    }
+  ]
+}

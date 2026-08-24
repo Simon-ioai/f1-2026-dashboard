@@ -1,0 +1,88 @@
+# Monday-morning rebuild — refreshes results/standings/schedule after a race
+# weekend, at 05:00 Europe/Copenhagen year-round.
+#
+# Denmark switches CEST->CET on 25 Oct 2026, mid-season, so the job is
+# scheduled at BOTH 03:00 and 04:00 UTC and exits unless the local hour in
+# Copenhagen is actually 05. "Was there a race?" comes from the committed
+# schedule data (some 2026 rounds race on Saturday, and Sprints exist), never
+# from a hardcoded list: the check is whether a Grand Prix took place in the
+# last 72 hours.
+name: Rebuild dashboard
+
+on:
+  schedule:
+    - cron: '0 3 * * 1' # 05:00 CEST (summer)
+    - cron: '0 4 * * 1' # 05:00 CET (winter)
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+concurrency:
+  group: data-commits
+  cancel-in-progress: false
+
+jobs:
+  rebuild:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Gate on 05:00 Europe/Copenhagen (skip the wrong DST twin)
+        id: gate
+        run: |
+          HOUR=$(TZ=Europe/Copenhagen date +%H)
+          echo "Local hour in Copenhagen: $HOUR"
+          if [ "$HOUR" = "05" ] || [ "${{ github.event_name }}" = "workflow_dispatch" ]; then
+            echo "run=yes" >> "$GITHUB_OUTPUT"
+          else
+            echo "run=no" >> "$GITHUB_OUTPUT"
+            echo "Not 05:00 local (DST twin firing) — exiting."
+          fi
+
+      - name: Was there a race in the last 72 hours?
+        id: race
+        if: steps.gate.outputs.run == 'yes'
+        run: |
+          RACE=$(node -e '
+            const s = require("./data/results/schedule.json");
+            const now = Date.now();
+            const h72 = 72 * 3600 * 1000;
+            const recent = s.races.filter(r => {
+              const t = Date.parse(r.date + "T" + (r.time ?? "12:00:00Z"));
+              return t <= now && now - t <= h72;
+            });
+            console.log(recent.length > 0 ? "yes" : "no");
+            if (recent.length) console.error("Recent race:", recent.map(r => r.name).join(", "));
+          ')
+          echo "Race weekend just finished: $RACE"
+          if [ "$RACE" = "yes" ] || [ "${{ github.event_name }}" = "workflow_dispatch" ]; then
+            echo "run=yes" >> "$GITHUB_OUTPUT"
+          else
+            echo "run=no" >> "$GITHUB_OUTPUT"
+          fi
+
+      - uses: actions/setup-node@v4
+        if: steps.race.outputs.run == 'yes'
+        with:
+          node-version: 22
+          cache: npm
+
+      - run: npm ci
+        if: steps.race.outputs.run == 'yes'
+
+      - name: Update results and rebuild derived data
+        if: steps.race.outputs.run == 'yes'
+        run: |
+          npm run update:results
+          npm run build:derived
+
+      - name: Commit updated data
+        if: steps.race.outputs.run == 'yes'
+        run: |
+          git config user.name "results-bot"
+          git config user.email "actions@users.noreply.github.com"
+          git add data/
+          git diff --cached --quiet || git commit -m "results update $(date -u +%F)"
+          git pull --rebase origin ${GITHUB_REF_NAME}
+          git push
