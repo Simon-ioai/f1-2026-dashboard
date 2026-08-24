@@ -52,6 +52,36 @@ export interface StandingsFile {
   }[];
 }
 
+export interface SimulationsFile {
+  generated_at: string;
+  method: {
+    iterations: number;
+    seed: number;
+    recent_window: number;
+    recent_weight: number;
+    based_on_rounds: number;
+    remaining_races: number;
+    remaining_sprints: number;
+    notes: string;
+  };
+  drivers: {
+    driverId: string;
+    name: string;
+    team: string;
+    code: string | null;
+    currentPoints: number;
+    dnfRate: number;
+    titleProb: number;
+    mean: number;
+    p5: number;
+    p25: number;
+    p50: number;
+    p75: number;
+    p95: number;
+  }[];
+  histograms: Record<string, { binStart: number; binWidth: number; counts: number[] }>;
+}
+
 export interface Meta {
   results_updated_at: string | null;
   odds_updated_at: string | null;
@@ -62,6 +92,7 @@ export interface Meta {
 export interface DashboardData {
   timeline: Timeline | null;
   standings: StandingsFile | null;
+  simulations: SimulationsFile | null;
   meta: Meta | null;
   fetchErrors: string[];
 }
@@ -79,10 +110,11 @@ async function tryFetch<T>(path: string, errors: string[]): Promise<T | null> {
 
 export async function loadDashboardData(): Promise<DashboardData> {
   const fetchErrors: string[] = [];
-  const [timeline, standings, meta] = await Promise.all([
+  const [timeline, standings, simulations, meta] = await Promise.all([
     tryFetch<Timeline>('data/derived/timeline.json', fetchErrors),
     tryFetch<StandingsFile>('data/results/standings.json', fetchErrors),
+    tryFetch<SimulationsFile>('data/derived/simulations.json', fetchErrors),
     tryFetch<Meta>('data/derived/meta.json', fetchErrors),
   ]);
-  return { timeline, standings, meta, fetchErrors };
+  return { timeline, standings, simulations, meta, fetchErrors };
 }

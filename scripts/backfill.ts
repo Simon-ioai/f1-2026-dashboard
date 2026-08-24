@@ -11,6 +11,7 @@ import { buildDerived } from './build-derived.js';
 console.log('Backfilling season data (results, standings, schedule)…');
 await updateResults();
 buildDerived();
+await import('./simulate.js'); // run the Monte Carlo pass on the fresh data
 console.log(
   '\nDone. Note: past odds cannot be backfilled on the free plan — ' +
     'the odds timeline starts at your first snapshot (npm run snapshot:odds).',

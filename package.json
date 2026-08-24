@@ -14,7 +14,8 @@
     "update:results": "tsx scripts/update-results.ts",
     "build:derived": "tsx scripts/build-derived.ts",
     "test": "vitest run",
-    "backfill:odds-history": "tsx scripts/backfill-odds-history.ts"
+    "backfill:odds-history": "tsx scripts/backfill-odds-history.ts",
+    "simulate": "tsx scripts/simulate.ts"
   },
   "dependencies": {
     "react": "^19.2.8",

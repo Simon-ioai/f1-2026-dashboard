@@ -1,6 +1,7 @@
 import { useEffect, useState } from 'react';
 import Leaderboard from './components/Leaderboard';
 import MoverCallout from './components/MoverCallout';
+import Simulator from './components/Simulator';
 import TimelineChart from './components/TimelineChart';
 import { loadDashboardData, type DashboardData } from './lib/data';
 
@@ -29,7 +30,7 @@ export default function App() {
     );
   }
 
-  const { timeline, standings, meta } = data;
+  const { timeline, standings, simulations, meta } = data;
   const hasOdds = (timeline?.points.length ?? 0) > 0;
 
   return (
@@ -78,6 +79,8 @@ export default function App() {
           </div>
         )}
       </section>
+
+      {simulations && <Simulator simulations={simulations} timeline={timeline} />}
 
       <footer className="footer">
         Data: race results, standings and schedule from{' '}

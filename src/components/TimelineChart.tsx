@@ -185,6 +185,10 @@ export default function TimelineChart({ timeline }: { timeline: Timeline }) {
         </button>
       </div>
 
+      {/* Mount the chart only once the container is measured: a re-render while
+          the draw-in animation is starting (width 0 -> measured flips the race
+          labels on) freezes Recharts' line tween at its hidden first frame. */}
+      {chartWidth > 0 && (
       <ResponsiveContainer width="100%" height={420}>
         <ComposedChart data={rows} margin={{ top: 18, right: 12, bottom: 0, left: -14 }}>
           <XAxis
@@ -250,6 +254,9 @@ export default function TimelineChart({ timeline }: { timeline: Timeline }) {
               dot={singleDay ? { r: 4, fill: s.color, strokeWidth: 0 } : false}
               activeDot={{ r: 4.5, strokeWidth: 0 }}
               connectNulls
+              // rAF is suspended in hidden/background tabs, which would freeze
+              // the draw-in tween at its invisible first frame — skip it there.
+              isAnimationActive={typeof document !== 'undefined' && !document.hidden}
               animationDuration={900}
               animationEasing="ease-out"
             />
@@ -271,6 +278,7 @@ export default function TimelineChart({ timeline }: { timeline: Timeline }) {
           )}
         </ComposedChart>
       </ResponsiveContainer>
+      )}
       <p className="chart-help">
         Lines are the market-implied title probability, normalised so the whole field sums to
         100%; the soft band is the market's bid–ask spread (bookmaker min–max where bookmaker

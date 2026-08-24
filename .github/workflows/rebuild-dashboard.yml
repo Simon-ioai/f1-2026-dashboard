@@ -71,10 +71,11 @@ jobs:
       - run: npm ci
         if: steps.race.outputs.run == 'yes'
 
-      - name: Update results and rebuild derived data
+      - name: Update results, re-run simulation, rebuild derived data
         if: steps.race.outputs.run == 'yes'
         run: |
           npm run update:results
+          npm run simulate
           npm run build:derived
 
       - name: Commit updated data

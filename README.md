@@ -101,12 +101,29 @@ badge explaining what went wrong.
 ```
 src/            the dashboard app (React + TypeScript + Recharts)
 src/lib/        the maths: probability normalisation, clinch arithmetic (unit-tested)
-scripts/        the jobs: snapshot-odds, update-results, build-derived, backfills
+scripts/        the jobs: snapshot-odds, update-results, simulate, build-derived, backfills
 data/odds/      one JSON file per day of market prices — append-only, precious
 data/results/   season results, standings, schedule (rebuildable any time)
 data/derived/   files computed from the above (never fetched, always rebuilt)
 .github/        the three workflows: two data jobs + the Pages deploy
 ```
+
+## The Monte Carlo simulator
+
+`npm run simulate` (also part of the Monday rebuild) plays out the remaining
+races 20,000 times. Each driver's pace is resampled from their **actual
+finishing positions this season** (the last 5 races weighted double), their
+DNF chance is their **real retirement rate** (same weighting), and each
+simulated race ranks the surviving cars and awards real points — Sprints
+included. The dashboard then plots the model's title probability against the
+market's, flags gaps of 3+ percentage points, and shows each contender's
+simulated final-points distribution. The output is deterministic for a given
+set of results (seeded RNG), so re-running it never churns the data files.
+
+**Honesty box:** it's a toy. It knows nothing about upgrades, circuits,
+weather or team orders, and half a season is a small sample. Where it
+disagrees with the market, the market is usually the better forecast — the
+gap is the interesting part, not the model's number.
 
 ## The probability maths, in one paragraph
 
