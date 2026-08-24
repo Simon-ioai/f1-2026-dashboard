@@ -1,4 +1,4 @@
-import { useMemo, useState } from 'react';
+import { useEffect, useMemo, useRef, useState } from 'react';
 import {
   Area,
   Brush,
@@ -90,6 +90,20 @@ function TimelineTooltip({
 export default function TimelineChart({ timeline }: { timeline: Timeline }) {
   const [hidden, setHidden] = useState<Set<string>>(new Set());
   const [last30, setLast30] = useState(false);
+  const wrapRef = useRef<HTMLDivElement>(null);
+  // 0 until measured: race labels stay hidden for the first paint rather than
+  // flashing a colliding layout on narrow screens.
+  const [chartWidth, setChartWidth] = useState(0);
+
+  useEffect(() => {
+    const el = wrapRef.current;
+    if (!el) return;
+    const observer = new ResizeObserver((entries) => {
+      setChartWidth(entries[0].contentRect.width);
+    });
+    observer.observe(el);
+    return () => observer.disconnect();
+  }, []);
 
   const allRows = useMemo<Row[]>(
     () =>
@@ -146,9 +160,12 @@ export default function TimelineChart({ timeline }: { timeline: Timeline }) {
   }
 
   const singleDay = rows.length === 1;
+  // Two staggered rows, ~80px per label: hide the text when it can't fit.
+  // Markers and their hover titles always stay.
+  const showRaceLabels = visibleRaces.length <= Math.floor(chartWidth / 80) * 2;
 
   return (
-    <div>
+    <div ref={wrapRef}>
       <div className="chart-toolbar" role="group" aria-label="Toggle drivers">
         {SERIES.map((s) => (
           <button
@@ -187,18 +204,25 @@ export default function TimelineChart({ timeline }: { timeline: Timeline }) {
             width={58}
             domain={[0, 'auto']}
           />
-          {visibleRaces.map((race) => (
+          {visibleRaces.map((race, i) => (
             <ReferenceLine
               key={race.round}
               x={Date.parse(race.date)}
               stroke="#3a3a44"
               strokeDasharray="3 4"
-              label={{
-                value: race.locality,
-                position: 'top',
-                fill: '#6d717b',
-                fontSize: 10.5,
-              }}
+              label={
+                // Stagger labels over two rows so neighbouring races don't
+                // collide; drop them entirely when the chart is too dense.
+                showRaceLabels
+                  ? {
+                      value: race.locality,
+                      position: 'top',
+                      dy: (i % 2) * 13 - 2,
+                      fill: '#6d717b',
+                      fontSize: 10.5,
+                    }
+                  : undefined
+              }
             >
               <title>{raceTitle(race)}</title>
             </ReferenceLine>
@@ -248,9 +272,10 @@ export default function TimelineChart({ timeline }: { timeline: Timeline }) {
         </ComposedChart>
       </ResponsiveContainer>
       <p className="chart-help">
-        Lines are the median bookmaker-implied title probability (vig removed); the soft band spans
-        the lowest to highest bookmaker. Vertical markers are race weekends — hover one for the
-        result. Click a driver chip to isolate; click again to bring everyone back.
+        Lines are the market-implied title probability, normalised so the whole field sums to
+        100%; the soft band is the market's bid–ask spread (bookmaker min–max where bookmaker
+        data exists). Vertical markers are race weekends — hover one for the result. Click a
+        driver chip to isolate; click again to bring everyone back.
       </p>
     </div>
   );

@@ -13,7 +13,8 @@
     "odds:discover": "tsx scripts/snapshot-odds.ts --discover",
     "update:results": "tsx scripts/update-results.ts",
     "build:derived": "tsx scripts/build-derived.ts",
-    "test": "vitest run"
+    "test": "vitest run",
+    "backfill:odds-history": "tsx scripts/backfill-odds-history.ts"
   },
   "dependencies": {
     "react": "^19.2.8",

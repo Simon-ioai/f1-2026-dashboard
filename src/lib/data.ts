@@ -12,6 +12,9 @@ export interface AggregatedProbability {
 export interface TimelinePoint {
   date: string; // YYYY-MM-DD
   fetched_at: string;
+  /** 'polymarket' | 'polymarket-history' | 'the-odds-api' */
+  source?: string;
+  /** Number of bookmakers aggregated (1 for prediction-market points). */
   bookmakers: number;
   byId: Record<string, AggregatedProbability>;
 }

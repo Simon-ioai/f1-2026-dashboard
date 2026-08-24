@@ -1,6 +1,6 @@
-# Daily odds snapshot — the data capture. One call to The Odds API
-# (1 credit of the 500/month free plan), appended to /data/odds/ and
-# committed. Runs all season; can be run by hand from the Actions tab.
+# Daily odds snapshot — the data capture. Pulls the F1 Drivers' Champion
+# market from Polymarket's free, keyless public API, appends to /data/odds/
+# and commits. Runs all season; can be run by hand from the Actions tab.
 name: Snapshot odds
 
 on:
@@ -28,10 +28,8 @@ jobs:
 
       - run: npm ci
 
+      # No API key needed — Polymarket's public API is keyless.
       - name: Take odds snapshot
-        env:
-          ODDS_API_KEY: ${{ secrets.ODDS_API_KEY }}
-          ODDS_SPORT_KEY: ${{ vars.ODDS_SPORT_KEY }}
         run: npm run snapshot:odds
 
       - name: Rebuild derived data

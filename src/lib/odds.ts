@@ -44,6 +44,36 @@ export function median(values: number[]): number {
   return sorted.length % 2 === 1 ? sorted[mid] : (sorted[mid - 1] + sorted[mid]) / 2;
 }
 
+export interface ShareOutcome {
+  name: string;
+  /** Implied probability (e.g. a prediction-market mid-price), 0..1. */
+  p: number;
+  /** Optional lower/upper bounds (e.g. best bid / best ask). */
+  lo?: number;
+  hi?: number;
+}
+
+/**
+ * Normalise probability-style outcomes (prediction-market prices) so the full
+ * field sums to exactly 1 — the same vig-removal philosophy as normalizeBook,
+ * for sources that quote probabilities instead of decimal odds. Bounds are
+ * scaled by the same factor and re-ordered if the raw quotes were inverted.
+ */
+export function normalizeShares(
+  outcomes: ShareOutcome[],
+): Map<string, { p: number; lo: number; hi: number }> {
+  const valid = outcomes.filter((o) => Number.isFinite(o.p) && o.p >= 0);
+  const sum = valid.reduce((acc, o) => acc + o.p, 0);
+  if (sum <= 0) return new Map();
+  const result = new Map<string, { p: number; lo: number; hi: number }>();
+  for (const o of valid) {
+    const lo = (o.lo ?? o.p) / sum;
+    const hi = (o.hi ?? o.p) / sum;
+    result.set(o.name, { p: o.p / sum, lo: Math.min(lo, hi), hi: Math.max(lo, hi) });
+  }
+  return result;
+}
+
 export interface AggregatedProbability {
   median: number;
   min: number;

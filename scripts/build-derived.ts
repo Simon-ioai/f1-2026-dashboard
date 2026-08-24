@@ -3,7 +3,7 @@
 // with the race calendar and winners for annotations. Derived data is always
 // rebuilt from committed snapshots, never fetched.
 
-import { aggregateBooks, type BookmakerOdds } from '../src/lib/odds.js';
+import { aggregateBooks, normalizeShares, type BookmakerOdds } from '../src/lib/odds.js';
 import { matchDriver, TRACKED_IDS, FIELD } from '../src/lib/drivers.js';
 import { listDir, readJson, writeJson } from './lib/io.js';
 import { loadMeta, saveMeta } from './update-results.js';
@@ -13,8 +13,32 @@ interface DayFile {
   snapshots: {
     fetched_at: string;
     source: string;
-    bookmakers: { key: string; title: string; last_update: string; outcomes: { name: string; price: number }[] }[];
+    /** bookmaker-shaped snapshots (dormant The Odds API path) */
+    bookmakers?: { key: string; title: string; last_update: string; outcomes: { name: string; price: number }[] }[];
+    /** probability-shaped snapshots (Polymarket live + history) */
+    outcomes?: { name: string; p: number; bid: number | null; ask: number | null }[];
   }[];
+}
+
+type ById = Record<string, { median: number; min: number; max: number; books: number }>;
+
+/** Aggregate one probability-shaped snapshot: normalise the full field, pool untracked drivers. */
+function aggregateShares(outcomes: NonNullable<DayFile['snapshots'][number]['outcomes']>): ById {
+  const normalized = normalizeShares(
+    outcomes.map((o) => ({ name: o.name, p: o.p, lo: o.bid ?? undefined, hi: o.ask ?? undefined })),
+  );
+  const byId: ById = {};
+  let field = { p: 0, lo: 0, hi: 0 };
+  for (const [name, v] of normalized) {
+    const id = matchDriver(name);
+    if (id === null) {
+      field = { p: field.p + v.p, lo: field.lo + v.lo, hi: field.hi + v.hi };
+    } else {
+      byId[id] = { median: v.p, min: v.lo, max: v.hi, books: 1 };
+    }
+  }
+  byId[FIELD.id] = { median: field.p, min: field.lo, max: field.hi, books: 1 };
+  return byId;
 }
 
 interface ScheduleFile {
@@ -45,22 +69,34 @@ export function buildDerived(): void {
     const day = readJson<DayFile>(`data/odds/${file}`);
     if (!day || day.snapshots.length === 0) continue;
     const latest = day.snapshots[day.snapshots.length - 1];
-    const books: BookmakerOdds[] = latest.bookmakers.map((b) => ({
-      key: b.key,
-      title: b.title,
-      lastUpdate: b.last_update,
-      outcomes: b.outcomes,
-    }));
-    const aggregated = aggregateBooks(books, matchDriver, FIELD.id);
-    const byId: Record<string, { median: number; min: number; max: number; books: number }> = {};
-    for (const id of [...TRACKED_IDS, FIELD.id]) {
-      const agg = aggregated.get(id);
-      if (agg) byId[id] = agg;
+
+    let byId: ById = {};
+    let sourceCount = 0;
+    if (latest.outcomes && latest.outcomes.length > 0) {
+      byId = aggregateShares(latest.outcomes);
+      sourceCount = 1;
+    } else if (latest.bookmakers && latest.bookmakers.length > 0) {
+      const books: BookmakerOdds[] = latest.bookmakers.map((b) => ({
+        key: b.key,
+        title: b.title,
+        lastUpdate: b.last_update,
+        outcomes: b.outcomes,
+      }));
+      const aggregated = aggregateBooks(books, matchDriver, FIELD.id);
+      for (const id of [...TRACKED_IDS, FIELD.id]) {
+        const agg = aggregated.get(id);
+        if (agg) byId[id] = agg;
+      }
+      sourceCount = books.length;
+    } else {
+      continue;
     }
+
     points.push({
       date: day.date,
       fetched_at: latest.fetched_at,
-      bookmakers: books.length,
+      source: latest.source,
+      bookmakers: sourceCount,
       byId,
     });
   }

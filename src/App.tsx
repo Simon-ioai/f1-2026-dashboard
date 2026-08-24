@@ -59,7 +59,8 @@ export default function App() {
       <section className="panel" style={{ marginTop: 18 }} aria-label="Title odds timeline">
         <h2 className="panel-title">Title odds timeline</h2>
         <p className="panel-sub">
-          Implied championship-win probability from bookmaker outright markets, snapshotted daily.
+          Implied championship-win probability from Polymarket's title market, tracked daily since
+          December 2025.
         </p>
         {hasOdds && timeline ? (
           <>
@@ -68,16 +69,11 @@ export default function App() {
           </>
         ) : (
           <div className="empty">
-            <h3>Waiting for the first odds snapshot</h3>
+            <h3>No odds data yet</h3>
             <p>
-              Historical odds can’t be backfilled on the free plan, so this chart starts the day
-              the first snapshot is taken — from then on it grows one point per day,
-              automatically.
-            </p>
-            <p>
-              To start capturing: add your free The Odds API key (see the README), then run{' '}
-              <code>npm run snapshot:odds</code> or trigger the <em>Snapshot odds</em> workflow on
-              GitHub.
+              Run <code>npm run backfill:odds-history</code> once to pull the season so far from
+              Polymarket, then <code>npm run snapshot:odds</code> (or the <em>Snapshot odds</em>{' '}
+              workflow on GitHub) keeps it growing daily.
             </p>
           </div>
         )}
@@ -88,12 +84,13 @@ export default function App() {
         <a href="https://jolpi.ca" target="_blank" rel="noreferrer">
           Jolpica-F1
         </a>{' '}
-        (OpenF1 fallback) · winner odds from{' '}
-        <a href="https://the-odds-api.com" target="_blank" rel="noreferrer">
-          The Odds API
+        (OpenF1 fallback) · title probabilities from{' '}
+        <a href="https://polymarket.com/event/2026-f1-drivers-champion" target="_blank" rel="noreferrer">
+          Polymarket
         </a>
-        , vig removed by normalising over the whole field. Probabilities are the market’s view,
-        not a prediction. Unofficial fan project — not associated with Formula 1.
+        's championship market, normalised over the whole field. Probabilities are the market's
+        view, not a prediction, and not betting advice. Unofficial fan project — not associated
+        with Formula 1.
       </footer>
     </div>
   );

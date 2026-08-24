@@ -1,5 +1,12 @@
 import { describe, expect, it } from 'vitest';
-import { aggregateBooks, impliedFromDecimal, median, normalizeBook, type BookmakerOdds } from './odds';
+import {
+  aggregateBooks,
+  impliedFromDecimal,
+  median,
+  normalizeBook,
+  normalizeShares,
+  type BookmakerOdds,
+} from './odds';
 
 describe('impliedFromDecimal', () => {
   it('converts decimal odds to raw implied probability', () => {
@@ -43,6 +50,38 @@ describe('normalizeBook — the known worked example', () => {
       { name: 'B', price: 2.0 },
     ]);
     expect(fair.get('A')).toBeCloseTo(0.5, 12);
+  });
+});
+
+describe('normalizeShares — prediction-market prices', () => {
+  it('scales the field to sum exactly to 1, bounds included', () => {
+    // Market mids sum to 1.04 (a 4% spread-implied premium).
+    const shares = normalizeShares([
+      { name: 'A', p: 0.74, lo: 0.73, hi: 0.75 },
+      { name: 'B', p: 0.2, lo: 0.19, hi: 0.21 },
+      { name: 'C', p: 0.1 },
+    ]);
+    const total = [...shares.values()].reduce((acc, v) => acc + v.p, 0);
+    expect(total).toBeCloseTo(1, 12);
+    expect(shares.get('A')!.p).toBeCloseTo(0.74 / 1.04, 10);
+    expect(shares.get('A')!.lo).toBeCloseTo(0.73 / 1.04, 10);
+    expect(shares.get('A')!.hi).toBeCloseTo(0.75 / 1.04, 10);
+    // no bounds -> band collapses to the mid
+    expect(shares.get('C')!.lo).toBeCloseTo(shares.get('C')!.p, 12);
+  });
+
+  it('reorders inverted bounds and drops invalid prices', () => {
+    const shares = normalizeShares([
+      { name: 'A', p: 0.5, lo: 0.6, hi: 0.4 },
+      { name: 'B', p: 0.5 },
+      { name: 'bad', p: NaN },
+    ]);
+    expect(shares.has('bad')).toBe(false);
+    expect(shares.get('A')!.lo).toBeLessThanOrEqual(shares.get('A')!.hi);
+  });
+
+  it('returns empty on an all-zero field instead of dividing by zero', () => {
+    expect(normalizeShares([{ name: 'A', p: 0 }]).size).toBe(0);
   });
 });
 

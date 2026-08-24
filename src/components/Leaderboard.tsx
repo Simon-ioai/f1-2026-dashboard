@@ -36,8 +36,10 @@ export default function Leaderboard({
       <section className="panel" aria-label="Title probability leaderboard">
         <h2 className="panel-title">Title probability</h2>
         <p className="panel-sub num">
-          Bookmaker-implied, vig removed · median of {latest.bookmakers} bookmaker
-          {latest.bookmakers === 1 ? '' : 's'} · {latest.date}
+          {latest.source?.startsWith('polymarket')
+            ? 'Market-implied (Polymarket), normalised'
+            : `Bookmaker-implied, vig removed · median of ${latest.bookmakers} bookmaker${latest.bookmakers === 1 ? '' : 's'}`}{' '}
+          · {latest.date}
           {weekAgo ? ' · Δ vs 7 days' : ''}
         </p>
         <div className="leaderboard">
