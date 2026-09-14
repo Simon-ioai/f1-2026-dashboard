@@ -2,11 +2,14 @@ import { describe, expect, it } from 'vitest';
 import {
   canStillWin,
   earliestClinch,
+  firstClinchedRound,
+  firstEliminationRound,
   hasClinched,
   maxPointsAvailable,
   weekendMax,
   type DriverPoints,
   type RemainingRace,
+  type RoundPoints,
 } from './clinch';
 
 const race = (round: number, hasSprint = false): RemainingRace => ({
@@ -46,11 +49,13 @@ describe('hasClinched', () => {
 });
 
 describe('canStillWin', () => {
-  it('alive while max remaining can strictly overhaul every rival', () => {
+  it('alive while max remaining can reach every rival; ties count as alive', () => {
     // 58 available (one sprint weekend + one race): 112 + 58 = 170
     const remaining = [race(1, true), race(2)];
     expect(canStillWin(d('ver', 112), [d('ant', 169)], remaining)).toBe(true);
-    expect(canStillWin(d('ver', 112), [d('ant', 170)], remaining)).toBe(false);
+    // exact tie possible -> countback territory -> conservatively alive
+    expect(canStillWin(d('ver', 112), [d('ant', 170)], remaining)).toBe(true);
+    expect(canStillWin(d('ver', 112), [d('ant', 171)], remaining)).toBe(false);
   });
 });
 
@@ -89,6 +94,32 @@ describe('earliestClinch', () => {
     // c maxes to 60, a already has 100 -> impossible.
     expect(never.earliestRound).toBeNull();
     expect(never.gapNeeded).toBeNull();
+  });
+
+  it('replays elimination and clinch rounds from per-round points', () => {
+    // 4-race season, no sprints, 25 max per round.
+    const schedule = [race(1), race(2), race(3), race(4)];
+    const rounds: RoundPoints[] = [
+      { round: 1, pointsByDriver: { a: 25, b: 18, c: 0 } },
+      { round: 2, pointsByDriver: { a: 25, b: 18, c: 0 } },
+      { round: 3, pointsByDriver: { a: 25, b: 18, c: 0 } },
+    ];
+    // After R2: c has 0, a has 50, 50 points remain -> c max 50 = 50, tie
+    // possible, conservatively alive. After R3: c max 0+25=25 < a's 75 -> out.
+    // (After R2 c could at best tie; strict rule keeps them alive.)
+    expect(firstEliminationRound('c', rounds, schedule)).toBe(3);
+    // b after R3: 54 + 25 = 79 > a's 75 -> still alive.
+    expect(firstEliminationRound('b', rounds, schedule)).toBeNull();
+    // a after R3: b's max 54+25=79 >= 75 -> not sealed yet.
+    expect(firstClinchedRound('a', rounds, schedule)).toBeNull();
+    // One more dominant round seals it: a=100, b max 72+0... schedule has 4
+    // rounds; after R4 nothing remains and 100 > 72.
+    const sealed = [...rounds, { round: 4, pointsByDriver: { a: 25, b: 18, c: 0 } }];
+    expect(firstClinchedRound('a', sealed, schedule)).toBe(4);
+    // Sprints count toward what remained: add a sprint to round 4 and after
+    // R3 there are 33 left, c's max 0+33 still < 75 -> elimination unchanged.
+    const sprintSchedule = [race(1), race(2), race(3), race(4, true)];
+    expect(firstEliminationRound('c', rounds, sprintSchedule)).toBe(3);
   });
 
   it('uses the strongest rival, not the closest by points alone', () => {

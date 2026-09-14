@@ -1,0 +1,405 @@
+{
+  "generated_at": "2026-09-14T07:14:14.045Z",
+  "based_on_round": 14,
+  "remaining_races": 9,
+  "remaining_sprints": 1,
+  "points_available": 233,
+  "drivers": [
+    {
+      "driverId": "antonelli",
+      "code": "ANT",
+      "name": "Andrea Kimi Antonelli",
+      "team": "Mercedes",
+      "position": 1,
+      "points": 292,
+      "status": "alive",
+      "clinch": {
+        "round": 17,
+        "raceName": "Singapore Grand Prix",
+        "locality": "Marina Bay",
+        "date": "2026-10-11",
+        "gapNeeded": 70,
+        "chiefRivalId": "russell",
+        "chiefRivalName": "George Russell"
+      },
+      "clinchedAt": null,
+      "eliminatedAt": null
+    },
+    {
+      "driverId": "russell",
+      "code": "RUS",
+      "name": "George Russell",
+      "team": "Mercedes",
+      "position": 2,
+      "points": 211,
+      "status": "alive",
+      "clinch": {
+        "round": 20,
+        "raceName": "Brazilian Grand Prix",
+        "locality": "São Paulo",
+        "date": "2026-11-08",
+        "gapNeeded": 157,
+        "chiefRivalId": "antonelli",
+        "chiefRivalName": "Andrea Kimi Antonelli"
+      },
+      "clinchedAt": null,
+      "eliminatedAt": null
+    },
+    {
+      "driverId": "hamilton",
+      "code": "HAM",
+      "name": "Lewis Hamilton",
+      "team": "Ferrari",
+      "position": 3,
+      "points": 191,
+      "status": "alive",
+      "clinch": {
+        "round": 21,
+        "raceName": "Las Vegas Grand Prix",
+        "locality": "Las Vegas",
+        "date": "2026-11-22",
+        "gapNeeded": 152,
+        "chiefRivalId": "antonelli",
+        "chiefRivalName": "Andrea Kimi Antonelli"
+      },
+      "clinchedAt": null,
+      "eliminatedAt": null
+    },
+    {
+      "driverId": "norris",
+      "code": "NOR",
+      "name": "Lando Norris",
+      "team": "McLaren",
+      "position": 4,
+      "points": 186,
+      "status": "alive",
+      "clinch": {
+        "round": 21,
+        "raceName": "Las Vegas Grand Prix",
+        "locality": "Las Vegas",
+        "date": "2026-11-22",
+        "gapNeeded": 157,
+        "chiefRivalId": "antonelli",
+        "chiefRivalName": "Andrea Kimi Antonelli"
+      },
+      "clinchedAt": null,
+      "eliminatedAt": null
+    },
+    {
+      "driverId": "leclerc",
+      "code": "LEC",
+      "name": "Charles Leclerc",
+      "team": "Ferrari",
+      "position": 5,
+      "points": 167,
+      "status": "alive",
+      "clinch": {
+        "round": 21,
+        "raceName": "Las Vegas Grand Prix",
+        "locality": "Las Vegas",
+        "date": "2026-11-22",
+        "gapNeeded": 176,
+        "chiefRivalId": "antonelli",
+        "chiefRivalName": "Andrea Kimi Antonelli"
+      },
+      "clinchedAt": null,
+      "eliminatedAt": null
+    },
+    {
+      "driverId": "max_verstappen",
+      "code": "VER",
+      "name": "Max Verstappen",
+      "team": "Red Bull",
+      "position": 6,
+      "points": 145,
+      "status": "alive",
+      "clinch": {
+        "round": 22,
+        "raceName": "Qatar Grand Prix",
+        "locality": "Lusail",
+        "date": "2026-11-29",
+        "gapNeeded": 173,
+        "chiefRivalId": "antonelli",
+        "chiefRivalName": "Andrea Kimi Antonelli"
+      },
+      "clinchedAt": null,
+      "eliminatedAt": null
+    },
+    {
+      "driverId": "piastri",
+      "code": "PIA",
+      "name": "Oscar Piastri",
+      "team": "McLaren",
+      "position": 7,
+      "points": 120,
+      "status": "alive",
+      "clinch": {
+        "round": 22,
+        "raceName": "Qatar Grand Prix",
+        "locality": "Lusail",
+        "date": "2026-11-29",
+        "gapNeeded": 198,
+        "chiefRivalId": "antonelli",
+        "chiefRivalName": "Andrea Kimi Antonelli"
+      },
+      "clinchedAt": null,
+      "eliminatedAt": null
+    },
+    {
+      "driverId": "hadjar",
+      "code": "HAD",
+      "name": "Isack Hadjar",
+      "team": "Red Bull",
+      "position": 8,
+      "points": 71,
+      "status": "alive",
+      "clinch": {
+        "round": 23,
+        "raceName": "Abu Dhabi Grand Prix",
+        "locality": "Abu Dhabi",
+        "date": "2026-12-06",
+        "gapNeeded": 222,
+        "chiefRivalId": "antonelli",
+        "chiefRivalName": "Andrea Kimi Antonelli"
+      },
+      "clinchedAt": null,
+      "eliminatedAt": null
+    },
+    {
+      "driverId": "lawson",
+      "code": "LAW",
+      "name": "Liam Lawson",
+      "team": "Red Bull",
+      "position": 9,
+      "points": 59,
+      "status": "alive",
+      "clinch": null,
+      "clinchedAt": null,
+      "eliminatedAt": null
+    },
+    {
+      "driverId": "gasly",
+      "code": "GAS",
+      "name": "Pierre Gasly",
+      "team": "Alpine F1 Team",
+      "position": 10,
+      "points": 41,
+      "status": "eliminated",
+      "clinch": null,
+      "clinchedAt": null,
+      "eliminatedAt": {
+        "round": 14,
+        "raceName": "Spanish Grand Prix",
+        "date": "2026-09-13"
+      }
+    },
+    {
+      "driverId": "arvid_lindblad",
+      "code": "LIN",
+      "name": "Arvid Lindblad",
+      "team": "RB F1 Team",
+      "position": 11,
+      "points": 31,
+      "status": "eliminated",
+      "clinch": null,
+      "clinchedAt": null,
+      "eliminatedAt": {
+        "round": 14,
+        "raceName": "Spanish Grand Prix",
+        "date": "2026-09-13"
+      }
+    },
+    {
+      "driverId": "colapinto",
+      "code": "COL",
+      "name": "Franco Colapinto",
+      "team": "Alpine F1 Team",
+      "position": 12,
+      "points": 27,
+      "status": "eliminated",
+      "clinch": null,
+      "clinchedAt": null,
+      "eliminatedAt": {
+        "round": 14,
+        "raceName": "Spanish Grand Prix",
+        "date": "2026-09-13"
+      }
+    },
+    {
+      "driverId": "bearman",
+      "code": "BEA",
+      "name": "Oliver Bearman",
+      "team": "Haas F1 Team",
+      "position": 13,
+      "points": 18,
+      "status": "eliminated",
+      "clinch": null,
+      "clinchedAt": null,
+      "eliminatedAt": {
+        "round": 14,
+        "raceName": "Spanish Grand Prix",
+        "date": "2026-09-13"
+      }
+    },
+    {
+      "driverId": "bortoleto",
+      "code": "BOR",
+      "name": "Gabriel Bortoleto",
+      "team": "Audi",
+      "position": 14,
+      "points": 10,
+      "status": "eliminated",
+      "clinch": null,
+      "clinchedAt": null,
+      "eliminatedAt": {
+        "round": 14,
+        "raceName": "Spanish Grand Prix",
+        "date": "2026-09-13"
+      }
+    },
+    {
+      "driverId": "hulkenberg",
+      "code": "HUL",
+      "name": "Nico Hülkenberg",
+      "team": "Audi",
+      "position": 15,
+      "points": 7,
+      "status": "eliminated",
+      "clinch": null,
+      "clinchedAt": null,
+      "eliminatedAt": {
+        "round": 13,
+        "raceName": "Italian Grand Prix",
+        "date": "2026-09-06"
+      }
+    },
+    {
+      "driverId": "sainz",
+      "code": "SAI",
+      "name": "Carlos Sainz",
+      "team": "Williams",
+      "position": 16,
+      "points": 6,
+      "status": "eliminated",
+      "clinch": null,
+      "clinchedAt": null,
+      "eliminatedAt": {
+        "round": 13,
+        "raceName": "Italian Grand Prix",
+        "date": "2026-09-06"
+      }
+    },
+    {
+      "driverId": "albon",
+      "code": "ALB",
+      "name": "Alexander Albon",
+      "team": "Williams",
+      "position": 17,
+      "points": 5,
+      "status": "eliminated",
+      "clinch": null,
+      "clinchedAt": null,
+      "eliminatedAt": {
+        "round": 13,
+        "raceName": "Italian Grand Prix",
+        "date": "2026-09-06"
+      }
+    },
+    {
+      "driverId": "ocon",
+      "code": "OCO",
+      "name": "Esteban Ocon",
+      "team": "Haas F1 Team",
+      "position": 18,
+      "points": 3,
+      "status": "eliminated",
+      "clinch": null,
+      "clinchedAt": null,
+      "eliminatedAt": {
+        "round": 13,
+        "raceName": "Italian Grand Prix",
+        "date": "2026-09-06"
+      }
+    },
+    {
+      "driverId": "alonso",
+      "code": "ALO",
+      "name": "Fernando Alonso",
+      "team": "Aston Martin",
+      "position": 19,
+      "points": 3,
+      "status": "eliminated",
+      "clinch": null,
+      "clinchedAt": null,
+      "eliminatedAt": {
+        "round": 13,
+        "raceName": "Italian Grand Prix",
+        "date": "2026-09-06"
+      }
+    },
+    {
+      "driverId": "tsunoda",
+      "code": "TSU",
+      "name": "Yuki Tsunoda",
+      "team": "RB F1 Team",
+      "position": 20,
+      "points": 1,
+      "status": "eliminated",
+      "clinch": null,
+      "clinchedAt": null,
+      "eliminatedAt": {
+        "round": 13,
+        "raceName": "Italian Grand Prix",
+        "date": "2026-09-06"
+      }
+    },
+    {
+      "driverId": "stroll",
+      "code": "STR",
+      "name": "Lance Stroll",
+      "team": "Aston Martin",
+      "position": 21,
+      "points": 0,
+      "status": "eliminated",
+      "clinch": null,
+      "clinchedAt": null,
+      "eliminatedAt": {
+        "round": 13,
+        "raceName": "Italian Grand Prix",
+        "date": "2026-09-06"
+      }
+    },
+    {
+      "driverId": "bottas",
+      "code": "BOT",
+      "name": "Valtteri Bottas",
+      "team": "Cadillac F1 Team",
+      "position": 22,
+      "points": 0,
+      "status": "eliminated",
+      "clinch": null,
+      "clinchedAt": null,
+      "eliminatedAt": {
+        "round": 13,
+        "raceName": "Italian Grand Prix",
+        "date": "2026-09-06"
+      }
+    },
+    {
+      "driverId": "perez",
+      "code": "PER",
+      "name": "Sergio Pérez",
+      "team": "Cadillac F1 Team",
+      "position": 23,
+      "points": 0,
+      "status": "eliminated",
+      "clinch": null,
+      "clinchedAt": null,
+      "eliminatedAt": {
+        "round": 13,
+        "raceName": "Italian Grand Prix",
+        "date": "2026-09-06"
+      }
+    }
+  ]
+}

@@ -1,4 +1,5 @@
 import { useEffect, useState } from 'react';
+import ClinchPanel from './components/ClinchPanel';
 import Leaderboard from './components/Leaderboard';
 import MoverCallout from './components/MoverCallout';
 import Simulator from './components/Simulator';
@@ -30,7 +31,7 @@ export default function App() {
     );
   }
 
-  const { timeline, standings, simulations, meta } = data;
+  const { timeline, standings, simulations, clinch, meta } = data;
   const hasOdds = (timeline?.points.length ?? 0) > 0;
 
   return (
@@ -79,6 +80,8 @@ export default function App() {
           </div>
         )}
       </section>
+
+      {clinch && <ClinchPanel clinch={clinch} />}
 
       {simulations && <Simulator simulations={simulations} timeline={timeline} />}
 

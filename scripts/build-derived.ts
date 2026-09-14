@@ -5,6 +5,17 @@
 
 import { aggregateBooks, normalizeShares, type BookmakerOdds } from '../src/lib/odds.js';
 import { matchDriver, TRACKED_IDS, FIELD } from '../src/lib/drivers.js';
+import {
+  canStillWin,
+  earliestClinch,
+  firstClinchedRound,
+  firstEliminationRound,
+  hasClinched,
+  maxPointsAvailable,
+  type DriverPoints,
+  type RemainingRace,
+  type RoundPoints,
+} from '../src/lib/clinch.js';
 import { listDir, readJson, writeJson } from './lib/io.js';
 import { loadMeta, saveMeta } from './update-results.js';
 
@@ -128,9 +139,120 @@ export function buildDerived(): void {
     races,
   });
 
+  buildClinch();
+
   const meta = loadMeta();
   meta.derived_updated_at = new Date().toISOString();
   saveMeta(meta);
+}
+
+interface SeasonWithPoints {
+  races: {
+    round: number;
+    results: { driverId: string; points: number; position: number | null }[];
+    sprintResults: { driverId: string; points: number }[];
+  }[];
+}
+interface StandingsForClinch {
+  round: number;
+  standings: {
+    position: number | null;
+    driverId: string;
+    code: string | null;
+    name: string;
+    team: string;
+    points: number;
+    wins: number;
+  }[];
+}
+
+/** data/derived/clinch.json — title permutations from current standings. */
+function buildClinch(): void {
+  const season = readJson<SeasonWithPoints>('data/results/season.json');
+  const schedule = readJson<ScheduleFile>('data/results/schedule.json');
+  const standings = readJson<StandingsForClinch>('data/results/standings.json');
+  if (!season || !schedule || !standings) return;
+
+  const fullCalendar: (RemainingRace & { locality: string })[] = schedule.races.map((r) => ({
+    round: r.round,
+    name: r.name,
+    date: r.date,
+    hasSprint: r.hasSprint,
+    locality: r.locality,
+  }));
+  const completedRounds: RoundPoints[] = season.races
+    .filter((r) => r.results.length > 0)
+    .map((r) => {
+      const pointsByDriver: Record<string, number> = {};
+      for (const row of [...r.results, ...r.sprintResults]) {
+        pointsByDriver[row.driverId] = (pointsByDriver[row.driverId] ?? 0) + row.points;
+      }
+      return { round: r.round, pointsByDriver };
+    });
+  const lastRound = Math.max(0, ...completedRounds.map((r) => r.round));
+  const remaining = fullCalendar.filter((r) => r.round > lastRound);
+  const byRound = new Map(fullCalendar.map((r) => [r.round, r]));
+
+  const all: DriverPoints[] = standings.standings.map((s) => ({
+    driverId: s.driverId,
+    name: s.name,
+    points: s.points,
+  }));
+
+  const drivers = standings.standings.map((s) => {
+    const me: DriverPoints = { driverId: s.driverId, name: s.name, points: s.points };
+    const rivals = all.filter((d) => d.driverId !== s.driverId);
+    const clinched = hasClinched(me, rivals, remaining);
+    const alive = clinched || canStillWin(me, rivals, remaining);
+    const scenario = alive && !clinched ? earliestClinch(me, rivals, remaining) : null;
+    const clinchRace = scenario?.earliestRound ? byRound.get(scenario.earliestRound) : null;
+    const eliminatedRound = alive ? null : firstEliminationRound(s.driverId, completedRounds, fullCalendar);
+    const clinchedRound = clinched
+      ? firstClinchedRound(s.driverId, completedRounds, fullCalendar)
+      : null;
+    const chiefRival = scenario?.chiefRivalId
+      ? standings.standings.find((d) => d.driverId === scenario.chiefRivalId)
+      : null;
+    return {
+      driverId: s.driverId,
+      code: s.code,
+      name: s.name,
+      team: s.team,
+      position: s.position,
+      points: s.points,
+      status: clinched ? 'clinched' : alive ? 'alive' : 'eliminated',
+      clinch:
+        scenario?.earliestRound && clinchRace
+          ? {
+              round: clinchRace.round,
+              raceName: clinchRace.name,
+              locality: clinchRace.locality,
+              date: clinchRace.date,
+              gapNeeded: scenario.gapNeeded,
+              chiefRivalId: scenario.chiefRivalId,
+              chiefRivalName: chiefRival?.name ?? null,
+            }
+          : null,
+      clinchedAt: clinchedRound ? { round: clinchedRound, raceName: byRound.get(clinchedRound)?.name ?? null } : null,
+      eliminatedAt:
+        eliminatedRound !== null
+          ? {
+              round: eliminatedRound,
+              raceName: byRound.get(eliminatedRound)?.name ?? null,
+              date: byRound.get(eliminatedRound)?.date ?? null,
+            }
+          : null,
+    };
+  });
+
+  writeJson('data/derived/clinch.json', {
+    generated_at: new Date().toISOString(),
+    based_on_round: lastRound,
+    remaining_races: remaining.length,
+    remaining_sprints: remaining.filter((r) => r.hasSprint).length,
+    points_available: maxPointsAvailable(remaining),
+    drivers,
+  });
 }
 
 const isMain = process.argv[1]?.endsWith('build-derived.ts');

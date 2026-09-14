@@ -125,6 +125,15 @@ weather or team orders, and half a season is a small sample. Where it
 disagrees with the market, the market is usually the better forecast — the
 gap is the interesting part, not the model's number.
 
+## Clinch scenarios
+
+The dashboard also works out the title permutations from the standings and
+the remaining calendar (Sprints included): the earliest race each contender
+can mathematically clinch and the points swing they'd need, who is already
+eliminated, and at which race their elimination happened. The rules are
+strict and conservative — reaching a points tie counts as "still alive",
+because ties are settled by a wins countback the model doesn't predict.
+
 ## The probability maths, in one paragraph
 
 Polymarket quotes each driver as a YES price between 0 and 1 — already an

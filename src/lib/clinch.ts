@@ -49,7 +49,11 @@ export function hasClinched(
   return rivals.every((rival) => rival.points + available < driver.points);
 }
 
-/** Can `driver` still mathematically win the title? */
+/**
+ * Can `driver` still mathematically win the title? Conservative on ties, like
+ * every function here: reaching a points tie counts as alive, because the
+ * countback that would settle it is not modelled.
+ */
 export function canStillWin(
   driver: DriverPoints,
   rivals: DriverPoints[],
@@ -57,7 +61,69 @@ export function canStillWin(
 ): boolean {
   const available = maxPointsAvailable(remaining);
   // Best case: driver maxes everything, every rival scores nothing more.
-  return rivals.every((rival) => driver.points + available > rival.points);
+  return rivals.every((rival) => driver.points + available >= rival.points);
+}
+
+export interface RoundPoints {
+  round: number;
+  /** Combined race + sprint points scored by each driver in this round. */
+  pointsByDriver: Record<string, number>;
+}
+
+/**
+ * Replay the season round by round and return the round after which the
+ * driver could no longer win the title (some rival's points already exceeded
+ * the driver's maximum possible total), or null if still alive.
+ * `schedule` is the FULL season calendar, used for what remained after each round.
+ */
+export function firstEliminationRound(
+  driverId: string,
+  completedRounds: RoundPoints[],
+  schedule: RemainingRace[],
+): number | null {
+  const cumulative = new Map<string, number>();
+  const sorted = [...completedRounds].sort((a, b) => a.round - b.round);
+  for (const rp of sorted) {
+    for (const [id, pts] of Object.entries(rp.pointsByDriver)) {
+      cumulative.set(id, (cumulative.get(id) ?? 0) + pts);
+    }
+    const available = maxPointsAvailable(schedule.filter((r) => r.round > rp.round));
+    const mine = cumulative.get(driverId) ?? 0;
+    for (const [id, pts] of cumulative) {
+      if (id !== driverId && mine + available < pts) return rp.round;
+    }
+  }
+  return null;
+}
+
+/**
+ * Replay the season and return the round after which the driver was already
+ * champion (every rival's maximum possible total strictly below the driver's
+ * points), or null if the title is not yet sealed.
+ */
+export function firstClinchedRound(
+  driverId: string,
+  completedRounds: RoundPoints[],
+  schedule: RemainingRace[],
+): number | null {
+  const cumulative = new Map<string, number>();
+  const sorted = [...completedRounds].sort((a, b) => a.round - b.round);
+  for (const rp of sorted) {
+    for (const [id, pts] of Object.entries(rp.pointsByDriver)) {
+      cumulative.set(id, (cumulative.get(id) ?? 0) + pts);
+    }
+    const available = maxPointsAvailable(schedule.filter((r) => r.round > rp.round));
+    const mine = cumulative.get(driverId) ?? 0;
+    let sealed = true;
+    for (const [id, pts] of cumulative) {
+      if (id !== driverId && pts + available >= mine) {
+        sealed = false;
+        break;
+      }
+    }
+    if (sealed) return rp.round;
+  }
+  return null;
 }
 
 export interface ClinchScenario {
