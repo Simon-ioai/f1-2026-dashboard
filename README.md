@@ -1,5 +1,8 @@
 # F1 2026 · Title Race Dashboard
 
+**Live at https://simon-ioai.github.io/f1-2026-dashboard/** — just want to
+*view* it? Read [GUIDE.md](GUIDE.md), the two-minute non-technical guide.
+
 A self-updating dashboard for the 2026 Formula 1 drivers' championship: what
 the market thinks each driver's title chances are, tracked daily across the
 whole season, plus real results and standings. Everything runs on free

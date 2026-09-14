@@ -1,0 +1,824 @@
+{
+  "generated_at": "2026-09-14T07:53:56.647Z",
+  "based_on_round": 14,
+  "window": 3,
+  "note": "Rolling 3-weekend averages (race + sprint points; qualifying position). A weekend is marked when the rolling points average is more than one standard deviation from the season baseline.",
+  "drivers": [
+    {
+      "driverId": "antonelli",
+      "code": "ANT",
+      "name": "Andrea Kimi Antonelli",
+      "baselinePoints": 20.857142857142858,
+      "baselineQuali": 2.357142857142857,
+      "pointsSd": 8.399465483479485,
+      "rounds": [
+        {
+          "round": 1,
+          "points": 18,
+          "qualiPos": 2,
+          "pointsAvg": 18,
+          "qualiAvg": 2,
+          "diverged": false,
+          "locality": "Melbourne"
+        },
+        {
+          "round": 2,
+          "points": 29,
+          "qualiPos": 1,
+          "pointsAvg": 23.5,
+          "qualiAvg": 1.5,
+          "diverged": false,
+          "locality": "Shanghai"
+        },
+        {
+          "round": 3,
+          "points": 25,
+          "qualiPos": 1,
+          "pointsAvg": 24,
+          "qualiAvg": 1.3333333333333333,
+          "diverged": false,
+          "locality": "Suzuka"
+        },
+        {
+          "round": 4,
+          "points": 28,
+          "qualiPos": 1,
+          "pointsAvg": 27.333333333333332,
+          "qualiAvg": 1,
+          "diverged": false,
+          "locality": "Miami"
+        },
+        {
+          "round": 5,
+          "points": 31,
+          "qualiPos": 2,
+          "pointsAvg": 28,
+          "qualiAvg": 1.3333333333333333,
+          "diverged": false,
+          "locality": "Montreal"
+        },
+        {
+          "round": 6,
+          "points": 25,
+          "qualiPos": 1,
+          "pointsAvg": 28,
+          "qualiAvg": 1.3333333333333333,
+          "diverged": false,
+          "locality": "Monte Carlo"
+        },
+        {
+          "round": 7,
+          "points": 0,
+          "qualiPos": 3,
+          "pointsAvg": 18.666666666666668,
+          "qualiAvg": 2,
+          "diverged": false,
+          "locality": "Barcelona"
+        },
+        {
+          "round": 8,
+          "points": 15,
+          "qualiPos": 4,
+          "pointsAvg": 13.333333333333334,
+          "qualiAvg": 2.6666666666666665,
+          "diverged": false,
+          "locality": "Spielberg"
+        },
+        {
+          "round": 9,
+          "points": 8,
+          "qualiPos": 1,
+          "pointsAvg": 7.666666666666667,
+          "qualiAvg": 2.6666666666666665,
+          "diverged": true,
+          "locality": "Silverstone"
+        },
+        {
+          "round": 10,
+          "points": 25,
+          "qualiPos": 1,
+          "pointsAvg": 16,
+          "qualiAvg": 2,
+          "diverged": false,
+          "locality": "Spa"
+        },
+        {
+          "round": 11,
+          "points": 15,
+          "qualiPos": 4,
+          "pointsAvg": 16,
+          "qualiAvg": 2,
+          "diverged": false,
+          "locality": "Budapest"
+        },
+        {
+          "round": 12,
+          "points": 23,
+          "qualiPos": 3,
+          "pointsAvg": 21,
+          "qualiAvg": 2.6666666666666665,
+          "diverged": false,
+          "locality": "Zandvoort"
+        },
+        {
+          "round": 13,
+          "points": 25,
+          "qualiPos": 7,
+          "pointsAvg": 21,
+          "qualiAvg": 4.666666666666667,
+          "diverged": false,
+          "locality": "Monza"
+        },
+        {
+          "round": 14,
+          "points": 25,
+          "qualiPos": 2,
+          "pointsAvg": 24.333333333333332,
+          "qualiAvg": 4,
+          "diverged": false,
+          "locality": "Madrid"
+        }
+      ]
+    },
+    {
+      "driverId": "russell",
+      "code": "RUS",
+      "name": "George Russell",
+      "baselinePoints": 15.071428571428571,
+      "baselineQuali": 3.142857142857143,
+      "pointsSd": 8.803118649614104,
+      "rounds": [
+        {
+          "round": 1,
+          "points": 25,
+          "qualiPos": 1,
+          "pointsAvg": 25,
+          "qualiAvg": 1,
+          "diverged": false,
+          "locality": "Melbourne"
+        },
+        {
+          "round": 2,
+          "points": 26,
+          "qualiPos": 2,
+          "pointsAvg": 25.5,
+          "qualiAvg": 1.5,
+          "diverged": false,
+          "locality": "Shanghai"
+        },
+        {
+          "round": 3,
+          "points": 12,
+          "qualiPos": 2,
+          "pointsAvg": 21,
+          "qualiAvg": 1.6666666666666667,
+          "diverged": false,
+          "locality": "Suzuka"
+        },
+        {
+          "round": 4,
+          "points": 17,
+          "qualiPos": 5,
+          "pointsAvg": 18.333333333333332,
+          "qualiAvg": 3,
+          "diverged": false,
+          "locality": "Miami"
+        },
+        {
+          "round": 5,
+          "points": 8,
+          "qualiPos": 1,
+          "pointsAvg": 12.333333333333334,
+          "qualiAvg": 2.6666666666666665,
+          "diverged": false,
+          "locality": "Montreal"
+        },
+        {
+          "round": 6,
+          "points": 0,
+          "qualiPos": 6,
+          "pointsAvg": 8.333333333333334,
+          "qualiAvg": 4,
+          "diverged": false,
+          "locality": "Monte Carlo"
+        },
+        {
+          "round": 7,
+          "points": 18,
+          "qualiPos": 1,
+          "pointsAvg": 8.666666666666666,
+          "qualiAvg": 2.6666666666666665,
+          "diverged": false,
+          "locality": "Barcelona"
+        },
+        {
+          "round": 8,
+          "points": 25,
+          "qualiPos": 1,
+          "pointsAvg": 14.333333333333334,
+          "qualiAvg": 2.6666666666666665,
+          "diverged": false,
+          "locality": "Spielberg"
+        },
+        {
+          "round": 9,
+          "points": 23,
+          "qualiPos": 4,
+          "pointsAvg": 22,
+          "qualiAvg": 2,
+          "diverged": false,
+          "locality": "Silverstone"
+        },
+        {
+          "round": 10,
+          "points": 0,
+          "qualiPos": 4,
+          "pointsAvg": 16,
+          "qualiAvg": 3,
+          "diverged": false,
+          "locality": "Spa"
+        },
+        {
+          "round": 11,
+          "points": 6,
+          "qualiPos": 7,
+          "pointsAvg": 9.666666666666666,
+          "qualiAvg": 5,
+          "diverged": false,
+          "locality": "Budapest"
+        },
+        {
+          "round": 12,
+          "points": 23,
+          "qualiPos": 2,
+          "pointsAvg": 9.666666666666666,
+          "qualiAvg": 4.333333333333333,
+          "diverged": false,
+          "locality": "Zandvoort"
+        },
+        {
+          "round": 13,
+          "points": 18,
+          "qualiPos": 2,
+          "pointsAvg": 15.666666666666666,
+          "qualiAvg": 3.6666666666666665,
+          "diverged": false,
+          "locality": "Monza"
+        },
+        {
+          "round": 14,
+          "points": 10,
+          "qualiPos": 6,
+          "pointsAvg": 17,
+          "qualiAvg": 3.3333333333333335,
+          "diverged": false,
+          "locality": "Madrid"
+        }
+      ]
+    },
+    {
+      "driverId": "hamilton",
+      "code": "HAM",
+      "name": "Lewis Hamilton",
+      "baselinePoints": 13.642857142857142,
+      "baselineQuali": 4.285714285714286,
+      "pointsSd": 6.661264818305293,
+      "rounds": [
+        {
+          "round": 1,
+          "points": 12,
+          "qualiPos": 7,
+          "pointsAvg": 12,
+          "qualiAvg": 7,
+          "diverged": false,
+          "locality": "Melbourne"
+        },
+        {
+          "round": 2,
+          "points": 21,
+          "qualiPos": 3,
+          "pointsAvg": 16.5,
+          "qualiAvg": 5,
+          "diverged": false,
+          "locality": "Shanghai"
+        },
+        {
+          "round": 3,
+          "points": 8,
+          "qualiPos": 6,
+          "pointsAvg": 13.666666666666666,
+          "qualiAvg": 5.333333333333333,
+          "diverged": false,
+          "locality": "Suzuka"
+        },
+        {
+          "round": 4,
+          "points": 10,
+          "qualiPos": 6,
+          "pointsAvg": 13,
+          "qualiAvg": 5,
+          "diverged": false,
+          "locality": "Miami"
+        },
+        {
+          "round": 5,
+          "points": 21,
+          "qualiPos": 5,
+          "pointsAvg": 13,
+          "qualiAvg": 5.666666666666667,
+          "diverged": false,
+          "locality": "Montreal"
+        },
+        {
+          "round": 6,
+          "points": 18,
+          "qualiPos": 3,
+          "pointsAvg": 16.333333333333332,
+          "qualiAvg": 4.666666666666667,
+          "diverged": false,
+          "locality": "Monte Carlo"
+        },
+        {
+          "round": 7,
+          "points": 25,
+          "qualiPos": 2,
+          "pointsAvg": 21.333333333333332,
+          "qualiAvg": 3.3333333333333335,
+          "diverged": true,
+          "locality": "Barcelona"
+        },
+        {
+          "round": 8,
+          "points": 10,
+          "qualiPos": 3,
+          "pointsAvg": 17.666666666666668,
+          "qualiAvg": 2.6666666666666665,
+          "diverged": false,
+          "locality": "Spielberg"
+        },
+        {
+          "round": 9,
+          "points": 22,
+          "qualiPos": 3,
+          "pointsAvg": 19,
+          "qualiAvg": 2.6666666666666665,
+          "diverged": false,
+          "locality": "Silverstone"
+        },
+        {
+          "round": 10,
+          "points": 12,
+          "qualiPos": 6,
+          "pointsAvg": 14.666666666666666,
+          "qualiAvg": 4,
+          "diverged": false,
+          "locality": "Spa"
+        },
+        {
+          "round": 11,
+          "points": 10,
+          "qualiPos": 2,
+          "pointsAvg": 14.666666666666666,
+          "qualiAvg": 3.6666666666666665,
+          "diverged": false,
+          "locality": "Budapest"
+        },
+        {
+          "round": 12,
+          "points": 14,
+          "qualiPos": 5,
+          "pointsAvg": 12,
+          "qualiAvg": 4.333333333333333,
+          "diverged": false,
+          "locality": "Zandvoort"
+        },
+        {
+          "round": 13,
+          "points": 8,
+          "qualiPos": 5,
+          "pointsAvg": 10.666666666666666,
+          "qualiAvg": 4,
+          "diverged": false,
+          "locality": "Monza"
+        },
+        {
+          "round": 14,
+          "points": 0,
+          "qualiPos": 4,
+          "pointsAvg": 7.333333333333333,
+          "qualiAvg": 4.666666666666667,
+          "diverged": false,
+          "locality": "Madrid"
+        }
+      ]
+    },
+    {
+      "driverId": "leclerc",
+      "code": "LEC",
+      "name": "Charles Leclerc",
+      "baselinePoints": 11.928571428571429,
+      "baselineQuali": 4.571428571428571,
+      "pointsSd": 8.163195152759783,
+      "rounds": [
+        {
+          "round": 1,
+          "points": 15,
+          "qualiPos": 4,
+          "pointsAvg": 15,
+          "qualiAvg": 4,
+          "diverged": false,
+          "locality": "Melbourne"
+        },
+        {
+          "round": 2,
+          "points": 19,
+          "qualiPos": 4,
+          "pointsAvg": 17,
+          "qualiAvg": 4,
+          "diverged": false,
+          "locality": "Shanghai"
+        },
+        {
+          "round": 3,
+          "points": 15,
+          "qualiPos": 4,
+          "pointsAvg": 16.333333333333332,
+          "qualiAvg": 4,
+          "diverged": false,
+          "locality": "Suzuka"
+        },
+        {
+          "round": 4,
+          "points": 10,
+          "qualiPos": 3,
+          "pointsAvg": 14.666666666666666,
+          "qualiAvg": 3.6666666666666665,
+          "diverged": false,
+          "locality": "Miami"
+        },
+        {
+          "round": 5,
+          "points": 16,
+          "qualiPos": 8,
+          "pointsAvg": 13.666666666666666,
+          "qualiAvg": 5,
+          "diverged": false,
+          "locality": "Montreal"
+        },
+        {
+          "round": 6,
+          "points": 0,
+          "qualiPos": 4,
+          "pointsAvg": 8.666666666666666,
+          "qualiAvg": 5,
+          "diverged": false,
+          "locality": "Monte Carlo"
+        },
+        {
+          "round": 7,
+          "points": 0,
+          "qualiPos": 10,
+          "pointsAvg": 5.333333333333333,
+          "qualiAvg": 7.333333333333333,
+          "diverged": false,
+          "locality": "Barcelona"
+        },
+        {
+          "round": 8,
+          "points": 4,
+          "qualiPos": 2,
+          "pointsAvg": 1.3333333333333333,
+          "qualiAvg": 5.333333333333333,
+          "diverged": true,
+          "locality": "Spielberg"
+        },
+        {
+          "round": 9,
+          "points": 29,
+          "qualiPos": 2,
+          "pointsAvg": 11,
+          "qualiAvg": 4.666666666666667,
+          "diverged": false,
+          "locality": "Silverstone"
+        },
+        {
+          "round": 10,
+          "points": 18,
+          "qualiPos": 5,
+          "pointsAvg": 17,
+          "qualiAvg": 3,
+          "diverged": false,
+          "locality": "Spa"
+        },
+        {
+          "round": 11,
+          "points": 12,
+          "qualiPos": 3,
+          "pointsAvg": 19.666666666666668,
+          "qualiAvg": 3.3333333333333335,
+          "diverged": false,
+          "locality": "Budapest"
+        },
+        {
+          "round": 12,
+          "points": 17,
+          "qualiPos": 6,
+          "pointsAvg": 15.666666666666666,
+          "qualiAvg": 4.666666666666667,
+          "diverged": false,
+          "locality": "Zandvoort"
+        },
+        {
+          "round": 13,
+          "points": 0,
+          "qualiPos": 4,
+          "pointsAvg": 9.666666666666666,
+          "qualiAvg": 4.333333333333333,
+          "diverged": false,
+          "locality": "Monza"
+        },
+        {
+          "round": 14,
+          "points": 12,
+          "qualiPos": 5,
+          "pointsAvg": 9.666666666666666,
+          "qualiAvg": 5,
+          "diverged": false,
+          "locality": "Madrid"
+        }
+      ]
+    },
+    {
+      "driverId": "norris",
+      "code": "NOR",
+      "name": "Lando Norris",
+      "baselinePoints": 13.285714285714286,
+      "baselineQuali": 4.5,
+      "pointsSd": 8.68026144626475,
+      "rounds": [
+        {
+          "round": 1,
+          "points": 10,
+          "qualiPos": 6,
+          "pointsAvg": 10,
+          "qualiAvg": 6,
+          "diverged": false,
+          "locality": "Melbourne"
+        },
+        {
+          "round": 2,
+          "points": 5,
+          "qualiPos": 6,
+          "pointsAvg": 7.5,
+          "qualiAvg": 6,
+          "diverged": false,
+          "locality": "Shanghai"
+        },
+        {
+          "round": 3,
+          "points": 10,
+          "qualiPos": 5,
+          "pointsAvg": 8.333333333333334,
+          "qualiAvg": 5.666666666666667,
+          "diverged": false,
+          "locality": "Suzuka"
+        },
+        {
+          "round": 4,
+          "points": 26,
+          "qualiPos": 4,
+          "pointsAvg": 13.666666666666666,
+          "qualiAvg": 5,
+          "diverged": false,
+          "locality": "Miami"
+        },
+        {
+          "round": 5,
+          "points": 7,
+          "qualiPos": 3,
+          "pointsAvg": 14.333333333333334,
+          "qualiAvg": 4,
+          "diverged": false,
+          "locality": "Montreal"
+        },
+        {
+          "round": 6,
+          "points": 0,
+          "qualiPos": 8,
+          "pointsAvg": 11,
+          "qualiAvg": 5,
+          "diverged": false,
+          "locality": "Monte Carlo"
+        },
+        {
+          "round": 7,
+          "points": 15,
+          "qualiPos": 4,
+          "pointsAvg": 7.333333333333333,
+          "qualiAvg": 5,
+          "diverged": false,
+          "locality": "Barcelona"
+        },
+        {
+          "round": 8,
+          "points": 6,
+          "qualiPos": 6,
+          "pointsAvg": 7,
+          "qualiAvg": 6,
+          "diverged": false,
+          "locality": "Spielberg"
+        },
+        {
+          "round": 9,
+          "points": 18,
+          "qualiPos": 6,
+          "pointsAvg": 13,
+          "qualiAvg": 5.333333333333333,
+          "diverged": false,
+          "locality": "Silverstone"
+        },
+        {
+          "round": 10,
+          "points": 6,
+          "qualiPos": 3,
+          "pointsAvg": 10,
+          "qualiAvg": 5,
+          "diverged": false,
+          "locality": "Spa"
+        },
+        {
+          "round": 11,
+          "points": 25,
+          "qualiPos": 1,
+          "pointsAvg": 16.333333333333332,
+          "qualiAvg": 3.3333333333333335,
+          "diverged": false,
+          "locality": "Budapest"
+        },
+        {
+          "round": 12,
+          "points": 31,
+          "qualiPos": 1,
+          "pointsAvg": 20.666666666666668,
+          "qualiAvg": 1.6666666666666667,
+          "diverged": false,
+          "locality": "Zandvoort"
+        },
+        {
+          "round": 13,
+          "points": 12,
+          "qualiPos": 9,
+          "pointsAvg": 22.666666666666668,
+          "qualiAvg": 3.6666666666666665,
+          "diverged": true,
+          "locality": "Monza"
+        },
+        {
+          "round": 14,
+          "points": 15,
+          "qualiPos": 1,
+          "pointsAvg": 19.333333333333332,
+          "qualiAvg": 3.6666666666666665,
+          "diverged": false,
+          "locality": "Madrid"
+        }
+      ]
+    },
+    {
+      "driverId": "max_verstappen",
+      "code": "VER",
+      "name": "Max Verstappen",
+      "baselinePoints": 10.357142857142858,
+      "baselineQuali": 5.384615384615385,
+      "pointsSd": 6.7992346508070085,
+      "rounds": [
+        {
+          "round": 1,
+          "points": 8,
+          "qualiPos": null,
+          "pointsAvg": 8,
+          "qualiAvg": null,
+          "diverged": false,
+          "locality": "Melbourne"
+        },
+        {
+          "round": 2,
+          "points": 0,
+          "qualiPos": 8,
+          "pointsAvg": 4,
+          "qualiAvg": 8,
+          "diverged": false,
+          "locality": "Shanghai"
+        },
+        {
+          "round": 3,
+          "points": 4,
+          "qualiPos": 11,
+          "pointsAvg": 4,
+          "qualiAvg": 9.5,
+          "diverged": false,
+          "locality": "Suzuka"
+        },
+        {
+          "round": 4,
+          "points": 14,
+          "qualiPos": 2,
+          "pointsAvg": 6,
+          "qualiAvg": 7,
+          "diverged": false,
+          "locality": "Miami"
+        },
+        {
+          "round": 5,
+          "points": 17,
+          "qualiPos": 6,
+          "pointsAvg": 11.666666666666666,
+          "qualiAvg": 6.333333333333333,
+          "diverged": false,
+          "locality": "Montreal"
+        },
+        {
+          "round": 6,
+          "points": 0,
+          "qualiPos": 2,
+          "pointsAvg": 10.333333333333334,
+          "qualiAvg": 3.3333333333333335,
+          "diverged": false,
+          "locality": "Monte Carlo"
+        },
+        {
+          "round": 7,
+          "points": 12,
+          "qualiPos": 5,
+          "pointsAvg": 9.666666666666666,
+          "qualiAvg": 4.333333333333333,
+          "diverged": false,
+          "locality": "Barcelona"
+        },
+        {
+          "round": 8,
+          "points": 18,
+          "qualiPos": 5,
+          "pointsAvg": 10,
+          "qualiAvg": 4,
+          "diverged": false,
+          "locality": "Spielberg"
+        },
+        {
+          "round": 9,
+          "points": 3,
+          "qualiPos": 7,
+          "pointsAvg": 11,
+          "qualiAvg": 5.666666666666667,
+          "diverged": false,
+          "locality": "Silverstone"
+        },
+        {
+          "round": 10,
+          "points": 15,
+          "qualiPos": 2,
+          "pointsAvg": 12,
+          "qualiAvg": 4.666666666666667,
+          "diverged": false,
+          "locality": "Spa"
+        },
+        {
+          "round": 11,
+          "points": 18,
+          "qualiPos": 6,
+          "pointsAvg": 12,
+          "qualiAvg": 5,
+          "diverged": false,
+          "locality": "Budapest"
+        },
+        {
+          "round": 12,
+          "points": 3,
+          "qualiPos": 7,
+          "pointsAvg": 12,
+          "qualiAvg": 5,
+          "diverged": false,
+          "locality": "Zandvoort"
+        },
+        {
+          "round": 13,
+          "points": 15,
+          "qualiPos": 6,
+          "pointsAvg": 12,
+          "qualiAvg": 6.333333333333333,
+          "diverged": false,
+          "locality": "Monza"
+        },
+        {
+          "round": 14,
+          "points": 18,
+          "qualiPos": 3,
+          "pointsAvg": 12,
+          "qualiAvg": 5.333333333333333,
+          "diverged": false,
+          "locality": "Madrid"
+        }
+      ]
+    }
+  ]
+}

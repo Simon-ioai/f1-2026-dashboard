@@ -1,5 +1,7 @@
 import { useEffect, useState } from 'react';
+import AboutPanel from './components/AboutPanel';
 import ClinchPanel from './components/ClinchPanel';
+import FormPanel from './components/FormPanel';
 import H2HPanel from './components/H2HPanel';
 import Leaderboard from './components/Leaderboard';
 import MoverCallout from './components/MoverCallout';
@@ -32,7 +34,7 @@ export default function App() {
     );
   }
 
-  const { timeline, standings, simulations, clinch, h2h, meta } = data;
+  const { timeline, standings, simulations, clinch, h2h, form, meta } = data;
   const hasOdds = (timeline?.points.length ?? 0) > 0;
 
   return (
@@ -56,6 +58,8 @@ export default function App() {
           <span className="badge-warn">⚠ Some data files failed to load</span>
         )}
       </div>
+
+      <AboutPanel />
 
       <Leaderboard timeline={timeline} standings={standings} />
 
@@ -87,6 +91,8 @@ export default function App() {
       {h2h && <H2HPanel h2h={h2h} />}
 
       {simulations && <Simulator simulations={simulations} timeline={timeline} />}
+
+      {form && <FormPanel form={form} />}
 
       <footer className="footer">
         Data: race results, standings and schedule from{' '}

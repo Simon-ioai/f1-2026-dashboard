@@ -16,6 +16,7 @@ import {
   type RemainingRace,
   type RoundPoints,
 } from '../src/lib/clinch.js';
+import { buildFormSeries } from '../src/lib/form.js';
 import { summarize, teamRoundVerdicts, type H2HRaceInput } from '../src/lib/h2h.js';
 import { listDir, readJson, writeJson } from './lib/io.js';
 import { loadMeta, saveMeta } from './update-results.js';
@@ -142,6 +143,7 @@ export function buildDerived(): void {
 
   buildClinch();
   buildH2H();
+  buildForm();
 
   const meta = loadMeta();
   meta.derived_updated_at = new Date().toISOString();
@@ -166,6 +168,53 @@ interface StandingsForClinch {
     points: number;
     wins: number;
   }[];
+}
+
+/** data/derived/form.json — rolling 3-race form per tracked driver. */
+function buildForm(): void {
+  const season = readJson<SeasonForH2H>('data/results/season.json');
+  const schedule = readJson<ScheduleFile>('data/results/schedule.json');
+  const standings = readJson<StandingsForClinch>('data/results/standings.json');
+  if (!season || !schedule || !standings) return;
+
+  const locality = new Map(schedule.races.map((r) => [r.round, r.locality]));
+  const completed = season.races.filter((r) => r.results.length > 0);
+  const info = new Map(standings.standings.map((s) => [s.driverId, s]));
+
+  const drivers = TRACKED_IDS.map((driverId) => {
+    const rounds = completed
+      .map((race) => {
+        const result = race.results.find((r) => r.driverId === driverId);
+        if (!result) return null; // did not take part that weekend
+        const sprint = race.sprintResults.find((r) => r.driverId === driverId);
+        const quali = race.qualifying.find((q) => q.driverId === driverId);
+        return {
+          round: race.round,
+          points: result.points + (sprint?.points ?? 0),
+          qualiPos: quali?.position ?? null,
+        };
+      })
+      .filter((r) => r !== null);
+    const series = buildFormSeries(rounds);
+    return {
+      driverId,
+      code: info.get(driverId)?.code ?? null,
+      name: info.get(driverId)?.name ?? driverId,
+      baselinePoints: series.baselinePoints,
+      baselineQuali: series.baselineQuali,
+      pointsSd: series.pointsSd,
+      rounds: series.points.map((p) => ({ ...p, locality: locality.get(p.round) ?? `R${p.round}` })),
+    };
+  });
+
+  writeJson('data/derived/form.json', {
+    generated_at: new Date().toISOString(),
+    based_on_round: Math.max(0, ...completed.map((r) => r.round)),
+    window: 3,
+    note:
+      'Rolling 3-weekend averages (race + sprint points; qualifying position). A weekend is marked when the rolling points average is more than one standard deviation from the season baseline.',
+    drivers,
+  });
 }
 
 const H2H_TEAMS = ['Mercedes', 'Ferrari', 'McLaren', 'Red Bull'];

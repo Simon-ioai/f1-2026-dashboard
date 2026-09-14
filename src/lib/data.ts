@@ -149,6 +149,30 @@ export interface H2HFile {
   }[];
 }
 
+export interface FormFile {
+  generated_at: string;
+  based_on_round: number;
+  window: number;
+  note: string;
+  drivers: {
+    driverId: string;
+    code: string | null;
+    name: string;
+    baselinePoints: number;
+    baselineQuali: number | null;
+    pointsSd: number;
+    rounds: {
+      round: number;
+      locality: string;
+      points: number;
+      qualiPos: number | null;
+      pointsAvg: number;
+      qualiAvg: number | null;
+      diverged: boolean;
+    }[];
+  }[];
+}
+
 export interface Meta {
   results_updated_at: string | null;
   odds_updated_at: string | null;
@@ -162,6 +186,7 @@ export interface DashboardData {
   simulations: SimulationsFile | null;
   clinch: ClinchFile | null;
   h2h: H2HFile | null;
+  form: FormFile | null;
   meta: Meta | null;
   fetchErrors: string[];
 }
@@ -179,13 +204,14 @@ async function tryFetch<T>(path: string, errors: string[]): Promise<T | null> {
 
 export async function loadDashboardData(): Promise<DashboardData> {
   const fetchErrors: string[] = [];
-  const [timeline, standings, simulations, clinch, h2h, meta] = await Promise.all([
+  const [timeline, standings, simulations, clinch, h2h, form, meta] = await Promise.all([
     tryFetch<Timeline>('data/derived/timeline.json', fetchErrors),
     tryFetch<StandingsFile>('data/results/standings.json', fetchErrors),
     tryFetch<SimulationsFile>('data/derived/simulations.json', fetchErrors),
     tryFetch<ClinchFile>('data/derived/clinch.json', fetchErrors),
     tryFetch<H2HFile>('data/derived/h2h.json', fetchErrors),
+    tryFetch<FormFile>('data/derived/form.json', fetchErrors),
     tryFetch<Meta>('data/derived/meta.json', fetchErrors),
   ]);
-  return { timeline, standings, simulations, clinch, h2h, meta, fetchErrors };
+  return { timeline, standings, simulations, clinch, h2h, form, meta, fetchErrors };
 }
