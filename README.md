@@ -134,6 +134,18 @@ eliminated, and at which race their elimination happened. The rules are
 strict and conservative — reaching a points tie counts as "still alive",
 because ties are settled by a wins countback the model doesn't predict.
 
+## Teammate head-to-head
+
+Four cards — Mercedes, Ferrari, McLaren, Red Bull — comparing the only two
+drivers in equal machinery: qualifying record, race record (counted only when
+both cars were classified, so a DNF is reliability rather than a verdict),
+points split, the **median qualifying gap in milliseconds**, and a per-round
+sparkline of that gap. Gaps are measured in the deepest qualifying session
+both cars set a time in (Q3, else Q2, else Q1); a car with no representative
+lap counts toward the record but never toward the gap. The teammate is
+detected per race from the results, so mid-season seat swaps are handled
+automatically.
+
 ## The probability maths, in one paragraph
 
 Polymarket quotes each driver as a YES price between 0 and 1 — already an

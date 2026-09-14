@@ -427,6 +427,91 @@ body {
   opacity: 0.85;
 }
 
+/* ---------- teammate head-to-head ---------- */
+.h2h-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 12px;
+}
+
+.h2h-card {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  padding: 14px 16px 8px;
+  min-width: 0;
+}
+
+.h2h-head {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  gap: 10px;
+  flex-wrap: wrap;
+  margin-bottom: 10px;
+}
+
+.h2h-team {
+  font-size: 12.5px;
+  font-weight: 700;
+  letter-spacing: 1.4px;
+  text-transform: uppercase;
+  color: var(--ink-muted);
+}
+
+.h2h-names {
+  font-size: 14.5px;
+}
+
+.h2h-names em {
+  font-style: normal;
+  color: var(--ink-muted);
+  font-size: 12.5px;
+}
+
+.h2h-stats {
+  display: grid;
+  grid-template-columns: auto auto 1fr;
+  gap: 8px 22px;
+  margin-bottom: 12px;
+}
+
+.h2h-big {
+  display: block;
+  font-size: 24px;
+  font-weight: 900;
+  line-height: 1.15;
+}
+
+.h2h-label {
+  display: block;
+  font-size: 11px;
+  color: var(--ink-muted);
+  letter-spacing: 0.3px;
+  max-width: 210px;
+}
+
+.h2h-points {
+  margin-bottom: 4px;
+}
+
+.h2h-points-bar {
+  height: 6px;
+  border-radius: 3px;
+  margin-bottom: 4px;
+}
+
+.h2h-points-label {
+  font-size: 11.5px;
+  color: var(--ink-muted);
+}
+
+.h2h-spark-label {
+  margin: 0 0 4px;
+  font-size: 11px;
+  color: var(--ink-muted);
+}
+
 /* ---------- simulator: dumbbells ---------- */
 .dumbbells {
   display: flex;

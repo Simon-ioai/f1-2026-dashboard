@@ -110,6 +110,45 @@ export interface ClinchFile {
   }[];
 }
 
+export interface H2HFile {
+  generated_at: string;
+  based_on_round: number;
+  note: string;
+  teams: {
+    team: string;
+    primary: { driverId: string; code: string | null; name: string; points: number };
+    partners: {
+      driverId: string;
+      code: string | null;
+      name: string;
+      points: number;
+      rounds: number;
+      qualiWins: number;
+      qualiLosses: number;
+      raceWins: number;
+      raceLosses: number;
+      medianGapMs: number | null;
+      comparableLaps: number;
+    }[];
+    overall: {
+      qualiWins: number;
+      qualiLosses: number;
+      raceWins: number;
+      raceLosses: number;
+      medianGapMs: number | null;
+      comparableLaps: number;
+    };
+    trend: {
+      round: number;
+      locality: string;
+      gapMs: number | null;
+      session: string | null;
+      partnerId: string;
+      partnerCode: string | null;
+    }[];
+  }[];
+}
+
 export interface Meta {
   results_updated_at: string | null;
   odds_updated_at: string | null;
@@ -122,6 +161,7 @@ export interface DashboardData {
   standings: StandingsFile | null;
   simulations: SimulationsFile | null;
   clinch: ClinchFile | null;
+  h2h: H2HFile | null;
   meta: Meta | null;
   fetchErrors: string[];
 }
@@ -139,12 +179,13 @@ async function tryFetch<T>(path: string, errors: string[]): Promise<T | null> {
 
 export async function loadDashboardData(): Promise<DashboardData> {
   const fetchErrors: string[] = [];
-  const [timeline, standings, simulations, clinch, meta] = await Promise.all([
+  const [timeline, standings, simulations, clinch, h2h, meta] = await Promise.all([
     tryFetch<Timeline>('data/derived/timeline.json', fetchErrors),
     tryFetch<StandingsFile>('data/results/standings.json', fetchErrors),
     tryFetch<SimulationsFile>('data/derived/simulations.json', fetchErrors),
     tryFetch<ClinchFile>('data/derived/clinch.json', fetchErrors),
+    tryFetch<H2HFile>('data/derived/h2h.json', fetchErrors),
     tryFetch<Meta>('data/derived/meta.json', fetchErrors),
   ]);
-  return { timeline, standings, simulations, clinch, meta, fetchErrors };
+  return { timeline, standings, simulations, clinch, h2h, meta, fetchErrors };
 }

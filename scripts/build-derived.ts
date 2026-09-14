@@ -16,6 +16,7 @@ import {
   type RemainingRace,
   type RoundPoints,
 } from '../src/lib/clinch.js';
+import { summarize, teamRoundVerdicts, type H2HRaceInput } from '../src/lib/h2h.js';
 import { listDir, readJson, writeJson } from './lib/io.js';
 import { loadMeta, saveMeta } from './update-results.js';
 
@@ -140,6 +141,7 @@ export function buildDerived(): void {
   });
 
   buildClinch();
+  buildH2H();
 
   const meta = loadMeta();
   meta.derived_updated_at = new Date().toISOString();
@@ -164,6 +166,93 @@ interface StandingsForClinch {
     points: number;
     wins: number;
   }[];
+}
+
+const H2H_TEAMS = ['Mercedes', 'Ferrari', 'McLaren', 'Red Bull'];
+
+interface SeasonForH2H {
+  races: {
+    round: number;
+    name: string;
+    results: {
+      driverId: string;
+      position: number | null;
+      positionText: string;
+      team: string;
+      points: number;
+    }[];
+    sprintResults: { driverId: string; points: number }[];
+    qualifying: {
+      driverId: string;
+      position: number | null;
+      q1: string | null;
+      q2: string | null;
+      q3: string | null;
+    }[];
+  }[];
+}
+
+/** data/derived/h2h.json — teammate head-to-heads for the four front teams. */
+function buildH2H(): void {
+  const season = readJson<SeasonForH2H>('data/results/season.json');
+  const schedule = readJson<ScheduleFile>('data/results/schedule.json');
+  const standings = readJson<StandingsForClinch>('data/results/standings.json');
+  if (!season || !schedule || !standings) return;
+
+  const locality = new Map(schedule.races.map((r) => [r.round, r.locality]));
+  const completed = season.races.filter((r) => r.results.length > 0);
+  const h2hRaces: H2HRaceInput[] = completed;
+
+  const teams = H2H_TEAMS.map((team) => {
+    const teamDrivers = standings.standings.filter((s) => s.team === team);
+    if (teamDrivers.length < 2) return null;
+    // Primary = the team's best-placed driver in the championship.
+    const [primary, ...others] = teamDrivers;
+    const verdicts = teamRoundVerdicts(h2hRaces, team, primary.driverId);
+    const overall = summarize(verdicts, primary.driverId);
+    const info = new Map(standings.standings.map((s) => [s.driverId, s]));
+
+    // Points per driver in this team's car across the season (race + sprint).
+    const partners = others.map((p) => {
+      const own = verdicts.filter((v) => v.partnerId === p.driverId);
+      return {
+        driverId: p.driverId,
+        code: p.code,
+        name: p.name,
+        points: p.points,
+        rounds: own.length,
+        ...summarize(own, primary.driverId), // record from primary's perspective
+      };
+    });
+
+    return {
+      team,
+      primary: {
+        driverId: primary.driverId,
+        code: primary.code,
+        name: primary.name,
+        points: primary.points,
+      },
+      partners,
+      overall,
+      trend: verdicts.map((v) => ({
+        round: v.round,
+        locality: locality.get(v.round) ?? `R${v.round}`,
+        gapMs: v.qualiGapMs,
+        session: v.qualiSession,
+        partnerId: v.partnerId,
+        partnerCode: info.get(v.partnerId)?.code ?? null,
+      })),
+    };
+  }).filter((t) => t !== null);
+
+  writeJson('data/derived/h2h.json', {
+    generated_at: new Date().toISOString(),
+    based_on_round: Math.max(0, ...completed.map((r) => r.round)),
+    note:
+      'Gaps compare the deepest qualifying session both cars set a time in; race record counts only races where both cars were classified.',
+    teams,
+  });
 }
 
 /** data/derived/clinch.json — title permutations from current standings. */

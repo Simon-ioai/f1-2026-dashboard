@@ -1,0 +1,604 @@
+{
+  "generated_at": "2026-09-14T07:26:36.286Z",
+  "based_on_round": 14,
+  "note": "Gaps compare the deepest qualifying session both cars set a time in; race record counts only races where both cars were classified.",
+  "teams": [
+    {
+      "team": "Mercedes",
+      "primary": {
+        "driverId": "antonelli",
+        "code": "ANT",
+        "name": "Andrea Kimi Antonelli",
+        "points": 292
+      },
+      "partners": [
+        {
+          "driverId": "russell",
+          "code": "RUS",
+          "name": "George Russell",
+          "points": 211,
+          "rounds": 14,
+          "qualiWins": 8,
+          "qualiLosses": 6,
+          "raceWins": 8,
+          "raceLosses": 4,
+          "medianGapMs": -251.5,
+          "comparableLaps": 14
+        }
+      ],
+      "overall": {
+        "qualiWins": 8,
+        "qualiLosses": 6,
+        "raceWins": 8,
+        "raceLosses": 4,
+        "medianGapMs": -251.5,
+        "comparableLaps": 14
+      },
+      "trend": [
+        {
+          "round": 1,
+          "locality": "Melbourne",
+          "gapMs": 293,
+          "session": "Q3",
+          "partnerId": "russell",
+          "partnerCode": "RUS"
+        },
+        {
+          "round": 2,
+          "locality": "Shanghai",
+          "gapMs": -222,
+          "session": "Q3",
+          "partnerId": "russell",
+          "partnerCode": "RUS"
+        },
+        {
+          "round": 3,
+          "locality": "Suzuka",
+          "gapMs": -298,
+          "session": "Q3",
+          "partnerId": "russell",
+          "partnerCode": "RUS"
+        },
+        {
+          "round": 4,
+          "locality": "Miami",
+          "gapMs": -399,
+          "session": "Q3",
+          "partnerId": "russell",
+          "partnerCode": "RUS"
+        },
+        {
+          "round": 5,
+          "locality": "Montreal",
+          "gapMs": 68,
+          "session": "Q3",
+          "partnerId": "russell",
+          "partnerCode": "RUS"
+        },
+        {
+          "round": 6,
+          "locality": "Monte Carlo",
+          "gapMs": -394,
+          "session": "Q3",
+          "partnerId": "russell",
+          "partnerCode": "RUS"
+        },
+        {
+          "round": 7,
+          "locality": "Barcelona",
+          "gapMs": 319,
+          "session": "Q3",
+          "partnerId": "russell",
+          "partnerCode": "RUS"
+        },
+        {
+          "round": 8,
+          "locality": "Spielberg",
+          "gapMs": 301,
+          "session": "Q3",
+          "partnerId": "russell",
+          "partnerCode": "RUS"
+        },
+        {
+          "round": 9,
+          "locality": "Silverstone",
+          "gapMs": -370,
+          "session": "Q3",
+          "partnerId": "russell",
+          "partnerCode": "RUS"
+        },
+        {
+          "round": 10,
+          "locality": "Spa",
+          "gapMs": -508,
+          "session": "Q3",
+          "partnerId": "russell",
+          "partnerCode": "RUS"
+        },
+        {
+          "round": 11,
+          "locality": "Budapest",
+          "gapMs": -281,
+          "session": "Q3",
+          "partnerId": "russell",
+          "partnerCode": "RUS"
+        },
+        {
+          "round": 12,
+          "locality": "Zandvoort",
+          "gapMs": 31,
+          "session": "Q3",
+          "partnerId": "russell",
+          "partnerCode": "RUS"
+        },
+        {
+          "round": 13,
+          "locality": "Monza",
+          "gapMs": 247,
+          "session": "Q3",
+          "partnerId": "russell",
+          "partnerCode": "RUS"
+        },
+        {
+          "round": 14,
+          "locality": "Madrid",
+          "gapMs": -314,
+          "session": "Q3",
+          "partnerId": "russell",
+          "partnerCode": "RUS"
+        }
+      ]
+    },
+    {
+      "team": "Ferrari",
+      "primary": {
+        "driverId": "hamilton",
+        "code": "HAM",
+        "name": "Lewis Hamilton",
+        "points": 191
+      },
+      "partners": [
+        {
+          "driverId": "leclerc",
+          "code": "LEC",
+          "name": "Charles Leclerc",
+          "points": 167,
+          "rounds": 14,
+          "qualiWins": 7,
+          "qualiLosses": 7,
+          "raceWins": 6,
+          "raceLosses": 5,
+          "medianGapMs": 4.5,
+          "comparableLaps": 14
+        }
+      ],
+      "overall": {
+        "qualiWins": 7,
+        "qualiLosses": 7,
+        "raceWins": 6,
+        "raceLosses": 5,
+        "medianGapMs": 4.5,
+        "comparableLaps": 14
+      },
+      "trend": [
+        {
+          "round": 1,
+          "locality": "Melbourne",
+          "gapMs": 151,
+          "session": "Q3",
+          "partnerId": "leclerc",
+          "partnerCode": "LEC"
+        },
+        {
+          "round": 2,
+          "locality": "Shanghai",
+          "gapMs": -13,
+          "session": "Q3",
+          "partnerId": "leclerc",
+          "partnerCode": "LEC"
+        },
+        {
+          "round": 3,
+          "locality": "Suzuka",
+          "gapMs": 162,
+          "session": "Q3",
+          "partnerId": "leclerc",
+          "partnerCode": "LEC"
+        },
+        {
+          "round": 4,
+          "locality": "Miami",
+          "gapMs": 176,
+          "session": "Q3",
+          "partnerId": "leclerc",
+          "partnerCode": "LEC"
+        },
+        {
+          "round": 5,
+          "locality": "Montreal",
+          "gapMs": -108,
+          "session": "Q3",
+          "partnerId": "leclerc",
+          "partnerCode": "LEC"
+        },
+        {
+          "round": 6,
+          "locality": "Monte Carlo",
+          "gapMs": -72,
+          "session": "Q3",
+          "partnerId": "leclerc",
+          "partnerCode": "LEC"
+        },
+        {
+          "round": 7,
+          "locality": "Barcelona",
+          "gapMs": 137,
+          "session": "Q2",
+          "partnerId": "leclerc",
+          "partnerCode": "LEC"
+        },
+        {
+          "round": 8,
+          "locality": "Spielberg",
+          "gapMs": 59,
+          "session": "Q3",
+          "partnerId": "leclerc",
+          "partnerCode": "LEC"
+        },
+        {
+          "round": 9,
+          "locality": "Silverstone",
+          "gapMs": 172,
+          "session": "Q3",
+          "partnerId": "leclerc",
+          "partnerCode": "LEC"
+        },
+        {
+          "round": 10,
+          "locality": "Spa",
+          "gapMs": 2,
+          "session": "Q3",
+          "partnerId": "leclerc",
+          "partnerCode": "LEC"
+        },
+        {
+          "round": 11,
+          "locality": "Budapest",
+          "gapMs": -226,
+          "session": "Q3",
+          "partnerId": "leclerc",
+          "partnerCode": "LEC"
+        },
+        {
+          "round": 12,
+          "locality": "Zandvoort",
+          "gapMs": -64,
+          "session": "Q3",
+          "partnerId": "leclerc",
+          "partnerCode": "LEC"
+        },
+        {
+          "round": 13,
+          "locality": "Monza",
+          "gapMs": 7,
+          "session": "Q3",
+          "partnerId": "leclerc",
+          "partnerCode": "LEC"
+        },
+        {
+          "round": 14,
+          "locality": "Madrid",
+          "gapMs": -6,
+          "session": "Q3",
+          "partnerId": "leclerc",
+          "partnerCode": "LEC"
+        }
+      ]
+    },
+    {
+      "team": "McLaren",
+      "primary": {
+        "driverId": "norris",
+        "code": "NOR",
+        "name": "Lando Norris",
+        "points": 186
+      },
+      "partners": [
+        {
+          "driverId": "piastri",
+          "code": "PIA",
+          "name": "Oscar Piastri",
+          "points": 120,
+          "rounds": 14,
+          "qualiWins": 9,
+          "qualiLosses": 5,
+          "raceWins": 6,
+          "raceLosses": 3,
+          "medianGapMs": -70.5,
+          "comparableLaps": 14
+        }
+      ],
+      "overall": {
+        "qualiWins": 9,
+        "qualiLosses": 5,
+        "raceWins": 6,
+        "raceLosses": 3,
+        "medianGapMs": -70.5,
+        "comparableLaps": 14
+      },
+      "trend": [
+        {
+          "round": 1,
+          "locality": "Melbourne",
+          "gapMs": 95,
+          "session": "Q3",
+          "partnerId": "piastri",
+          "partnerCode": "PIA"
+        },
+        {
+          "round": 2,
+          "locality": "Shanghai",
+          "gapMs": 58,
+          "session": "Q3",
+          "partnerId": "piastri",
+          "partnerCode": "PIA"
+        },
+        {
+          "round": 3,
+          "locality": "Suzuka",
+          "gapMs": 277,
+          "session": "Q3",
+          "partnerId": "piastri",
+          "partnerCode": "PIA"
+        },
+        {
+          "round": 4,
+          "locality": "Miami",
+          "gapMs": -317,
+          "session": "Q3",
+          "partnerId": "piastri",
+          "partnerCode": "PIA"
+        },
+        {
+          "round": 5,
+          "locality": "Montreal",
+          "gapMs": -52,
+          "session": "Q3",
+          "partnerId": "piastri",
+          "partnerCode": "PIA"
+        },
+        {
+          "round": 6,
+          "locality": "Monte Carlo",
+          "gapMs": 141,
+          "session": "Q3",
+          "partnerId": "piastri",
+          "partnerCode": "PIA"
+        },
+        {
+          "round": 7,
+          "locality": "Barcelona",
+          "gapMs": -89,
+          "session": "Q3",
+          "partnerId": "piastri",
+          "partnerCode": "PIA"
+        },
+        {
+          "round": 8,
+          "locality": "Spielberg",
+          "gapMs": -9,
+          "session": "Q3",
+          "partnerId": "piastri",
+          "partnerCode": "PIA"
+        },
+        {
+          "round": 9,
+          "locality": "Silverstone",
+          "gapMs": -155,
+          "session": "Q3",
+          "partnerId": "piastri",
+          "partnerCode": "PIA"
+        },
+        {
+          "round": 10,
+          "locality": "Spa",
+          "gapMs": -215,
+          "session": "Q3",
+          "partnerId": "piastri",
+          "partnerCode": "PIA"
+        },
+        {
+          "round": 11,
+          "locality": "Budapest",
+          "gapMs": -477,
+          "session": "Q3",
+          "partnerId": "piastri",
+          "partnerCode": "PIA"
+        },
+        {
+          "round": 12,
+          "locality": "Zandvoort",
+          "gapMs": -142,
+          "session": "Q3",
+          "partnerId": "piastri",
+          "partnerCode": "PIA"
+        },
+        {
+          "round": 13,
+          "locality": "Monza",
+          "gapMs": 290,
+          "session": "Q3",
+          "partnerId": "piastri",
+          "partnerCode": "PIA"
+        },
+        {
+          "round": 14,
+          "locality": "Madrid",
+          "gapMs": -470,
+          "session": "Q3",
+          "partnerId": "piastri",
+          "partnerCode": "PIA"
+        }
+      ]
+    },
+    {
+      "team": "Red Bull",
+      "primary": {
+        "driverId": "max_verstappen",
+        "code": "VER",
+        "name": "Max Verstappen",
+        "points": 145
+      },
+      "partners": [
+        {
+          "driverId": "hadjar",
+          "code": "HAD",
+          "name": "Isack Hadjar",
+          "points": 71,
+          "rounds": 11,
+          "qualiWins": 8,
+          "qualiLosses": 2,
+          "raceWins": 6,
+          "raceLosses": 1,
+          "medianGapMs": -119,
+          "comparableLaps": 9
+        },
+        {
+          "driverId": "lawson",
+          "code": "LAW",
+          "name": "Liam Lawson",
+          "points": 59,
+          "rounds": 3,
+          "qualiWins": 3,
+          "qualiLosses": 0,
+          "raceWins": 2,
+          "raceLosses": 0,
+          "medianGapMs": -352,
+          "comparableLaps": 3
+        }
+      ],
+      "overall": {
+        "qualiWins": 11,
+        "qualiLosses": 2,
+        "raceWins": 8,
+        "raceLosses": 1,
+        "medianGapMs": -125,
+        "comparableLaps": 12
+      },
+      "trend": [
+        {
+          "round": 1,
+          "locality": "Melbourne",
+          "gapMs": null,
+          "session": null,
+          "partnerId": "hadjar",
+          "partnerCode": "HAD"
+        },
+        {
+          "round": 2,
+          "locality": "Shanghai",
+          "gapMs": -119,
+          "session": "Q3",
+          "partnerId": "hadjar",
+          "partnerCode": "HAD"
+        },
+        {
+          "round": 3,
+          "locality": "Suzuka",
+          "gapMs": 158,
+          "session": "Q2",
+          "partnerId": "hadjar",
+          "partnerCode": "HAD"
+        },
+        {
+          "round": 4,
+          "locality": "Miami",
+          "gapMs": null,
+          "session": null,
+          "partnerId": "hadjar",
+          "partnerCode": "HAD"
+        },
+        {
+          "round": 5,
+          "locality": "Montreal",
+          "gapMs": -28,
+          "session": "Q3",
+          "partnerId": "hadjar",
+          "partnerCode": "HAD"
+        },
+        {
+          "round": 6,
+          "locality": "Monte Carlo",
+          "gapMs": -340,
+          "session": "Q3",
+          "partnerId": "hadjar",
+          "partnerCode": "HAD"
+        },
+        {
+          "round": 7,
+          "locality": "Barcelona",
+          "gapMs": -56,
+          "session": "Q3",
+          "partnerId": "hadjar",
+          "partnerCode": "HAD"
+        },
+        {
+          "round": 8,
+          "locality": "Spielberg",
+          "gapMs": -157,
+          "session": "Q3",
+          "partnerId": "hadjar",
+          "partnerCode": "HAD"
+        },
+        {
+          "round": 9,
+          "locality": "Silverstone",
+          "gapMs": 147,
+          "session": "Q3",
+          "partnerId": "hadjar",
+          "partnerCode": "HAD"
+        },
+        {
+          "round": 10,
+          "locality": "Spa",
+          "gapMs": -234,
+          "session": "Q2",
+          "partnerId": "hadjar",
+          "partnerCode": "HAD"
+        },
+        {
+          "round": 11,
+          "locality": "Budapest",
+          "gapMs": -131,
+          "session": "Q3",
+          "partnerId": "hadjar",
+          "partnerCode": "HAD"
+        },
+        {
+          "round": 12,
+          "locality": "Zandvoort",
+          "gapMs": -115,
+          "session": "Q3",
+          "partnerId": "lawson",
+          "partnerCode": "LAW"
+        },
+        {
+          "round": 13,
+          "locality": "Monza",
+          "gapMs": -633,
+          "session": "Q2",
+          "partnerId": "lawson",
+          "partnerCode": "LAW"
+        },
+        {
+          "round": 14,
+          "locality": "Madrid",
+          "gapMs": -352,
+          "session": "Q3",
+          "partnerId": "lawson",
+          "partnerCode": "LAW"
+        }
+      ]
+    }
+  ]
+}
