@@ -3,19 +3,11 @@ import AboutPanel from './components/AboutPanel';
 import ClinchPanel from './components/ClinchPanel';
 import FormPanel from './components/FormPanel';
 import H2HPanel from './components/H2HPanel';
+import Header from './components/Header';
 import Leaderboard from './components/Leaderboard';
-import MoverCallout from './components/MoverCallout';
 import Simulator from './components/Simulator';
-import TimelineChart from './components/TimelineChart';
+import Timeline from './components/Timeline';
 import { loadDashboardData, type DashboardData } from './lib/data';
-
-function ago(iso: string | null | undefined): string {
-  if (!iso) return 'never';
-  const mins = Math.round((Date.now() - Date.parse(iso)) / 60_000);
-  if (mins < 60) return `${mins} min ago`;
-  if (mins < 48 * 60) return `${Math.round(mins / 60)} h ago`;
-  return `${Math.round(mins / (24 * 60))} days ago`;
-}
 
 export default function App() {
   const [data, setData] = useState<DashboardData | null>(null);
@@ -27,9 +19,7 @@ export default function App() {
   if (!data) {
     return (
       <div className="shell">
-        <div className="empty">
-          <h3>Loading…</h3>
-        </div>
+        <div style={{ padding: '80px 0', textAlign: 'center', color: 'var(--muted)' }}>Loading…</div>
       </div>
     );
   }
@@ -37,65 +27,35 @@ export default function App() {
   const { timeline, standings, simulations, clinch, h2h, form, meta } = data;
   const hasOdds = (timeline?.points.length ?? 0) > 0;
 
+  // Self-diagnosed staleness: the pipeline can look healthy while the
+  // deployed data quietly ages.
+  const oddsAge = meta?.odds_updated_at ? (Date.now() - Date.parse(meta.odds_updated_at)) / 86_400_000 : null;
+  const staleBadge =
+    oddsAge !== null && oddsAge > 2.5
+      ? `Odds data is ${Math.floor(oddsAge)} days old — the daily update may be stuck`
+      : null;
+
   return (
     <div className="shell">
-      <header className="masthead">
-        <h1>
-          Title Race <span className="accent">2026</span>
-        </h1>
-        <span className="season-tag">Formula 1 · Championship Dashboard</span>
-      </header>
-
-      <div className="statusbar num">
-        <span>Odds updated: {ago(meta?.odds_updated_at)}</span>
-        <span>Results updated: {ago(meta?.results_updated_at)}</span>
-        {(meta?.warnings ?? []).map((w, i) => (
-          <span className="badge-warn" key={i} title={w.at}>
-            ⚠ {w.message}
-          </span>
-        ))}
-        {data.fetchErrors.length > 0 && (
-          <span className="badge-warn">⚠ Some data files failed to load</span>
-        )}
-        {(() => {
-          // Self-diagnosed staleness: the Sep 2026 outage showed the pipeline
-          // can look healthy while the deployed data quietly ages.
-          const updated = meta?.odds_updated_at;
-          const ageDays = updated ? (Date.now() - Date.parse(updated)) / 86_400_000 : null;
-          return ageDays !== null && ageDays > 2.5 ? (
-            <span className="badge-warn">
-              ⚠ Odds data is {Math.floor(ageDays)} days old — the daily update may be stuck
-            </span>
-          ) : null;
-        })()}
-      </div>
+      <Header meta={meta} clinch={clinch} timeline={timeline} staleBadge={staleBadge} />
 
       <AboutPanel />
 
       <Leaderboard timeline={timeline} standings={standings} />
 
-      <section className="panel" style={{ marginTop: 18 }} aria-label="Title odds timeline">
-        <h2 className="panel-title">Title odds timeline</h2>
-        <p className="panel-sub">
-          Implied championship-win probability from Polymarket's title market, tracked daily since
-          December 2025.
-        </p>
-        {hasOdds && timeline ? (
-          <>
-            <TimelineChart timeline={timeline} />
-            <MoverCallout timeline={timeline} />
-          </>
-        ) : (
-          <div className="empty">
-            <h3>No odds data yet</h3>
-            <p>
-              Run <code>npm run backfill:odds-history</code> once to pull the season so far from
-              Polymarket, then <code>npm run snapshot:odds</code> (or the <em>Snapshot odds</em>{' '}
-              workflow on GitHub) keeps it growing daily.
-            </p>
+      {hasOdds && timeline ? (
+        <Timeline timeline={timeline} />
+      ) : (
+        <section className="panel">
+          <div className="panel-head">
+            <h2 className="panel-title">Title odds timeline</h2>
           </div>
-        )}
-      </section>
+          <p className="panel-sub">
+            No odds data yet — run <code>npm run backfill:odds-history</code> once, then{' '}
+            <code>npm run snapshot:odds</code> keeps it growing daily.
+          </p>
+        </section>
+      )}
 
       {clinch && <ClinchPanel clinch={clinch} />}
 
@@ -114,9 +74,10 @@ export default function App() {
         <a href="https://polymarket.com/event/2026-f1-drivers-champion" target="_blank" rel="noreferrer">
           Polymarket
         </a>
-        's championship market, normalised over the whole field. Probabilities are the market's
-        view, not a prediction, and not betting advice. Unofficial fan project — not associated
-        with Formula 1.
+        's championship market, normalised over the whole field. Driver portraits from Wikimedia
+        Commons, used under their CC licences. Probabilities are the market's view, not a
+        prediction, and not betting advice. Unofficial fan project — not associated with Formula
+        1.
       </footer>
     </div>
   );

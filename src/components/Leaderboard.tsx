@@ -1,16 +1,30 @@
-import DriverAvatar from './DriverAvatar';
+import Face from './Face';
+import { driverView } from '../lib/driverInfo';
 import { TRACKED_DRIVERS } from '../lib/drivers';
 import type { StandingsFile, Timeline, TimelinePoint } from '../lib/data';
 
 const DAY = 86_400_000;
+const C = 2 * Math.PI * 33; // ring circumference (r=33 in a 72 viewBox)
 
-/** Latest point, and the closest point to seven days earlier (if any). */
 function latestAndWeekAgo(points: TimelinePoint[]): [TimelinePoint | null, TimelinePoint | null] {
   if (points.length === 0) return [null, null];
   const latest = points[points.length - 1];
   const target = Date.parse(latest.date) - 7 * DAY;
   const earlier = points.filter((p) => Date.parse(p.date) <= target);
   return [latest, earlier.length > 0 ? earlier[earlier.length - 1] : null];
+}
+
+function Ring({ pct, color, size, inset, face }: { pct: number; color: string; size: number; inset: number; face: React.ReactNode }) {
+  const dash = `${Math.max(1.5, (C * pct) / 100).toFixed(1)} ${C.toFixed(1)}`;
+  return (
+    <div style={{ position: 'relative', width: size, height: size, flex: 'none' }}>
+      <svg viewBox="0 0 72 72" style={{ position: 'absolute', inset: 0, width: '100%', height: '100%', transform: 'rotate(-90deg)' }}>
+        <circle cx="36" cy="36" r="33" fill="none" stroke="var(--sunk)" strokeWidth="3.5" />
+        <circle cx="36" cy="36" r="33" fill="none" stroke={color} strokeWidth="3.5" strokeLinecap="round" strokeDasharray={dash} />
+      </svg>
+      <div style={{ position: 'absolute', inset, borderRadius: '50%', overflow: 'hidden', display: 'grid' }}>{face}</div>
+    </div>
+  );
 }
 
 export default function Leaderboard({
@@ -22,100 +36,76 @@ export default function Leaderboard({
 }) {
   const [latest, weekAgo] = latestAndWeekAgo(timeline?.points ?? []);
 
-  if (latest) {
-    const cards = TRACKED_DRIVERS.map((d) => {
-      const now = latest.byId[d.id];
-      const prev = weekAgo?.byId[d.id];
-      return {
-        driver: d,
-        value: now ? now.median * 100 : null,
-        delta: now && prev ? (now.median - prev.median) * 100 : null,
-      };
-    }).sort((a, b) => (b.value ?? -1) - (a.value ?? -1));
+  const cards = latest
+    ? TRACKED_DRIVERS.map((driver) => {
+        const now = latest.byId[driver.id];
+        const prev = weekAgo?.byId[driver.id];
+        return {
+          driver,
+          view: driverView(driver.id, driver.code),
+          value: now ? now.median * 100 : null,
+          delta: now && prev ? (now.median - prev.median) * 100 : null,
+        };
+      }).sort((a, b) => (b.value ?? -1) - (a.value ?? -1))
+    : null;
 
-    return (
-      <section className="panel" aria-label="Title probability leaderboard">
-        <h2 className="panel-title">Title probability</h2>
-        <p className="panel-sub num">
-          {latest.source?.startsWith('polymarket')
-            ? 'Market-implied (Polymarket), normalised'
-            : `Bookmaker-implied, vig removed · median of ${latest.bookmakers} bookmaker${latest.bookmakers === 1 ? '' : 's'}`}{' '}
-          · {latest.date}
-          {weekAgo ? ' · Δ vs 7 days' : ''}
-        </p>
-        <div className="leaderboard">
-          {cards.map((c, i) => (
-            <div
-              className="driver-card"
-              key={c.driver.id}
-              style={{ '--team': c.driver.color } as React.CSSProperties}
-            >
-              <div className="card-top">
-                <DriverAvatar
-                  color={c.driver.color}
-                  size={34}
-                  title={`${c.driver.firstName} ${c.driver.lastName}`}
-                />
-                <div className="pos">P{i + 1}</div>
-              </div>
-              <div className="value num">
-                {c.value !== null ? (
-                  <>
-                    {c.value.toFixed(1)}
-                    <small>%</small>
-                  </>
-                ) : (
-                  '—'
-                )}
-              </div>
-              <div className="who">
-                {c.driver.firstName} {c.driver.lastName}
-              </div>
-              <div className="team-name">{c.driver.team}</div>
-              {c.delta !== null && (
-                <div
-                  className={`delta num ${c.delta > 0.05 ? 'up' : c.delta < -0.05 ? 'down' : 'flat'}`}
-                >
-                  {c.delta > 0 ? '▲' : c.delta < 0 ? '▼' : '•'} {Math.abs(c.delta).toFixed(1)}
-                </div>
-              )}
-            </div>
-          ))}
-        </div>
-      </section>
-    );
+  if (!cards) {
+    if (!standings) return null;
   }
 
-  if (!standings) return null;
-  const known = new Map(TRACKED_DRIVERS.map((d) => [d.id, d]));
   return (
-    <section className="panel" aria-label="Championship standings">
-      <h2 className="panel-title">Championship standings</h2>
-      <p className="panel-sub num">
-        After round {standings.round} · title probabilities appear once the first odds snapshot
-        lands
-      </p>
-      <div className="leaderboard">
-        {standings.standings.slice(0, 6).map((s) => {
-          const d = known.get(s.driverId);
+    <section className="panel" aria-label="Title probability">
+      <div className="panel-head">
+        <h2 className="panel-title">Title probability</h2>
+        <p className="panel-sub num">
+          {cards
+            ? `Market-implied (Polymarket), normalised · ${latest!.date}${weekAgo ? ' · Δ vs 7 days' : ''} · the ring fills to each driver's chance`
+            : `Championship standings after round ${standings!.round} — title probabilities appear once odds data loads`}
+        </p>
+      </div>
+      <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(160px, 1fr))', gap: 12 }}>
+        {(cards ?? []).map((c, i) => {
+          const big = i === 0;
+          const size = big ? 120 : 64;
+          const inset = big ? 9 : 6;
+          const chg = c.delta;
+          const chgLabel =
+            chg === null ? '' : (chg > 0.05 ? '▲ ' : '▼ ') + Math.abs(chg).toFixed(1);
+          const chgColor =
+            chg === null || Math.abs(chg) <= 0.05 ? 'var(--muted)' : chg > 0 ? 'var(--up)' : 'var(--down)';
           return (
             <div
-              className="driver-card"
-              key={s.driverId}
-              style={{ '--team': d?.color ?? 'var(--ink-muted)' } as React.CSSProperties}
+              key={c.driver.id}
+              className="card"
+              style={{
+                gridColumn: big ? 'span 2' : 'auto',
+                padding: 18,
+                display: 'flex',
+                flexDirection: big ? 'row' : 'column',
+                alignItems: big ? 'center' : 'flex-start',
+                gap: 18,
+              }}
             >
-              <div className="card-top">
-                {d && <DriverAvatar color={d.color} size={34} title={s.name} />}
-                <div className="pos">P{s.position ?? '–'}</div>
-              </div>
-              <div className="value num">
-                {s.points}
-                <small>pts</small>
-              </div>
-              <div className="who">{s.name}</div>
-              <div className="team-name">
-                {s.team}
-                {s.wins > 0 ? ` · ${s.wins} win${s.wins === 1 ? '' : 's'}` : ''}
+              <Ring
+                pct={c.value ?? 0}
+                color={c.view.color}
+                size={size}
+                inset={inset}
+                face={<Face d={c.view} size={size - inset * 2} title={`${c.driver.firstName} ${c.driver.lastName}`} />}
+              />
+              <div style={{ display: 'flex', flexDirection: 'column', minWidth: 0, flex: 1 }}>
+                <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', gap: 8 }}>
+                  <span style={{ fontSize: 14, fontWeight: 600, letterSpacing: '.1em', color: 'var(--muted)' }}>P{i + 1}</span>
+                  <span className="num" style={{ fontSize: 15, fontWeight: 700, color: chgColor }}>{chgLabel}</span>
+                </div>
+                <div className="big-num" style={{ fontSize: big ? 68 : 40, lineHeight: 1.25 }}>
+                  {c.value !== null ? c.value.toFixed(1) : '—'}
+                  <span style={{ fontSize: '.42em', fontWeight: 600 }}>%</span>
+                </div>
+                <div style={{ fontSize: 17, fontWeight: 700, lineHeight: 1.2, marginTop: 4 }}>
+                  {c.driver.firstName} {c.driver.lastName}
+                </div>
+                <div style={{ fontSize: 15, color: 'var(--muted)' }}>{c.driver.team}</div>
               </div>
             </div>
           );
