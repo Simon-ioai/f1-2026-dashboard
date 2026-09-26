@@ -100,13 +100,19 @@ export interface ClinchFile {
       round: number;
       raceName: string;
       locality: string;
+      country?: string | null;
       date: string;
       gapNeeded: number | null;
       chiefRivalId: string | null;
       chiefRivalName: string | null;
     } | null;
     clinchedAt: { round: number; raceName: string | null } | null;
-    eliminatedAt: { round: number; raceName: string | null; date: string | null } | null;
+    eliminatedAt: {
+      round: number;
+      raceName: string | null;
+      country?: string | null;
+      date: string | null;
+    } | null;
   }[];
 }
 

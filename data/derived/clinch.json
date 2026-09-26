@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-09-26T10:17:40.050Z",
+  "generated_at": "2026-09-26T10:34:27.941Z",
   "based_on_round": 14,
   "remaining_races": 9,
   "remaining_sprints": 1,
@@ -17,6 +17,7 @@
         "round": 17,
         "raceName": "Singapore Grand Prix",
         "locality": "Marina Bay",
+        "country": "Singapore",
         "date": "2026-10-11",
         "gapNeeded": 70,
         "chiefRivalId": "russell",
@@ -37,6 +38,7 @@
         "round": 20,
         "raceName": "Brazilian Grand Prix",
         "locality": "São Paulo",
+        "country": "Brazil",
         "date": "2026-11-08",
         "gapNeeded": 157,
         "chiefRivalId": "antonelli",
@@ -57,6 +59,7 @@
         "round": 21,
         "raceName": "Las Vegas Grand Prix",
         "locality": "Las Vegas",
+        "country": "USA",
         "date": "2026-11-22",
         "gapNeeded": 152,
         "chiefRivalId": "antonelli",
@@ -77,6 +80,7 @@
         "round": 21,
         "raceName": "Las Vegas Grand Prix",
         "locality": "Las Vegas",
+        "country": "USA",
         "date": "2026-11-22",
         "gapNeeded": 157,
         "chiefRivalId": "antonelli",
@@ -97,6 +101,7 @@
         "round": 21,
         "raceName": "Las Vegas Grand Prix",
         "locality": "Las Vegas",
+        "country": "USA",
         "date": "2026-11-22",
         "gapNeeded": 176,
         "chiefRivalId": "antonelli",
@@ -117,6 +122,7 @@
         "round": 22,
         "raceName": "Qatar Grand Prix",
         "locality": "Lusail",
+        "country": "Qatar",
         "date": "2026-11-29",
         "gapNeeded": 173,
         "chiefRivalId": "antonelli",
@@ -137,6 +143,7 @@
         "round": 22,
         "raceName": "Qatar Grand Prix",
         "locality": "Lusail",
+        "country": "Qatar",
         "date": "2026-11-29",
         "gapNeeded": 198,
         "chiefRivalId": "antonelli",
@@ -157,6 +164,7 @@
         "round": 23,
         "raceName": "Abu Dhabi Grand Prix",
         "locality": "Abu Dhabi",
+        "country": "UAE",
         "date": "2026-12-06",
         "gapNeeded": 222,
         "chiefRivalId": "antonelli",
@@ -190,6 +198,7 @@
       "eliminatedAt": {
         "round": 14,
         "raceName": "Spanish Grand Prix",
+        "country": "Spain",
         "date": "2026-09-13"
       }
     },
@@ -206,6 +215,7 @@
       "eliminatedAt": {
         "round": 14,
         "raceName": "Spanish Grand Prix",
+        "country": "Spain",
         "date": "2026-09-13"
       }
     },
@@ -222,6 +232,7 @@
       "eliminatedAt": {
         "round": 14,
         "raceName": "Spanish Grand Prix",
+        "country": "Spain",
         "date": "2026-09-13"
       }
     },
@@ -238,6 +249,7 @@
       "eliminatedAt": {
         "round": 14,
         "raceName": "Spanish Grand Prix",
+        "country": "Spain",
         "date": "2026-09-13"
       }
     },
@@ -254,6 +266,7 @@
       "eliminatedAt": {
         "round": 14,
         "raceName": "Spanish Grand Prix",
+        "country": "Spain",
         "date": "2026-09-13"
       }
     },
@@ -270,6 +283,7 @@
       "eliminatedAt": {
         "round": 13,
         "raceName": "Italian Grand Prix",
+        "country": "Italy",
         "date": "2026-09-06"
       }
     },
@@ -286,6 +300,7 @@
       "eliminatedAt": {
         "round": 13,
         "raceName": "Italian Grand Prix",
+        "country": "Italy",
         "date": "2026-09-06"
       }
     },
@@ -302,6 +317,7 @@
       "eliminatedAt": {
         "round": 13,
         "raceName": "Italian Grand Prix",
+        "country": "Italy",
         "date": "2026-09-06"
       }
     },
@@ -318,6 +334,7 @@
       "eliminatedAt": {
         "round": 13,
         "raceName": "Italian Grand Prix",
+        "country": "Italy",
         "date": "2026-09-06"
       }
     },
@@ -334,6 +351,7 @@
       "eliminatedAt": {
         "round": 13,
         "raceName": "Italian Grand Prix",
+        "country": "Italy",
         "date": "2026-09-06"
       }
     },
@@ -350,6 +368,7 @@
       "eliminatedAt": {
         "round": 13,
         "raceName": "Italian Grand Prix",
+        "country": "Italy",
         "date": "2026-09-06"
       }
     },
@@ -366,6 +385,7 @@
       "eliminatedAt": {
         "round": 13,
         "raceName": "Italian Grand Prix",
+        "country": "Italy",
         "date": "2026-09-06"
       }
     },
@@ -382,6 +402,7 @@
       "eliminatedAt": {
         "round": 13,
         "raceName": "Italian Grand Prix",
+        "country": "Italy",
         "date": "2026-09-06"
       }
     },
@@ -398,6 +419,7 @@
       "eliminatedAt": {
         "round": 13,
         "raceName": "Italian Grand Prix",
+        "country": "Italy",
         "date": "2026-09-06"
       }
     }

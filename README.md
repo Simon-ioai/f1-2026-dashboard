@@ -149,6 +149,15 @@ lap counts toward the record but never toward the gap. The teammate is
 detected per race from the results, so mid-season seat swaps are handled
 automatically.
 
+## Design notes
+
+The dashboard follows the device's appearance setting: dark theme at night,
+light by day (`prefers-color-scheme`). Each theme has its own driver palette,
+both validated for colour-blind separation and contrast against their
+background. All imagery — helmet avatars, car silhouettes — is original
+artwork; country flags come from the MIT-licensed flag-icons set. No F1
+logos, photos, or licensed fonts are used.
+
 ## The probability maths, in one paragraph
 
 Polymarket quotes each driver as a YES price between 0 and 1 — already an

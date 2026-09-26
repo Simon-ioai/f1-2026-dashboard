@@ -1,3 +1,4 @@
+import DriverAvatar from './DriverAvatar';
 import { TRACKED_DRIVERS } from '../lib/drivers';
 import type { StandingsFile, Timeline, TimelinePoint } from '../lib/data';
 
@@ -49,7 +50,14 @@ export default function Leaderboard({
               key={c.driver.id}
               style={{ '--team': c.driver.color } as React.CSSProperties}
             >
-              <div className="pos">P{i + 1}</div>
+              <div className="card-top">
+                <DriverAvatar
+                  color={c.driver.color}
+                  size={34}
+                  title={`${c.driver.firstName} ${c.driver.lastName}`}
+                />
+                <div className="pos">P{i + 1}</div>
+              </div>
               <div className="value num">
                 {c.value !== null ? (
                   <>
@@ -96,7 +104,10 @@ export default function Leaderboard({
               key={s.driverId}
               style={{ '--team': d?.color ?? 'var(--ink-muted)' } as React.CSSProperties}
             >
-              <div className="pos">P{s.position ?? '–'}</div>
+              <div className="card-top">
+                {d && <DriverAvatar color={d.color} size={34} title={s.name} />}
+                <div className="pos">P{s.position ?? '–'}</div>
+              </div>
               <div className="value num">
                 {s.points}
                 <small>pts</small>

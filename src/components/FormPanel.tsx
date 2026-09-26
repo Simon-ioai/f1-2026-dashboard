@@ -70,7 +70,7 @@ export default function FormPanel({ form }: { form: FormFile }) {
       <div className="form-grid">
         {form.drivers.map((d) => {
           const driver = DRIVER.get(d.driverId);
-          const color = driver?.color ?? '#8a93a0';
+          const color = driver?.color ?? 'var(--dc-field)';
           const data: CellDatum[] = d.rounds.map((r) => ({
             round: r.round,
             locality: r.locality,
@@ -100,7 +100,7 @@ export default function FormPanel({ form }: { form: FormFile }) {
                 <LineChart data={data} margin={{ top: 8, right: 4, bottom: 2, left: 4 }}>
                   <XAxis dataKey="round" hide />
                   <YAxis hide domain={[0, 33]} />
-                  <ReferenceLine y={d.baselinePoints} stroke="#4a4a55" strokeDasharray="4 4" />
+                  <ReferenceLine y={d.baselinePoints} stroke="var(--chart-grid)" strokeDasharray="4 4" />
                   <Tooltip content={<FormTooltip mode="points" />} isAnimationActive={false} />
                   <Line
                     dataKey="pointsAvg"
@@ -118,7 +118,7 @@ export default function FormPanel({ form }: { form: FormFile }) {
                   <XAxis dataKey="round" hide />
                   <YAxis hide reversed domain={[1, 'auto']} />
                   {d.baselineQuali !== null && (
-                    <ReferenceLine y={d.baselineQuali} stroke="#4a4a55" strokeDasharray="4 4" />
+                    <ReferenceLine y={d.baselineQuali} stroke="var(--chart-grid)" strokeDasharray="4 4" />
                   )}
                   <Tooltip content={<FormTooltip mode="quali" />} isAnimationActive={false} />
                   <Line

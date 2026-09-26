@@ -1,9 +1,11 @@
 import { Bar, BarChart, Cell, ReferenceLine, ResponsiveContainer, Tooltip, XAxis } from 'recharts';
+import CarDuel from './CarDuel';
+import DriverAvatar from './DriverAvatar';
 import { TRACKED_DRIVERS } from '../lib/drivers';
 import type { H2HFile } from '../lib/data';
 
 const COLOR = new Map(TRACKED_DRIVERS.map((d) => [d.id, d.color]));
-const PARTNER_FALLBACK = '#8a93a0';
+const PARTNER_FALLBACK = 'var(--dc-field)';
 
 function lastName(name: string): string {
   return name.split(' ').slice(-1)[0];
@@ -61,9 +63,11 @@ export default function H2HPanel({ h2h }: { h2h: H2HFile }) {
               <div className="h2h-head">
                 <span className="h2h-team">{t.team}</span>
                 <span className="h2h-names">
+                  <DriverAvatar color={primaryColor} size={22} title={t.primary.name} />
                   <b style={{ color: primaryColor }}>{lastName(t.primary.name)}</b>
                   <em> vs </em>
                   <b style={{ color: partnerColor }}>{partnerLabel}</b>
+                  <DriverAvatar color={partnerColor} size={22} title={partnerLabel} />
                 </span>
               </div>
 
@@ -90,13 +94,34 @@ export default function H2HPanel({ h2h }: { h2h: H2HFile }) {
                 </div>
               </div>
 
+              {gap !== null && (
+                <div className="h2h-duel">
+                  <CarDuel
+                    gapMs={gap}
+                    primaryColor={primaryColor}
+                    partnerColor={partnerColor}
+                    primaryCode={t.primary.code}
+                    partnerCode={t.partners.length === 1 ? t.partners[0].code : 'TM'}
+                  />
+                  <p className="h2h-duel-label num">
+                    The median qualifying gap, drawn to scale — {fmtGap(gap)} at ~330 km/h is
+                    about {Math.round((Math.abs(gap) / 1000) * 91)} metres.
+                  </p>
+                </div>
+              )}
+
               <div className="h2h-points">
-                <div
-                  className="h2h-points-bar"
-                  style={{
-                    background: `linear-gradient(90deg, ${primaryColor} ${(t.primary.points / totalPoints) * 100}%, ${partnerColor}55 ${(t.primary.points / totalPoints) * 100}%)`,
-                  }}
-                />
+                <div className="h2h-points-bar">
+                  <span
+                    style={{
+                      width: `${(t.primary.points / totalPoints) * 100}%`,
+                      background: primaryColor,
+                    }}
+                  />
+                  <span
+                    style={{ flex: 1, background: partnerColor, opacity: 0.45 }}
+                  />
+                </div>
                 <span className="h2h-points-label num">
                   {t.primary.points} · {t.partners.map((p) => p.points).join(' · ')} pts
                 </span>
@@ -108,17 +133,18 @@ export default function H2HPanel({ h2h }: { h2h: H2HFile }) {
                   margin={{ top: 6, right: 2, bottom: 0, left: 2 }}
                 >
                   <XAxis dataKey="round" hide />
-                  <ReferenceLine y={0} stroke="#3a3a44" />
+                  <ReferenceLine y={0} stroke="var(--chart-axis)" />
                   <Tooltip
                     content={<GapTooltip primaryCode={t.primary.code} />}
-                    cursor={{ fill: 'rgba(255,255,255,0.05)' }}
+                    cursor={{ fill: 'var(--border)', fillOpacity: 0.4 }}
                     isAnimationActive={false}
                   />
                   <Bar dataKey="gapS" isAnimationActive={false} radius={[2, 2, 2, 2]} maxBarSize={10}>
                     {t.trend.map((x, i) => (
                       <Cell
                         key={i}
-                        fill={x.gapMs !== null && x.gapMs < 0 ? primaryColor : `${partnerColor}AA`}
+                        fill={x.gapMs !== null && x.gapMs < 0 ? primaryColor : partnerColor}
+                        fillOpacity={x.gapMs !== null && x.gapMs < 0 ? 1 : 0.65}
                       />
                     ))}
                   </Bar>

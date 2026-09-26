@@ -1,7 +1,9 @@
 // The six tracked title contenders, their 2026 teams and chart colours.
-// Teammates share the team hue in two shades and the second driver renders
-// dashed, so team identity is honest and lines stay distinguishable (palette
-// validated for CVD separation and contrast on the dark surface).
+// Colours are CSS variables so each theme (dark / light, via
+// prefers-color-scheme) supplies its own validated set — the concrete values
+// live in index.css. Teammates keep dash differentiation as a colour-blind
+// fallback, and the array order is the legend order, arranged so no two
+// similar hues sit next to each other.
 
 export interface TrackedDriver {
   id: string; // Jolpica driverId
@@ -9,80 +11,53 @@ export interface TrackedDriver {
   firstName: string;
   lastName: string;
   team: string;
+  /** CSS variable reference, e.g. 'var(--dc-antonelli)'. */
   color: string;
   dashed: boolean;
   /** Names bookmakers use for this driver (lowercased for matching). */
   aliases: string[];
 }
 
+const driver = (
+  id: string,
+  code: string,
+  firstName: string,
+  lastName: string,
+  team: string,
+  dashed: boolean,
+  aliases: string[],
+): TrackedDriver => ({
+  id,
+  code,
+  firstName,
+  lastName,
+  team,
+  color: `var(--dc-${id})`,
+  dashed,
+  aliases,
+});
+
 export const TRACKED_DRIVERS: TrackedDriver[] = [
-  {
-    id: 'antonelli',
-    code: 'ANT',
-    firstName: 'Kimi',
-    lastName: 'Antonelli',
-    team: 'Mercedes',
-    color: '#00F5D0',
-    dashed: false,
-    aliases: ['kimi antonelli', 'andrea kimi antonelli', 'antonelli'],
-  },
-  {
-    id: 'russell',
-    code: 'RUS',
-    firstName: 'George',
-    lastName: 'Russell',
-    team: 'Mercedes',
-    color: '#00937F',
-    dashed: true,
-    aliases: ['george russell', 'russell'],
-  },
-  {
-    id: 'hamilton',
-    code: 'HAM',
-    firstName: 'Lewis',
-    lastName: 'Hamilton',
-    team: 'Ferrari',
-    color: '#FFA3B5',
-    dashed: true,
-    aliases: ['lewis hamilton', 'hamilton'],
-  },
-  {
-    id: 'leclerc',
-    code: 'LEC',
-    firstName: 'Charles',
-    lastName: 'Leclerc',
-    team: 'Ferrari',
-    color: '#E8002D',
-    dashed: false,
-    aliases: ['charles leclerc', 'leclerc'],
-  },
-  {
-    id: 'norris',
-    code: 'NOR',
-    firstName: 'Lando',
-    lastName: 'Norris',
-    team: 'McLaren',
-    color: '#FF8700',
-    dashed: false,
-    aliases: ['lando norris', 'norris'],
-  },
-  {
-    id: 'max_verstappen',
-    code: 'VER',
-    firstName: 'Max',
-    lastName: 'Verstappen',
-    team: 'Red Bull',
-    color: '#3671C6',
-    dashed: false,
-    aliases: ['max verstappen', 'verstappen'],
-  },
+  driver('antonelli', 'ANT', 'Kimi', 'Antonelli', 'Mercedes', false, [
+    'kimi antonelli',
+    'andrea kimi antonelli',
+    'antonelli',
+  ]),
+  driver('leclerc', 'LEC', 'Charles', 'Leclerc', 'Ferrari', false, ['charles leclerc', 'leclerc']),
+  driver('russell', 'RUS', 'George', 'Russell', 'Mercedes', true, ['george russell', 'russell']),
+  driver('norris', 'NOR', 'Lando', 'Norris', 'McLaren', false, ['lando norris', 'norris']),
+  driver('hamilton', 'HAM', 'Lewis', 'Hamilton', 'Ferrari', true, ['lewis hamilton', 'hamilton']),
+  driver('max_verstappen', 'VER', 'Max', 'Verstappen', 'Red Bull', false, [
+    'max verstappen',
+    'verstappen',
+  ]),
 ];
 
 export const FIELD = {
   id: 'field',
   code: 'FLD',
   label: 'Field',
-  color: '#6B7280',
+  color: 'var(--dc-field)',
 } as const;
 
 export const TRACKED_IDS = TRACKED_DRIVERS.map((d) => d.id);

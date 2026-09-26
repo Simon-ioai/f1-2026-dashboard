@@ -10,6 +10,7 @@ import {
   XAxis,
   YAxis,
 } from 'recharts';
+import { AvatarBubble } from './DriverAvatar';
 import { FIELD, TRACKED_DRIVERS } from '../lib/drivers';
 import type { RaceAnnotation, Timeline } from '../lib/data';
 
@@ -190,21 +191,21 @@ export default function TimelineChart({ timeline }: { timeline: Timeline }) {
           labels on) freezes Recharts' line tween at its hidden first frame. */}
       {chartWidth > 0 && (
       <ResponsiveContainer width="100%" height={420}>
-        <ComposedChart data={rows} margin={{ top: 18, right: 12, bottom: 0, left: -14 }}>
+        <ComposedChart data={rows} margin={{ top: 18, right: 22, bottom: 0, left: -14 }}>
           <XAxis
             dataKey="t"
             type="number"
             scale="time"
             domain={domain}
             tickFormatter={(t: number) => fmtDate(t)}
-            stroke="#3a3a44"
-            tick={{ fill: '#6d717b', fontSize: 12 }}
+            stroke="var(--chart-axis)"
+            tick={{ fill: 'var(--ink-muted)', fontSize: 12 }}
             tickMargin={8}
           />
           <YAxis
             unit="%"
-            stroke="#3a3a44"
-            tick={{ fill: '#6d717b', fontSize: 12 }}
+            stroke="var(--chart-axis)"
+            tick={{ fill: 'var(--ink-muted)', fontSize: 12 }}
             width={58}
             domain={[0, 'auto']}
           />
@@ -212,7 +213,7 @@ export default function TimelineChart({ timeline }: { timeline: Timeline }) {
             <ReferenceLine
               key={race.round}
               x={Date.parse(race.date)}
-              stroke="#3a3a44"
+              stroke="var(--chart-axis)"
               strokeDasharray="3 4"
               label={
                 // Stagger labels over two rows so neighbouring races don't
@@ -222,7 +223,7 @@ export default function TimelineChart({ timeline }: { timeline: Timeline }) {
                       value: race.locality,
                       position: 'top',
                       dy: (i % 2) * 13 - 2,
-                      fill: '#6d717b',
+                      fill: 'var(--ink-muted)',
                       fontSize: 10.5,
                     }
                   : undefined
@@ -251,7 +252,21 @@ export default function TimelineChart({ timeline }: { timeline: Timeline }) {
               stroke={s.color}
               strokeWidth={s.id === FIELD.id ? 1.5 : 2.2}
               strokeDasharray={s.dashed ? '7 4' : undefined}
-              dot={singleDay ? { r: 4, fill: s.color, strokeWidth: 0 } : false}
+              dot={(props: { cx?: number; cy?: number; index?: number; value?: number }) => {
+                const isLast = props.index === rows.length - 1;
+                if (props.cx === undefined || props.cy === undefined || props.value == null) {
+                  return <g key={`e-${props.index}`} />;
+                }
+                if (isLast && s.id !== FIELD.id) {
+                  return (
+                    <AvatarBubble key={`a-${props.index}`} cx={props.cx} cy={props.cy} r={9} color={s.color} />
+                  );
+                }
+                if (singleDay) {
+                  return <circle key={`s-${props.index}`} cx={props.cx} cy={props.cy} r={4} fill={s.color} />;
+                }
+                return <g key={`e-${props.index}`} />;
+              }}
               activeDot={{ r: 4.5, strokeWidth: 0 }}
               connectNulls
               // rAF is suspended in hidden/background tabs, which would freeze
@@ -263,7 +278,7 @@ export default function TimelineChart({ timeline }: { timeline: Timeline }) {
           ))}
           <Tooltip
             content={<TimelineTooltip races={timeline.races} />}
-            cursor={{ stroke: '#4a4a55', strokeDasharray: '2 3' }}
+            cursor={{ stroke: 'var(--chart-grid)', strokeDasharray: '2 3' }}
             isAnimationActive={false}
           />
           {rows.length > 6 && (
@@ -271,8 +286,8 @@ export default function TimelineChart({ timeline }: { timeline: Timeline }) {
               dataKey="t"
               height={26}
               travellerWidth={9}
-              stroke="#4a4a55"
-              fill="#121216"
+              stroke="var(--chart-grid)"
+              fill="var(--surface)"
               tickFormatter={(t: number) => fmtDate(t)}
             />
           )}

@@ -1,3 +1,4 @@
+import { flagFor } from '../lib/flags';
 import { TRACKED_DRIVERS } from '../lib/drivers';
 import type { ClinchFile } from '../lib/data';
 
@@ -52,7 +53,7 @@ export default function ClinchPanel({ clinch }: { clinch: ClinchFile }) {
           if (d.status === 'eliminated') {
             return (
               <div className="clinch-row out" key={d.driverId} style={accent}>
-                <span className="clinch-badge num">—</span>
+                <span className="clinch-badge num"><span className="round-no">out</span></span>
                 <p>
                   <b>{driver.lastName}</b> can no longer win the title
                   {d.eliminatedAt?.raceName
@@ -65,7 +66,7 @@ export default function ClinchPanel({ clinch }: { clinch: ClinchFile }) {
           if (!d.clinch) {
             return (
               <div className="clinch-row" key={d.driverId} style={accent}>
-                <span className="clinch-badge num">tie</span>
+                <span className="clinch-badge num"><span className="round-no">tie</span></span>
                 <p>
                   <b>{driver.lastName}</b> can at best equal the leader on points — the title
                   would then go to a wins countback.
@@ -74,9 +75,13 @@ export default function ClinchPanel({ clinch }: { clinch: ClinchFile }) {
             );
           }
           const isLeader = d.position === 1;
+          const flag = flagFor(d.clinch.country);
           return (
             <div className="clinch-row" key={d.driverId} style={accent}>
-              <span className="clinch-badge num">R{d.clinch.round}</span>
+              <span className="clinch-badge num">
+                {flag && <img className="clinch-flag" src={flag} alt="" />}
+                <span className="round-no">R{d.clinch.round}</span>
+              </span>
               <p>
                 <b>{driver.lastName}</b> {isLeader ? 'wins the title' : 'can clinch, at the earliest,'}{' '}
                 in <b>{d.clinch.locality}</b> on {fmtDate(d.clinch.date)} — if he outscores{' '}

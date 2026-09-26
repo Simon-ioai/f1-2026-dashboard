@@ -311,13 +311,15 @@ function buildClinch(): void {
   const standings = readJson<StandingsForClinch>('data/results/standings.json');
   if (!season || !schedule || !standings) return;
 
-  const fullCalendar: (RemainingRace & { locality: string })[] = schedule.races.map((r) => ({
-    round: r.round,
-    name: r.name,
-    date: r.date,
-    hasSprint: r.hasSprint,
-    locality: r.locality,
-  }));
+  const fullCalendar: (RemainingRace & { locality: string; country: string })[] =
+    schedule.races.map((r) => ({
+      round: r.round,
+      name: r.name,
+      date: r.date,
+      hasSprint: r.hasSprint,
+      locality: r.locality,
+      country: r.country,
+    }));
   const completedRounds: RoundPoints[] = season.races
     .filter((r) => r.results.length > 0)
     .map((r) => {
@@ -365,6 +367,7 @@ function buildClinch(): void {
               round: clinchRace.round,
               raceName: clinchRace.name,
               locality: clinchRace.locality,
+              country: clinchRace.country,
               date: clinchRace.date,
               gapNeeded: scenario.gapNeeded,
               chiefRivalId: scenario.chiefRivalId,
@@ -377,6 +380,7 @@ function buildClinch(): void {
           ? {
               round: eliminatedRound,
               raceName: byRound.get(eliminatedRound)?.name ?? null,
+              country: byRound.get(eliminatedRound)?.country ?? null,
               date: byRound.get(eliminatedRound)?.date ?? null,
             }
           : null,
