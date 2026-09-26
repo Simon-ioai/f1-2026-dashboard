@@ -1,6 +1,6 @@
 {
-  "generated_at": "2026-09-26T15:26:53.561Z",
-  "based_on_round": 14,
+  "generated_at": "2026-09-26T21:08:51.969Z",
+  "based_on_round": 15,
   "note": "Gaps compare the deepest qualifying session both cars set a time in; race record counts only races where both cars were classified.",
   "teams": [
     {
@@ -9,30 +9,30 @@
         "driverId": "antonelli",
         "code": "ANT",
         "name": "Andrea Kimi Antonelli",
-        "points": 292
+        "points": 302
       },
       "partners": [
         {
           "driverId": "russell",
           "code": "RUS",
           "name": "George Russell",
-          "points": 211,
-          "rounds": 14,
+          "points": 236,
+          "rounds": 15,
           "qualiWins": 8,
-          "qualiLosses": 6,
+          "qualiLosses": 7,
           "raceWins": 8,
-          "raceLosses": 4,
-          "medianGapMs": -251.5,
-          "comparableLaps": 14
+          "raceLosses": 5,
+          "medianGapMs": -222,
+          "comparableLaps": 15
         }
       ],
       "overall": {
         "qualiWins": 8,
-        "qualiLosses": 6,
+        "qualiLosses": 7,
         "raceWins": 8,
-        "raceLosses": 4,
-        "medianGapMs": -251.5,
-        "comparableLaps": 14
+        "raceLosses": 5,
+        "medianGapMs": -222,
+        "comparableLaps": 15
       },
       "trend": [
         {
@@ -146,6 +146,14 @@
           "session": "Q3",
           "partnerId": "russell",
           "partnerCode": "RUS"
+        },
+        {
+          "round": 15,
+          "locality": "Baku",
+          "gapMs": 1889,
+          "session": "Q1",
+          "partnerId": "russell",
+          "partnerCode": "RUS"
         }
       ]
     },
@@ -155,30 +163,30 @@
         "driverId": "hamilton",
         "code": "HAM",
         "name": "Lewis Hamilton",
-        "points": 191
+        "points": 199
       },
       "partners": [
         {
           "driverId": "leclerc",
           "code": "LEC",
           "name": "Charles Leclerc",
-          "points": 167,
-          "rounds": 14,
+          "points": 179,
+          "rounds": 15,
           "qualiWins": 7,
-          "qualiLosses": 7,
+          "qualiLosses": 8,
           "raceWins": 6,
-          "raceLosses": 5,
-          "medianGapMs": 4.5,
-          "comparableLaps": 14
+          "raceLosses": 6,
+          "medianGapMs": 7,
+          "comparableLaps": 15
         }
       ],
       "overall": {
         "qualiWins": 7,
-        "qualiLosses": 7,
+        "qualiLosses": 8,
         "raceWins": 6,
-        "raceLosses": 5,
-        "medianGapMs": 4.5,
-        "comparableLaps": 14
+        "raceLosses": 6,
+        "medianGapMs": 7,
+        "comparableLaps": 15
       },
       "trend": [
         {
@@ -292,6 +300,14 @@
           "session": "Q3",
           "partnerId": "leclerc",
           "partnerCode": "LEC"
+        },
+        {
+          "round": 15,
+          "locality": "Baku",
+          "gapMs": 495,
+          "session": "Q3",
+          "partnerId": "leclerc",
+          "partnerCode": "LEC"
         }
       ]
     },
@@ -309,22 +325,22 @@
           "code": "PIA",
           "name": "Oscar Piastri",
           "points": 120,
-          "rounds": 14,
+          "rounds": 15,
           "qualiWins": 9,
-          "qualiLosses": 5,
+          "qualiLosses": 6,
           "raceWins": 6,
           "raceLosses": 3,
-          "medianGapMs": -70.5,
-          "comparableLaps": 14
+          "medianGapMs": -52,
+          "comparableLaps": 15
         }
       ],
       "overall": {
         "qualiWins": 9,
-        "qualiLosses": 5,
+        "qualiLosses": 6,
         "raceWins": 6,
         "raceLosses": 3,
-        "medianGapMs": -70.5,
-        "comparableLaps": 14
+        "medianGapMs": -52,
+        "comparableLaps": 15
       },
       "trend": [
         {
@@ -438,6 +454,14 @@
           "session": "Q3",
           "partnerId": "piastri",
           "partnerCode": "PIA"
+        },
+        {
+          "round": 15,
+          "locality": "Baku",
+          "gapMs": 308,
+          "session": "Q3",
+          "partnerId": "piastri",
+          "partnerCode": "PIA"
         }
       ]
     },
@@ -447,21 +471,21 @@
         "driverId": "max_verstappen",
         "code": "VER",
         "name": "Max Verstappen",
-        "points": 145
+        "points": 163
       },
       "partners": [
         {
           "driverId": "hadjar",
           "code": "HAD",
           "name": "Isack Hadjar",
-          "points": 71,
-          "rounds": 11,
+          "points": 86,
+          "rounds": 12,
           "qualiWins": 8,
-          "qualiLosses": 2,
-          "raceWins": 6,
+          "qualiLosses": 3,
+          "raceWins": 7,
           "raceLosses": 1,
-          "medianGapMs": -119,
-          "comparableLaps": 9
+          "medianGapMs": -87.5,
+          "comparableLaps": 10
         },
         {
           "driverId": "lawson",
@@ -479,11 +503,11 @@
       ],
       "overall": {
         "qualiWins": 11,
-        "qualiLosses": 2,
-        "raceWins": 8,
+        "qualiLosses": 3,
+        "raceWins": 9,
         "raceLosses": 1,
-        "medianGapMs": -125,
-        "comparableLaps": 12
+        "medianGapMs": -119,
+        "comparableLaps": 13
       },
       "trend": [
         {
@@ -597,6 +621,14 @@
           "session": "Q3",
           "partnerId": "lawson",
           "partnerCode": "LAW"
+        },
+        {
+          "round": 15,
+          "locality": "Baku",
+          "gapMs": 581,
+          "session": "Q3",
+          "partnerId": "hadjar",
+          "partnerCode": "HAD"
         }
       ]
     }

@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-09-26T15:26:53.551Z",
+  "generated_at": "2026-09-26T21:08:51.954Z",
   "snapshot_days": 291,
   "points": [
     {
@@ -14772,7 +14772,12 @@
       "country": "Azerbaijan",
       "date": "2026-09-26",
       "hasSprint": false,
-      "winner": null
+      "winner": {
+        "driverId": "russell",
+        "code": "RUS",
+        "name": "George Russell",
+        "team": "Mercedes"
+      }
     },
     {
       "round": 16,
@@ -14837,7 +14842,7 @@
     {
       "round": 22,
       "name": "Qatar Grand Prix",
-      "circuit": "Losail International Circuit",
+      "circuit": "Lusail International Circuit",
       "locality": "Lusail",
       "country": "Qatar",
       "date": "2026-11-29",
