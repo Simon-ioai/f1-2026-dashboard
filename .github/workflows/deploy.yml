@@ -3,9 +3,16 @@
 # dashboard redeploys itself whenever new data lands.
 name: Deploy to GitHub Pages
 
+# NOTE: pushes made by the data jobs use the workflow GITHUB_TOKEN, and
+# GitHub deliberately does not let those trigger on:push workflows. The
+# workflow_run trigger below is what redeploys the site after every data
+# commit; on:push covers pushes from a human.
 on:
   push:
     branches: [main]
+  workflow_run:
+    workflows: ["Snapshot odds", "Rebuild dashboard"]
+    types: [completed]
   workflow_dispatch:
 
 permissions:

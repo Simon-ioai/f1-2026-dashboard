@@ -27,17 +27,26 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
+        with:
+          fetch-depth: 30 # gate greps recent history for today's results commit
 
-      - name: Gate on 05:00 Europe/Copenhagen (skip the wrong DST twin)
+      - name: Gate on Monday morning in Copenhagen (DST- and delay-tolerant)
         id: gate
         run: |
+          # GitHub fires scheduled crons late — sometimes by hours — so an
+          # exact hour==05 check can skip a real Monday entirely. Accept the
+          # whole 05:00-12:59 Copenhagen window and dedupe below.
           HOUR=$(TZ=Europe/Copenhagen date +%H)
-          echo "Local hour in Copenhagen: $HOUR"
-          if [ "$HOUR" = "05" ] || [ "${{ github.event_name }}" = "workflow_dispatch" ]; then
+          TODAY=$(date -u +%F)
+          LAST_RESULTS_DAY=$(git log --grep="^results update" --format=%cs -n 1 || true)
+          echo "Copenhagen hour: $HOUR · today: $TODAY · last results commit: ${LAST_RESULTS_DAY:-none}"
+          if [ "${{ github.event_name }}" = "workflow_dispatch" ]; then
+            echo "run=yes" >> "$GITHUB_OUTPUT"
+          elif [ "$HOUR" -ge 5 ] && [ "$HOUR" -le 12 ] && [ "$LAST_RESULTS_DAY" != "$TODAY" ]; then
             echo "run=yes" >> "$GITHUB_OUTPUT"
           else
             echo "run=no" >> "$GITHUB_OUTPUT"
-            echo "Not 05:00 local (DST twin firing) — exiting."
+            echo "Outside the Monday-morning window, or already ran today — exiting."
           fi
 
       - name: Was there a race in the last 72 hours?
