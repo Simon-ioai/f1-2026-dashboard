@@ -1,0 +1,29 @@
+# Canary: checks the LIVE site's data age, not the jobs. The Sep 2026 outage
+# proved every job can be green while the site quietly serves stale data —
+# this fails loudly (= GitHub emails the owner) whenever the deployed odds
+# data is older than 48 hours, whatever the cause.
+name: Freshness check
+
+on:
+  schedule:
+    - cron: '0 18 * * *' # daily, after the snapshot + deploy should have run
+  workflow_dispatch:
+
+jobs:
+  check:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Live odds data must be under 48h old
+        run: |
+          URL="https://simon-ioai.github.io/f1-2026-dashboard/data/derived/meta.json"
+          GEN=$(curl -sf "$URL" | jq -r .odds_updated_at)
+          if [ -z "$GEN" ] || [ "$GEN" = "null" ]; then
+            echo "::error::Could not read odds_updated_at from the live site ($URL)."
+            exit 1
+          fi
+          AGE_H=$(( ( $(date -u +%s) - $(date -u -d "$GEN" +%s) ) / 3600 ))
+          echo "Live odds data age: ${AGE_H}h (updated $GEN)"
+          if [ "$AGE_H" -gt 48 ]; then
+            echo "::error::Dashboard is stale: live odds data is ${AGE_H}h old. Check the 'Snapshot odds' and 'Deploy to GitHub Pages' workflows on the Actions tab."
+            exit 1
+          fi

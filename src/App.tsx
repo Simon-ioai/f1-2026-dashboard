@@ -57,6 +57,17 @@ export default function App() {
         {data.fetchErrors.length > 0 && (
           <span className="badge-warn">⚠ Some data files failed to load</span>
         )}
+        {(() => {
+          // Self-diagnosed staleness: the Sep 2026 outage showed the pipeline
+          // can look healthy while the deployed data quietly ages.
+          const updated = meta?.odds_updated_at;
+          const ageDays = updated ? (Date.now() - Date.parse(updated)) / 86_400_000 : null;
+          return ageDays !== null && ageDays > 2.5 ? (
+            <span className="badge-warn">
+              ⚠ Odds data is {Math.floor(ageDays)} days old — the daily update may be stuck
+            </span>
+          ) : null;
+        })()}
       </div>
 
       <AboutPanel />
