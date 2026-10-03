@@ -1,0 +1,144 @@
+{
+  "date": "2026-10-03",
+  "snapshots": [
+    {
+      "fetched_at": "2026-10-03T15:28:06.888Z",
+      "source": "polymarket",
+      "event_slug": "2026-f1-drivers-champion",
+      "outcomes": [
+        {
+          "name": "Lando Norris",
+          "p": 0.0065,
+          "bid": 0.006,
+          "ask": 0.007
+        },
+        {
+          "name": "Oscar Piastri",
+          "p": 0.0005,
+          "bid": null,
+          "ask": 0.001
+        },
+        {
+          "name": "George Russell",
+          "p": 0.0395,
+          "bid": 0.036,
+          "ask": 0.043
+        },
+        {
+          "name": "Kimi Antonelli",
+          "p": 0.9255,
+          "bid": 0.925,
+          "ask": 0.926
+        },
+        {
+          "name": "Max Verstappen",
+          "p": 0.0045,
+          "bid": 0.004,
+          "ask": 0.005
+        },
+        {
+          "name": "Isack Hadjar",
+          "p": 0,
+          "bid": null,
+          "ask": 0.001
+        },
+        {
+          "name": "Charles Leclerc",
+          "p": 0.0015,
+          "bid": 0.001,
+          "ask": 0.002
+        },
+        {
+          "name": "Lewis Hamilton",
+          "p": 0.0105,
+          "bid": 0.006,
+          "ask": 0.015
+        },
+        {
+          "name": "Fernando Alonso",
+          "p": 0,
+          "bid": null,
+          "ask": 0.001
+        },
+        {
+          "name": "Lance Stroll",
+          "p": 0,
+          "bid": null,
+          "ask": 0.001
+        },
+        {
+          "name": "Esteban Ocon",
+          "p": 0,
+          "bid": null,
+          "ask": 0.001
+        },
+        {
+          "name": "Oliver Bearman",
+          "p": 0,
+          "bid": null,
+          "ask": 0.001
+        },
+        {
+          "name": "Nico Hülkenberg",
+          "p": 0,
+          "bid": null,
+          "ask": 0.001
+        },
+        {
+          "name": "Gabriel Bortoleto",
+          "p": 0,
+          "bid": null,
+          "ask": 0.001
+        },
+        {
+          "name": "Pierre Gasly",
+          "p": 0,
+          "bid": null,
+          "ask": 0.001
+        },
+        {
+          "name": "Franco Colapinto",
+          "p": 0,
+          "bid": null,
+          "ask": 0.001
+        },
+        {
+          "name": "Liam Lawson",
+          "p": 0,
+          "bid": null,
+          "ask": 0.001
+        },
+        {
+          "name": "Arvid Lindblad",
+          "p": 0,
+          "bid": null,
+          "ask": 0.001
+        },
+        {
+          "name": "Alexander Albon",
+          "p": 0,
+          "bid": null,
+          "ask": 0.001
+        },
+        {
+          "name": "Carlos Sainz Jr.",
+          "p": 0,
+          "bid": null,
+          "ask": 0.001
+        },
+        {
+          "name": "Valtteri Bottas",
+          "p": 0,
+          "bid": null,
+          "ask": 0.001
+        },
+        {
+          "name": "Sergio Pérez",
+          "p": 0,
+          "bid": null,
+          "ask": 0.001
+        }
+      ]
+    }
+  ]
+}
