@@ -1,6 +1,6 @@
 {
-  "generated_at": "2026-10-03T15:28:07.288Z",
-  "based_on_round": 15,
+  "generated_at": "2026-10-04T16:04:49.505Z",
+  "based_on_round": 16,
   "note": "Gaps compare the deepest qualifying session both cars set a time in; race record counts only races where both cars were classified.",
   "teams": [
     {
@@ -9,7 +9,7 @@
         "driverId": "antonelli",
         "code": "ANT",
         "name": "Andrea Kimi Antonelli",
-        "points": 302
+        "points": 320
       },
       "partners": [
         {
@@ -17,7 +17,7 @@
           "code": "RUS",
           "name": "George Russell",
           "points": 236,
-          "rounds": 15,
+          "rounds": 16,
           "qualiWins": 8,
           "qualiLosses": 7,
           "raceWins": 8,
@@ -154,6 +154,14 @@
           "session": "Q1",
           "partnerId": "russell",
           "partnerCode": "RUS"
+        },
+        {
+          "round": 16,
+          "locality": "Kuala Lumpur",
+          "gapMs": null,
+          "session": null,
+          "partnerId": "russell",
+          "partnerCode": "RUS"
         }
       ]
     },
@@ -163,18 +171,18 @@
         "driverId": "hamilton",
         "code": "HAM",
         "name": "Lewis Hamilton",
-        "points": 199
+        "points": 214
       },
       "partners": [
         {
           "driverId": "leclerc",
           "code": "LEC",
           "name": "Charles Leclerc",
-          "points": 179,
-          "rounds": 15,
+          "points": 191,
+          "rounds": 16,
           "qualiWins": 7,
           "qualiLosses": 8,
-          "raceWins": 6,
+          "raceWins": 7,
           "raceLosses": 6,
           "medianGapMs": 7,
           "comparableLaps": 15
@@ -183,7 +191,7 @@
       "overall": {
         "qualiWins": 7,
         "qualiLosses": 8,
-        "raceWins": 6,
+        "raceWins": 7,
         "raceLosses": 6,
         "medianGapMs": 7,
         "comparableLaps": 15
@@ -308,6 +316,14 @@
           "session": "Q3",
           "partnerId": "leclerc",
           "partnerCode": "LEC"
+        },
+        {
+          "round": 16,
+          "locality": "Kuala Lumpur",
+          "gapMs": null,
+          "session": null,
+          "partnerId": "leclerc",
+          "partnerCode": "LEC"
         }
       ]
     },
@@ -317,19 +333,19 @@
         "driverId": "norris",
         "code": "NOR",
         "name": "Lando Norris",
-        "points": 186
+        "points": 188
       },
       "partners": [
         {
           "driverId": "piastri",
           "code": "PIA",
           "name": "Oscar Piastri",
-          "points": 120,
-          "rounds": 15,
+          "points": 128,
+          "rounds": 16,
           "qualiWins": 9,
           "qualiLosses": 6,
           "raceWins": 6,
-          "raceLosses": 3,
+          "raceLosses": 4,
           "medianGapMs": -52,
           "comparableLaps": 15
         }
@@ -338,7 +354,7 @@
         "qualiWins": 9,
         "qualiLosses": 6,
         "raceWins": 6,
-        "raceLosses": 3,
+        "raceLosses": 4,
         "medianGapMs": -52,
         "comparableLaps": 15
       },
@@ -462,6 +478,14 @@
           "session": "Q3",
           "partnerId": "piastri",
           "partnerCode": "PIA"
+        },
+        {
+          "round": 16,
+          "locality": "Kuala Lumpur",
+          "gapMs": null,
+          "session": null,
+          "partnerId": "piastri",
+          "partnerCode": "PIA"
         }
       ]
     },
@@ -471,18 +495,18 @@
         "driverId": "max_verstappen",
         "code": "VER",
         "name": "Max Verstappen",
-        "points": 163
+        "points": 188
       },
       "partners": [
         {
           "driverId": "hadjar",
           "code": "HAD",
           "name": "Isack Hadjar",
-          "points": 86,
-          "rounds": 12,
+          "points": 96,
+          "rounds": 13,
           "qualiWins": 8,
           "qualiLosses": 3,
-          "raceWins": 7,
+          "raceWins": 8,
           "raceLosses": 1,
           "medianGapMs": -87.5,
           "comparableLaps": 10
@@ -491,7 +515,7 @@
           "driverId": "lawson",
           "code": "LAW",
           "name": "Liam Lawson",
-          "points": 59,
+          "points": 65,
           "rounds": 3,
           "qualiWins": 3,
           "qualiLosses": 0,
@@ -504,7 +528,7 @@
       "overall": {
         "qualiWins": 11,
         "qualiLosses": 3,
-        "raceWins": 9,
+        "raceWins": 10,
         "raceLosses": 1,
         "medianGapMs": -119,
         "comparableLaps": 13
@@ -627,6 +651,14 @@
           "locality": "Baku",
           "gapMs": 581,
           "session": "Q3",
+          "partnerId": "hadjar",
+          "partnerCode": "HAD"
+        },
+        {
+          "round": 16,
+          "locality": "Kuala Lumpur",
+          "gapMs": null,
+          "session": null,
           "partnerId": "hadjar",
           "partnerCode": "HAD"
         }

@@ -1,7 +1,7 @@
 {
   "season": 2026,
-  "round": 15,
-  "fetched_at": "2026-09-28T09:35:54.994Z",
+  "round": 16,
+  "fetched_at": "2026-10-04T16:04:47.212Z",
   "standings": [
     {
       "position": 1,
@@ -9,7 +9,7 @@
       "code": "ANT",
       "name": "Andrea Kimi Antonelli",
       "team": "Mercedes",
-      "points": 302,
+      "points": 320,
       "wins": 8
     },
     {
@@ -27,26 +27,26 @@
       "code": "HAM",
       "name": "Lewis Hamilton",
       "team": "Ferrari",
-      "points": 199,
+      "points": 214,
       "wins": 1
     },
     {
       "position": 4,
-      "driverId": "norris",
-      "code": "NOR",
-      "name": "Lando Norris",
-      "team": "McLaren",
-      "points": 186,
-      "wins": 2
-    },
-    {
-      "position": 5,
       "driverId": "leclerc",
       "code": "LEC",
       "name": "Charles Leclerc",
       "team": "Ferrari",
-      "points": 179,
+      "points": 191,
       "wins": 1
+    },
+    {
+      "position": 5,
+      "driverId": "norris",
+      "code": "NOR",
+      "name": "Lando Norris",
+      "team": "McLaren",
+      "points": 188,
+      "wins": 2
     },
     {
       "position": 6,
@@ -54,8 +54,8 @@
       "code": "VER",
       "name": "Max Verstappen",
       "team": "Red Bull",
-      "points": 163,
-      "wins": 0
+      "points": 188,
+      "wins": 1
     },
     {
       "position": 7,
@@ -63,7 +63,7 @@
       "code": "PIA",
       "name": "Oscar Piastri",
       "team": "McLaren",
-      "points": 120,
+      "points": 128,
       "wins": 0
     },
     {
@@ -72,7 +72,7 @@
       "code": "HAD",
       "name": "Isack Hadjar",
       "team": "Red Bull",
-      "points": 86,
+      "points": 96,
       "wins": 0
     },
     {
@@ -81,7 +81,7 @@
       "code": "LAW",
       "name": "Liam Lawson",
       "team": "Red Bull",
-      "points": 59,
+      "points": 65,
       "wins": 0
     },
     {
@@ -99,7 +99,7 @@
       "code": "LIN",
       "name": "Arvid Lindblad",
       "team": "RB F1 Team",
-      "points": 37,
+      "points": 38,
       "wins": 0
     },
     {
@@ -158,20 +158,20 @@
     },
     {
       "position": 18,
+      "driverId": "alonso",
+      "code": "ALO",
+      "name": "Fernando Alonso",
+      "team": "Aston Martin",
+      "points": 7,
+      "wins": 0
+    },
+    {
+      "position": 19,
       "driverId": "albon",
       "code": "ALB",
       "name": "Alexander Albon",
       "team": "Williams",
       "points": 5,
-      "wins": 0
-    },
-    {
-      "position": 19,
-      "driverId": "alonso",
-      "code": "ALO",
-      "name": "Fernando Alonso",
-      "team": "Aston Martin",
-      "points": 3,
       "wins": 0
     },
     {
@@ -210,5 +210,6 @@
       "points": 0,
       "wins": 0
     }
-  ]
+  ],
+  "provisional": true
 }

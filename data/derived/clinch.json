@@ -1,9 +1,9 @@
 {
-  "generated_at": "2026-10-03T15:28:07.285Z",
-  "based_on_round": 15,
-  "remaining_races": 8,
+  "generated_at": "2026-10-04T16:04:49.501Z",
+  "based_on_round": 16,
+  "remaining_races": 7,
   "remaining_sprints": 1,
-  "points_available": 208,
+  "points_available": 183,
   "drivers": [
     {
       "driverId": "antonelli",
@@ -11,7 +11,7 @@
       "name": "Andrea Kimi Antonelli",
       "team": "Mercedes",
       "position": 1,
-      "points": 302,
+      "points": 320,
       "status": "alive",
       "clinch": {
         "round": 18,
@@ -19,7 +19,7 @@
         "locality": "Austin",
         "country": "USA",
         "date": "2026-10-25",
-        "gapNeeded": 60,
+        "gapNeeded": 42,
         "chiefRivalId": "russell",
         "chiefRivalName": "George Russell"
       },
@@ -35,12 +35,12 @@
       "points": 236,
       "status": "alive",
       "clinch": {
-        "round": 21,
-        "raceName": "Las Vegas Grand Prix",
-        "locality": "Las Vegas",
-        "country": "USA",
-        "date": "2026-11-22",
-        "gapNeeded": 117,
+        "round": 22,
+        "raceName": "Qatar Grand Prix",
+        "locality": "Lusail",
+        "country": "Qatar",
+        "date": "2026-11-29",
+        "gapNeeded": 110,
         "chiefRivalId": "antonelli",
         "chiefRivalName": "Andrea Kimi Antonelli"
       },
@@ -53,28 +53,7 @@
       "name": "Lewis Hamilton",
       "team": "Ferrari",
       "position": 3,
-      "points": 199,
-      "status": "alive",
-      "clinch": {
-        "round": 21,
-        "raceName": "Las Vegas Grand Prix",
-        "locality": "Las Vegas",
-        "country": "USA",
-        "date": "2026-11-22",
-        "gapNeeded": 154,
-        "chiefRivalId": "antonelli",
-        "chiefRivalName": "Andrea Kimi Antonelli"
-      },
-      "clinchedAt": null,
-      "eliminatedAt": null
-    },
-    {
-      "driverId": "norris",
-      "code": "NOR",
-      "name": "Lando Norris",
-      "team": "McLaren",
-      "position": 4,
-      "points": 186,
+      "points": 214,
       "status": "alive",
       "clinch": {
         "round": 22,
@@ -82,7 +61,7 @@
         "locality": "Lusail",
         "country": "Qatar",
         "date": "2026-11-29",
-        "gapNeeded": 142,
+        "gapNeeded": 132,
         "chiefRivalId": "antonelli",
         "chiefRivalName": "Andrea Kimi Antonelli"
       },
@@ -94,8 +73,8 @@
       "code": "LEC",
       "name": "Charles Leclerc",
       "team": "Ferrari",
-      "position": 5,
-      "points": 179,
+      "position": 4,
+      "points": 191,
       "status": "alive",
       "clinch": {
         "round": 22,
@@ -103,7 +82,28 @@
         "locality": "Lusail",
         "country": "Qatar",
         "date": "2026-11-29",
-        "gapNeeded": 149,
+        "gapNeeded": 155,
+        "chiefRivalId": "antonelli",
+        "chiefRivalName": "Andrea Kimi Antonelli"
+      },
+      "clinchedAt": null,
+      "eliminatedAt": null
+    },
+    {
+      "driverId": "norris",
+      "code": "NOR",
+      "name": "Lando Norris",
+      "team": "McLaren",
+      "position": 5,
+      "points": 188,
+      "status": "alive",
+      "clinch": {
+        "round": 22,
+        "raceName": "Qatar Grand Prix",
+        "locality": "Lusail",
+        "country": "Qatar",
+        "date": "2026-11-29",
+        "gapNeeded": 158,
         "chiefRivalId": "antonelli",
         "chiefRivalName": "Andrea Kimi Antonelli"
       },
@@ -116,7 +116,7 @@
       "name": "Max Verstappen",
       "team": "Red Bull",
       "position": 6,
-      "points": 163,
+      "points": 188,
       "status": "alive",
       "clinch": {
         "round": 22,
@@ -124,7 +124,7 @@
         "locality": "Lusail",
         "country": "Qatar",
         "date": "2026-11-29",
-        "gapNeeded": 165,
+        "gapNeeded": 158,
         "chiefRivalId": "antonelli",
         "chiefRivalName": "Andrea Kimi Antonelli"
       },
@@ -137,20 +137,16 @@
       "name": "Oscar Piastri",
       "team": "McLaren",
       "position": 7,
-      "points": 120,
-      "status": "alive",
-      "clinch": {
-        "round": 23,
-        "raceName": "Abu Dhabi Grand Prix",
-        "locality": "Abu Dhabi",
-        "country": "UAE",
-        "date": "2026-12-06",
-        "gapNeeded": 183,
-        "chiefRivalId": "antonelli",
-        "chiefRivalName": "Andrea Kimi Antonelli"
-      },
+      "points": 128,
+      "status": "eliminated",
+      "clinch": null,
       "clinchedAt": null,
-      "eliminatedAt": null
+      "eliminatedAt": {
+        "round": 16,
+        "raceName": "Bahrain Grand Prix in Malaysia",
+        "country": "Malaysia",
+        "date": "2026-10-04"
+      }
     },
     {
       "driverId": "hadjar",
@@ -158,7 +154,7 @@
       "name": "Isack Hadjar",
       "team": "Red Bull",
       "position": 8,
-      "points": 86,
+      "points": 96,
       "status": "eliminated",
       "clinch": null,
       "clinchedAt": null,
@@ -175,7 +171,7 @@
       "name": "Liam Lawson",
       "team": "Red Bull",
       "position": 9,
-      "points": 59,
+      "points": 65,
       "status": "eliminated",
       "clinch": null,
       "clinchedAt": null,
@@ -209,7 +205,7 @@
       "name": "Arvid Lindblad",
       "team": "RB F1 Team",
       "position": 11,
-      "points": 37,
+      "points": 38,
       "status": "eliminated",
       "clinch": null,
       "clinchedAt": null,
@@ -323,12 +319,12 @@
       }
     },
     {
-      "driverId": "albon",
-      "code": "ALB",
-      "name": "Alexander Albon",
-      "team": "Williams",
+      "driverId": "alonso",
+      "code": "ALO",
+      "name": "Fernando Alonso",
+      "team": "Aston Martin",
       "position": 18,
-      "points": 5,
+      "points": 7,
       "status": "eliminated",
       "clinch": null,
       "clinchedAt": null,
@@ -340,12 +336,12 @@
       }
     },
     {
-      "driverId": "alonso",
-      "code": "ALO",
-      "name": "Fernando Alonso",
-      "team": "Aston Martin",
+      "driverId": "albon",
+      "code": "ALB",
+      "name": "Alexander Albon",
+      "team": "Williams",
       "position": 19,
-      "points": 3,
+      "points": 5,
       "status": "eliminated",
       "clinch": null,
       "clinchedAt": null,
