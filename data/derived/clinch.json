@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-10-04T16:14:19.568Z",
+  "generated_at": "2026-10-05T10:15:02.231Z",
   "based_on_round": 16,
   "remaining_races": 7,
   "remaining_sprints": 1,
@@ -302,10 +302,10 @@
       }
     },
     {
-      "driverId": "sainz",
-      "code": "SAI",
-      "name": "Carlos Sainz",
-      "team": "Williams",
+      "driverId": "alonso",
+      "code": "ALO",
+      "name": "Fernando Alonso",
+      "team": "Aston Martin",
       "position": 17,
       "points": 7,
       "status": "eliminated",
@@ -319,10 +319,10 @@
       }
     },
     {
-      "driverId": "alonso",
-      "code": "ALO",
-      "name": "Fernando Alonso",
-      "team": "Aston Martin",
+      "driverId": "sainz",
+      "code": "SAI",
+      "name": "Carlos Sainz",
+      "team": "Williams",
       "position": 18,
       "points": 7,
       "status": "eliminated",

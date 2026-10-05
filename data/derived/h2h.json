@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-10-04T16:14:19.571Z",
+  "generated_at": "2026-10-05T10:15:02.233Z",
   "based_on_round": 16,
   "note": "Gaps compare the deepest qualifying session both cars set a time in; race record counts only races where both cars were classified.",
   "teams": [
@@ -18,21 +18,21 @@
           "name": "George Russell",
           "points": 236,
           "rounds": 16,
-          "qualiWins": 8,
+          "qualiWins": 9,
           "qualiLosses": 7,
-          "raceWins": 8,
+          "raceWins": 9,
           "raceLosses": 5,
-          "medianGapMs": -222,
-          "comparableLaps": 15
+          "medianGapMs": -231,
+          "comparableLaps": 16
         }
       ],
       "overall": {
-        "qualiWins": 8,
+        "qualiWins": 9,
         "qualiLosses": 7,
-        "raceWins": 8,
+        "raceWins": 9,
         "raceLosses": 5,
-        "medianGapMs": -222,
-        "comparableLaps": 15
+        "medianGapMs": -231,
+        "comparableLaps": 16
       },
       "trend": [
         {
@@ -158,8 +158,8 @@
         {
           "round": 16,
           "locality": "Kuala Lumpur",
-          "gapMs": null,
-          "session": null,
+          "gapMs": -240,
+          "session": "Q3",
           "partnerId": "russell",
           "partnerCode": "RUS"
         }
@@ -180,21 +180,21 @@
           "name": "Charles Leclerc",
           "points": 191,
           "rounds": 16,
-          "qualiWins": 7,
+          "qualiWins": 8,
           "qualiLosses": 8,
           "raceWins": 7,
           "raceLosses": 6,
-          "medianGapMs": 7,
-          "comparableLaps": 15
+          "medianGapMs": 4.5,
+          "comparableLaps": 16
         }
       ],
       "overall": {
-        "qualiWins": 7,
+        "qualiWins": 8,
         "qualiLosses": 8,
         "raceWins": 7,
         "raceLosses": 6,
-        "medianGapMs": 7,
-        "comparableLaps": 15
+        "medianGapMs": 4.5,
+        "comparableLaps": 16
       },
       "trend": [
         {
@@ -320,8 +320,8 @@
         {
           "round": 16,
           "locality": "Kuala Lumpur",
-          "gapMs": null,
-          "session": null,
+          "gapMs": -238,
+          "session": "Q3",
           "partnerId": "leclerc",
           "partnerCode": "LEC"
         }
@@ -342,21 +342,21 @@
           "name": "Oscar Piastri",
           "points": 128,
           "rounds": 16,
-          "qualiWins": 9,
+          "qualiWins": 10,
           "qualiLosses": 6,
           "raceWins": 6,
           "raceLosses": 4,
-          "medianGapMs": -52,
-          "comparableLaps": 15
+          "medianGapMs": -30.5,
+          "comparableLaps": 16
         }
       ],
       "overall": {
-        "qualiWins": 9,
+        "qualiWins": 10,
         "qualiLosses": 6,
         "raceWins": 6,
         "raceLosses": 4,
-        "medianGapMs": -52,
-        "comparableLaps": 15
+        "medianGapMs": -30.5,
+        "comparableLaps": 16
       },
       "trend": [
         {
@@ -482,8 +482,8 @@
         {
           "round": 16,
           "locality": "Kuala Lumpur",
-          "gapMs": null,
-          "session": null,
+          "gapMs": -5,
+          "session": "Q3",
           "partnerId": "piastri",
           "partnerCode": "PIA"
         }
@@ -504,12 +504,12 @@
           "name": "Isack Hadjar",
           "points": 96,
           "rounds": 13,
-          "qualiWins": 8,
+          "qualiWins": 9,
           "qualiLosses": 3,
           "raceWins": 8,
           "raceLosses": 1,
-          "medianGapMs": -87.5,
-          "comparableLaps": 10
+          "medianGapMs": -119,
+          "comparableLaps": 11
         },
         {
           "driverId": "lawson",
@@ -526,12 +526,12 @@
         }
       ],
       "overall": {
-        "qualiWins": 11,
+        "qualiWins": 12,
         "qualiLosses": 3,
         "raceWins": 10,
         "raceLosses": 1,
-        "medianGapMs": -119,
-        "comparableLaps": 13
+        "medianGapMs": -125,
+        "comparableLaps": 14
       },
       "trend": [
         {
@@ -657,8 +657,8 @@
         {
           "round": 16,
           "locality": "Kuala Lumpur",
-          "gapMs": null,
-          "session": null,
+          "gapMs": -428,
+          "session": "Q3",
           "partnerId": "hadjar",
           "partnerCode": "HAD"
         }
