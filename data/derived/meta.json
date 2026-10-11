@@ -1,6 +1,12 @@
 {
-  "results_updated_at": "2026-10-11T09:06:05.781Z",
+  "results_updated_at": "2026-10-11T15:36:37.266Z",
   "odds_updated_at": "2026-10-11T09:07:46.886Z",
-  "derived_updated_at": "2026-10-11T09:07:47.345Z",
-  "warnings": []
+  "derived_updated_at": "2026-10-11T15:36:38.286Z",
+  "warnings": [
+    {
+      "source": "results",
+      "message": "Singapore Grand Prix result is provisional (from OpenF1, points derived from positions) until Jolpica publishes it.",
+      "at": "2026-10-11T15:36:37.457Z"
+    }
+  ]
 }

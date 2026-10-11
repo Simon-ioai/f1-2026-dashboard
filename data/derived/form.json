@@ -1,6 +1,6 @@
 {
-  "generated_at": "2026-10-11T09:07:47.344Z",
-  "based_on_round": 16,
+  "generated_at": "2026-10-11T15:36:38.286Z",
+  "based_on_round": 17,
   "window": 3,
   "note": "Rolling 3-weekend averages (race + sprint points; qualifying position). A weekend is marked when the rolling points average is more than one standard deviation from the season baseline.",
   "drivers": [
@@ -9,8 +9,8 @@
       "code": "ANT",
       "name": "Andrea Kimi Antonelli",
       "baselinePoints": 20,
-      "baselineQuali": 3.3125,
-      "pointsSd": 8.299096336348915,
+      "baselineQuali": 3.3529411764705883,
+      "pointsSd": 8.051306068692503,
       "rounds": [
         {
           "round": 1,
@@ -155,6 +155,15 @@
           "qualiAvg": 7.333333333333333,
           "diverged": false,
           "locality": "Kuala Lumpur"
+        },
+        {
+          "round": 17,
+          "points": 20,
+          "qualiPos": 4,
+          "pointsAvg": 16,
+          "qualiAvg": 8,
+          "diverged": false,
+          "locality": "Marina Bay"
         }
       ]
     },
@@ -162,9 +171,9 @@
       "driverId": "leclerc",
       "code": "LEC",
       "name": "Charles Leclerc",
-      "baselinePoints": 11.9375,
-      "baselineQuali": 4.4375,
-      "pointsSd": 7.636006400599727,
+      "baselinePoints": 12.647058823529411,
+      "baselineQuali": 4.294117647058823,
+      "pointsSd": 7.933111372933277,
       "rounds": [
         {
           "round": 1,
@@ -262,7 +271,7 @@
           "qualiPos": 3,
           "pointsAvg": 19.666666666666668,
           "qualiAvg": 3.3333333333333335,
-          "diverged": true,
+          "diverged": false,
           "locality": "Budapest"
         },
         {
@@ -309,6 +318,15 @@
           "qualiAvg": 4,
           "diverged": false,
           "locality": "Kuala Lumpur"
+        },
+        {
+          "round": 17,
+          "points": 24,
+          "qualiPos": 2,
+          "pointsAvg": 16,
+          "qualiAvg": 3,
+          "diverged": false,
+          "locality": "Marina Bay"
         }
       ]
     },
@@ -316,9 +334,9 @@
       "driverId": "russell",
       "code": "RUS",
       "name": "George Russell",
-      "baselinePoints": 14.75,
-      "baselineQuali": 3.3125,
-      "pointsSd": 9.38416218956173,
+      "baselinePoints": 14,
+      "baselineQuali": 3.4705882352941178,
+      "pointsSd": 9.585528307880399,
       "rounds": [
         {
           "round": 1,
@@ -463,6 +481,15 @@
           "qualiAvg": 5,
           "diverged": false,
           "locality": "Kuala Lumpur"
+        },
+        {
+          "round": 17,
+          "points": 2,
+          "qualiPos": 6,
+          "pointsAvg": 9,
+          "qualiAvg": 5,
+          "diverged": false,
+          "locality": "Marina Bay"
         }
       ]
     },
@@ -470,9 +497,9 @@
       "driverId": "norris",
       "code": "NOR",
       "name": "Lando Norris",
-      "baselinePoints": 11.75,
-      "baselineQuali": 4.625,
-      "pointsSd": 9.086390922693123,
+      "baselinePoints": 11.823529411764707,
+      "baselineQuali": 4.647058823529412,
+      "pointsSd": 8.819999293835153,
       "rounds": [
         {
           "round": 1,
@@ -579,7 +606,7 @@
           "qualiPos": 1,
           "pointsAvg": 20.666666666666668,
           "qualiAvg": 1.6666666666666667,
-          "diverged": false,
+          "diverged": true,
           "locality": "Zandvoort"
         },
         {
@@ -617,6 +644,15 @@
           "qualiAvg": 4,
           "diverged": false,
           "locality": "Kuala Lumpur"
+        },
+        {
+          "round": 17,
+          "points": 13,
+          "qualiPos": 5,
+          "pointsAvg": 5,
+          "qualiAvg": 5.333333333333333,
+          "diverged": false,
+          "locality": "Marina Bay"
         }
       ]
     },
@@ -624,9 +660,9 @@
       "driverId": "hamilton",
       "code": "HAM",
       "name": "Lewis Hamilton",
-      "baselinePoints": 13.375,
-      "baselineQuali": 4.25,
-      "pointsSd": 6.392133837772798,
+      "baselinePoints": 13.470588235294118,
+      "baselineQuali": 4.176470588235294,
+      "pointsSd": 6.213056906593362,
       "rounds": [
         {
           "round": 1,
@@ -771,6 +807,15 @@
           "qualiAvg": 4,
           "diverged": false,
           "locality": "Kuala Lumpur"
+        },
+        {
+          "round": 17,
+          "points": 15,
+          "qualiPos": 3,
+          "pointsAvg": 12.666666666666666,
+          "qualiAvg": 3.6666666666666665,
+          "diverged": false,
+          "locality": "Marina Bay"
         }
       ]
     },
@@ -778,9 +823,9 @@
       "driverId": "max_verstappen",
       "code": "VER",
       "name": "Max Verstappen",
-      "baselinePoints": 11.75,
-      "baselineQuali": 5.266666666666667,
-      "pointsSd": 7.454025757937787,
+      "baselinePoints": 13,
+      "baselineQuali": 5,
+      "pointsSd": 8.791707322645518,
       "rounds": [
         {
           "round": 1,
@@ -923,8 +968,17 @@
           "qualiPos": 1,
           "pointsAvg": 20.333333333333332,
           "qualiAvg": 4,
-          "diverged": true,
+          "diverged": false,
           "locality": "Kuala Lumpur"
+        },
+        {
+          "round": 17,
+          "points": 33,
+          "qualiPos": 1,
+          "pointsAvg": 25.333333333333332,
+          "qualiAvg": 3.3333333333333335,
+          "diverged": true,
+          "locality": "Marina Bay"
         }
       ]
     }

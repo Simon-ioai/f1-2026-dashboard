@@ -1,7 +1,7 @@
 {
   "season": 2026,
   "round": 17,
-  "fetched_at": "2026-10-11T09:06:05.781Z",
+  "fetched_at": "2026-10-11T15:36:37.265Z",
   "standings": [
     {
       "position": 1,
@@ -9,7 +9,7 @@
       "code": "ANT",
       "name": "Andrea Kimi Antonelli",
       "team": "Mercedes",
-      "points": 325,
+      "points": 340,
       "wins": 8
     },
     {
@@ -18,7 +18,7 @@
       "code": "RUS",
       "name": "George Russell",
       "team": "Mercedes",
-      "points": 236,
+      "points": 238,
       "wins": 3
     },
     {
@@ -27,25 +27,25 @@
       "code": "HAM",
       "name": "Lewis Hamilton",
       "team": "Ferrari",
-      "points": 221,
+      "points": 229,
       "wins": 1
     },
     {
       "position": 4,
-      "driverId": "leclerc",
-      "code": "LEC",
-      "name": "Charles Leclerc",
-      "team": "Ferrari",
-      "points": 197,
-      "wins": 1
-    },
-    {
-      "position": 5,
       "driverId": "max_verstappen",
       "code": "VER",
       "name": "Max Verstappen",
       "team": "Red Bull",
-      "points": 196,
+      "points": 221,
+      "wins": 2
+    },
+    {
+      "position": 5,
+      "driverId": "leclerc",
+      "code": "LEC",
+      "name": "Charles Leclerc",
+      "team": "Ferrari",
+      "points": 215,
       "wins": 1
     },
     {
@@ -54,7 +54,7 @@
       "code": "NOR",
       "name": "Lando Norris",
       "team": "McLaren",
-      "points": 189,
+      "points": 201,
       "wins": 2
     },
     {
@@ -63,7 +63,7 @@
       "code": "PIA",
       "name": "Oscar Piastri",
       "team": "McLaren",
-      "points": 128,
+      "points": 138,
       "wins": 0
     },
     {
@@ -72,7 +72,7 @@
       "code": "HAD",
       "name": "Isack Hadjar",
       "team": "Red Bull",
-      "points": 96,
+      "points": 97,
       "wins": 0
     },
     {
@@ -81,7 +81,7 @@
       "code": "LAW",
       "name": "Liam Lawson",
       "team": "Red Bull",
-      "points": 69,
+      "points": 75,
       "wins": 0
     },
     {
@@ -122,20 +122,20 @@
     },
     {
       "position": 14,
+      "driverId": "hulkenberg",
+      "code": "HUL",
+      "name": "Nico Hülkenberg",
+      "team": "Audi",
+      "points": 13,
+      "wins": 0
+    },
+    {
+      "position": 15,
       "driverId": "bortoleto",
       "code": "BOR",
       "name": "Gabriel Bortoleto",
       "team": "Audi",
       "points": 10,
-      "wins": 0
-    },
-    {
-      "position": 15,
-      "driverId": "hulkenberg",
-      "code": "HUL",
-      "name": "Nico Hülkenberg",
-      "team": "Audi",
-      "points": 9,
       "wins": 0
     },
     {
@@ -210,5 +210,6 @@
       "points": 0,
       "wins": 0
     }
-  ]
+  ],
+  "provisional": true
 }

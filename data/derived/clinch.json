@@ -1,16 +1,10 @@
 {
-  "generated_at": "2026-10-11T09:07:47.338Z",
-  "based_on_round": 16,
-  "in_progress": {
-    "round": 17,
-    "name": "Singapore Grand Prix",
-    "locality": "Marina Bay",
-    "sprintDone": true,
-    "qualifyingDone": true
-  },
-  "remaining_races": 7,
+  "generated_at": "2026-10-11T15:36:38.283Z",
+  "based_on_round": 17,
+  "in_progress": null,
+  "remaining_races": 6,
   "remaining_sprints": 0,
-  "points_available": 175,
+  "points_available": 150,
   "drivers": [
     {
       "driverId": "antonelli",
@@ -18,7 +12,7 @@
       "name": "Andrea Kimi Antonelli",
       "team": "Mercedes",
       "position": 1,
-      "points": 325,
+      "points": 340,
       "status": "alive",
       "clinch": {
         "round": 18,
@@ -26,7 +20,7 @@
         "locality": "Austin",
         "country": "USA",
         "date": "2026-10-25",
-        "gapNeeded": 37,
+        "gapNeeded": 24,
         "chiefRivalId": "russell",
         "chiefRivalName": "George Russell"
       },
@@ -39,15 +33,15 @@
       "name": "George Russell",
       "team": "Mercedes",
       "position": 2,
-      "points": 236,
+      "points": 238,
       "status": "alive",
       "clinch": {
-        "round": 22,
-        "raceName": "Qatar Grand Prix",
-        "locality": "Lusail",
-        "country": "Qatar",
-        "date": "2026-11-29",
-        "gapNeeded": 115,
+        "round": 23,
+        "raceName": "Abu Dhabi Grand Prix",
+        "locality": "Abu Dhabi",
+        "country": "UAE",
+        "date": "2026-12-06",
+        "gapNeeded": 103,
         "chiefRivalId": "antonelli",
         "chiefRivalName": "Andrea Kimi Antonelli"
       },
@@ -60,28 +54,7 @@
       "name": "Lewis Hamilton",
       "team": "Ferrari",
       "position": 3,
-      "points": 221,
-      "status": "alive",
-      "clinch": {
-        "round": 22,
-        "raceName": "Qatar Grand Prix",
-        "locality": "Lusail",
-        "country": "Qatar",
-        "date": "2026-11-29",
-        "gapNeeded": 130,
-        "chiefRivalId": "antonelli",
-        "chiefRivalName": "Andrea Kimi Antonelli"
-      },
-      "clinchedAt": null,
-      "eliminatedAt": null
-    },
-    {
-      "driverId": "leclerc",
-      "code": "LEC",
-      "name": "Charles Leclerc",
-      "team": "Ferrari",
-      "position": 4,
-      "points": 197,
+      "points": 229,
       "status": "alive",
       "clinch": {
         "round": 23,
@@ -89,7 +62,7 @@
         "locality": "Abu Dhabi",
         "country": "UAE",
         "date": "2026-12-06",
-        "gapNeeded": 129,
+        "gapNeeded": 112,
         "chiefRivalId": "antonelli",
         "chiefRivalName": "Andrea Kimi Antonelli"
       },
@@ -101,8 +74,8 @@
       "code": "VER",
       "name": "Max Verstappen",
       "team": "Red Bull",
-      "position": 5,
-      "points": 196,
+      "position": 4,
+      "points": 221,
       "status": "alive",
       "clinch": {
         "round": 23,
@@ -110,7 +83,28 @@
         "locality": "Abu Dhabi",
         "country": "UAE",
         "date": "2026-12-06",
-        "gapNeeded": 130,
+        "gapNeeded": 120,
+        "chiefRivalId": "antonelli",
+        "chiefRivalName": "Andrea Kimi Antonelli"
+      },
+      "clinchedAt": null,
+      "eliminatedAt": null
+    },
+    {
+      "driverId": "leclerc",
+      "code": "LEC",
+      "name": "Charles Leclerc",
+      "team": "Ferrari",
+      "position": 5,
+      "points": 215,
+      "status": "alive",
+      "clinch": {
+        "round": 23,
+        "raceName": "Abu Dhabi Grand Prix",
+        "locality": "Abu Dhabi",
+        "country": "UAE",
+        "date": "2026-12-06",
+        "gapNeeded": 126,
         "chiefRivalId": "antonelli",
         "chiefRivalName": "Andrea Kimi Antonelli"
       },
@@ -123,7 +117,7 @@
       "name": "Lando Norris",
       "team": "McLaren",
       "position": 6,
-      "points": 189,
+      "points": 201,
       "status": "alive",
       "clinch": {
         "round": 23,
@@ -131,7 +125,7 @@
         "locality": "Abu Dhabi",
         "country": "UAE",
         "date": "2026-12-06",
-        "gapNeeded": 137,
+        "gapNeeded": 140,
         "chiefRivalId": "antonelli",
         "chiefRivalName": "Andrea Kimi Antonelli"
       },
@@ -144,7 +138,7 @@
       "name": "Oscar Piastri",
       "team": "McLaren",
       "position": 7,
-      "points": 128,
+      "points": 138,
       "status": "eliminated",
       "clinch": null,
       "clinchedAt": null,
@@ -161,7 +155,7 @@
       "name": "Isack Hadjar",
       "team": "Red Bull",
       "position": 8,
-      "points": 96,
+      "points": 97,
       "status": "eliminated",
       "clinch": null,
       "clinchedAt": null,
@@ -178,7 +172,7 @@
       "name": "Liam Lawson",
       "team": "Red Bull",
       "position": 9,
-      "points": 69,
+      "points": 75,
       "status": "eliminated",
       "clinch": null,
       "clinchedAt": null,
@@ -258,11 +252,28 @@
       }
     },
     {
+      "driverId": "hulkenberg",
+      "code": "HUL",
+      "name": "Nico Hülkenberg",
+      "team": "Audi",
+      "position": 14,
+      "points": 13,
+      "status": "eliminated",
+      "clinch": null,
+      "clinchedAt": null,
+      "eliminatedAt": {
+        "round": 13,
+        "raceName": "Italian Grand Prix",
+        "country": "Italy",
+        "date": "2026-09-06"
+      }
+    },
+    {
       "driverId": "bortoleto",
       "code": "BOR",
       "name": "Gabriel Bortoleto",
       "team": "Audi",
-      "position": 14,
+      "position": 15,
       "points": 10,
       "status": "eliminated",
       "clinch": null,
@@ -272,23 +283,6 @@
         "raceName": "Spanish Grand Prix",
         "country": "Spain",
         "date": "2026-09-13"
-      }
-    },
-    {
-      "driverId": "hulkenberg",
-      "code": "HUL",
-      "name": "Nico Hülkenberg",
-      "team": "Audi",
-      "position": 15,
-      "points": 9,
-      "status": "eliminated",
-      "clinch": null,
-      "clinchedAt": null,
-      "eliminatedAt": {
-        "round": 13,
-        "raceName": "Italian Grand Prix",
-        "country": "Italy",
-        "date": "2026-09-06"
       }
     },
     {

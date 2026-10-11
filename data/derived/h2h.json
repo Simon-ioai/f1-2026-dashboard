@@ -1,6 +1,6 @@
 {
-  "generated_at": "2026-10-11T09:07:47.341Z",
-  "based_on_round": 16,
+  "generated_at": "2026-10-11T15:36:38.285Z",
+  "based_on_round": 17,
   "note": "Gaps compare the deepest qualifying session both cars set a time in; race record counts only races where both cars were classified.",
   "teams": [
     {
@@ -9,18 +9,18 @@
         "driverId": "antonelli",
         "code": "ANT",
         "name": "Andrea Kimi Antonelli",
-        "points": 325
+        "points": 340
       },
       "partners": [
         {
           "driverId": "russell",
           "code": "RUS",
           "name": "George Russell",
-          "points": 236,
+          "points": 238,
           "rounds": 17,
           "qualiWins": 10,
           "qualiLosses": 7,
-          "raceWins": 9,
+          "raceWins": 10,
           "raceLosses": 5,
           "medianGapMs": -222,
           "comparableLaps": 17
@@ -29,7 +29,7 @@
       "overall": {
         "qualiWins": 10,
         "qualiLosses": 7,
-        "raceWins": 9,
+        "raceWins": 10,
         "raceLosses": 5,
         "medianGapMs": -222,
         "comparableLaps": 17
@@ -179,19 +179,19 @@
         "driverId": "hamilton",
         "code": "HAM",
         "name": "Lewis Hamilton",
-        "points": 221
+        "points": 229
       },
       "partners": [
         {
           "driverId": "leclerc",
           "code": "LEC",
           "name": "Charles Leclerc",
-          "points": 197,
+          "points": 215,
           "rounds": 17,
           "qualiWins": 8,
           "qualiLosses": 9,
           "raceWins": 7,
-          "raceLosses": 6,
+          "raceLosses": 7,
           "medianGapMs": 7,
           "comparableLaps": 17
         }
@@ -200,7 +200,7 @@
         "qualiWins": 8,
         "qualiLosses": 9,
         "raceWins": 7,
-        "raceLosses": 6,
+        "raceLosses": 7,
         "medianGapMs": 7,
         "comparableLaps": 17
       },
@@ -349,18 +349,18 @@
         "driverId": "norris",
         "code": "NOR",
         "name": "Lando Norris",
-        "points": 189
+        "points": 201
       },
       "partners": [
         {
           "driverId": "piastri",
           "code": "PIA",
           "name": "Oscar Piastri",
-          "points": 128,
+          "points": 138,
           "rounds": 17,
           "qualiWins": 11,
           "qualiLosses": 6,
-          "raceWins": 6,
+          "raceWins": 7,
           "raceLosses": 4,
           "medianGapMs": -52,
           "comparableLaps": 17
@@ -369,7 +369,7 @@
       "overall": {
         "qualiWins": 11,
         "qualiLosses": 6,
-        "raceWins": 6,
+        "raceWins": 7,
         "raceLosses": 4,
         "medianGapMs": -52,
         "comparableLaps": 17
@@ -519,16 +519,16 @@
         "driverId": "max_verstappen",
         "code": "VER",
         "name": "Max Verstappen",
-        "points": 196
+        "points": 221
       },
       "partners": [
         {
           "driverId": "hadjar",
           "code": "HAD",
           "name": "Isack Hadjar",
-          "points": 96,
-          "rounds": 14,
-          "qualiWins": 10,
+          "points": 97,
+          "rounds": 13,
+          "qualiWins": 9,
           "qualiLosses": 3,
           "raceWins": 8,
           "raceLosses": 1,
@@ -539,23 +539,23 @@
           "driverId": "lawson",
           "code": "LAW",
           "name": "Liam Lawson",
-          "points": 69,
-          "rounds": 3,
-          "qualiWins": 3,
+          "points": 75,
+          "rounds": 4,
+          "qualiWins": 4,
           "qualiLosses": 0,
-          "raceWins": 2,
+          "raceWins": 3,
           "raceLosses": 0,
-          "medianGapMs": -352,
-          "comparableLaps": 3
+          "medianGapMs": -492.5,
+          "comparableLaps": 4
         }
       ],
       "overall": {
         "qualiWins": 13,
         "qualiLosses": 3,
-        "raceWins": 10,
+        "raceWins": 11,
         "raceLosses": 1,
-        "medianGapMs": -125,
-        "comparableLaps": 14
+        "medianGapMs": -131,
+        "comparableLaps": 15
       },
       "trend": [
         {
@@ -689,10 +689,10 @@
         {
           "round": 17,
           "locality": "Marina Bay",
-          "gapMs": null,
-          "session": null,
-          "partnerId": "hadjar",
-          "partnerCode": "HAD"
+          "gapMs": -996,
+          "session": "Q3",
+          "partnerId": "lawson",
+          "partnerCode": "LAW"
         }
       ]
     }
