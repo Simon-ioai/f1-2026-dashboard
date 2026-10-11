@@ -103,4 +103,25 @@ describe('teamRoundVerdicts + summarize', () => {
     expect(s.medianGapMs).toBe(-150);
     expect(s.qualiWins).toBe(3); // record uses classification, present all rounds
   });
+
+  it('pairs teammates from qualifying when the race has not been run yet', () => {
+    const races: H2HRaceInput[] = [
+      race(1, 'p'),
+      {
+        round: 2,
+        results: [], // weekend in progress: qualifying done, race pending
+        qualifying: [
+          { ...q('me', 3, '1:12.0', '1:11.5', '1:11.300'), team: 'T' },
+          { ...q('p', 6, '1:12.1', '1:11.8', '1:11.500'), team: 'T' },
+          { ...q('rival', 1, '1:11.9', '1:11.4', '1:11.000'), team: 'Other' },
+        ],
+      },
+    ];
+    const verdicts = teamRoundVerdicts(races, 'T', 'me');
+    expect(verdicts).toHaveLength(2);
+    expect(verdicts[1]).toMatchObject({ round: 2, partnerId: 'p', qualiGapMs: -200, qualiAheadId: 'me', raceAheadId: null });
+    const s = summarize(verdicts, 'me');
+    expect(s.raceWins + s.raceLosses).toBe(1); // only round 1 counts for the race record
+  });
 });
+

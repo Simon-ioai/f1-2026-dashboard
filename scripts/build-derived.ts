@@ -155,6 +155,7 @@ interface SeasonWithPoints {
     round: number;
     results: { driverId: string; points: number; position: number | null }[];
     sprintResults: { driverId: string; points: number }[];
+    qualifying: unknown[];
   }[];
 }
 interface StandingsForClinch {
@@ -233,6 +234,7 @@ interface SeasonForH2H {
     sprintResults: { driverId: string; points: number }[];
     qualifying: {
       driverId: string;
+      team?: string;
       position: number | null;
       q1: string | null;
       q2: string | null;
@@ -250,7 +252,10 @@ function buildH2H(): void {
 
   const locality = new Map(schedule.races.map((r) => [r.round, r.locality]));
   const completed = season.races.filter((r) => r.results.length > 0);
-  const h2hRaces: H2HRaceInput[] = completed;
+  // Include a weekend in progress so its qualifying shows up straight away.
+  const h2hRaces: H2HRaceInput[] = season.races.filter(
+    (r) => r.results.length > 0 || r.qualifying.length > 0,
+  );
 
   const teams = H2H_TEAMS.map((team) => {
     const teamDrivers = standings.standings.filter((s) => s.team === team);
@@ -330,7 +335,15 @@ function buildClinch(): void {
       return { round: r.round, pointsByDriver };
     });
   const lastRound = Math.max(0, ...completedRounds.map((r) => r.round));
-  const remaining = fullCalendar.filter((r) => r.round > lastRound);
+  // A weekend in progress whose sprint is done: the standings already contain
+  // the sprint points, so only the race remains to be won there.
+  const inProgress = season.races.find(
+    (r) => r.round > lastRound && r.results.length === 0 && (r.sprintResults.length > 0 || r.qualifying.length > 0),
+  );
+  const sprintDone = inProgress && inProgress.sprintResults.length > 0 ? inProgress.round : null;
+  const remaining = fullCalendar
+    .filter((r) => r.round > lastRound)
+    .map((r) => (r.round === sprintDone ? { ...r, hasSprint: false } : r));
   const byRound = new Map(fullCalendar.map((r) => [r.round, r]));
 
   const all: DriverPoints[] = standings.standings.map((s) => ({
@@ -346,7 +359,10 @@ function buildClinch(): void {
     const alive = clinched || canStillWin(me, rivals, remaining);
     const scenario = alive && !clinched ? earliestClinch(me, rivals, remaining) : null;
     const clinchRace = scenario?.earliestRound ? byRound.get(scenario.earliestRound) : null;
-    const eliminatedRound = alive ? null : firstEliminationRound(s.driverId, completedRounds, fullCalendar);
+    const replayedOut = alive ? null : firstEliminationRound(s.driverId, completedRounds, fullCalendar);
+    // Out now but not after any completed round -> the in-progress sprint did it.
+    const outInSprint = !alive && replayedOut === null && sprintDone !== null;
+    const eliminatedRound = outInSprint ? sprintDone : replayedOut;
     const clinchedRound = clinched
       ? firstClinchedRound(s.driverId, completedRounds, fullCalendar)
       : null;
@@ -379,7 +395,9 @@ function buildClinch(): void {
         eliminatedRound !== null
           ? {
               round: eliminatedRound,
-              raceName: byRound.get(eliminatedRound)?.name ?? null,
+              raceName: outInSprint
+                ? `${byRound.get(eliminatedRound)?.name ?? 'the'} Sprint`
+                : byRound.get(eliminatedRound)?.name ?? null,
               country: byRound.get(eliminatedRound)?.country ?? null,
               date: byRound.get(eliminatedRound)?.date ?? null,
             }
@@ -390,6 +408,15 @@ function buildClinch(): void {
   writeJson('data/derived/clinch.json', {
     generated_at: new Date().toISOString(),
     based_on_round: lastRound,
+    in_progress: inProgress
+      ? {
+          round: inProgress.round,
+          name: byRound.get(inProgress.round)?.name ?? `Round ${inProgress.round}`,
+          locality: byRound.get(inProgress.round)?.locality ?? null,
+          sprintDone: inProgress.sprintResults.length > 0,
+          qualifyingDone: inProgress.qualifying.length > 0,
+        }
+      : null,
     remaining_races: remaining.length,
     remaining_sprints: remaining.filter((r) => r.hasSprint).length,
     points_available: maxPointsAvailable(remaining),

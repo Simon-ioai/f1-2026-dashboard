@@ -23,6 +23,8 @@ export function parseLapMs(time: string | null | undefined): number | null {
 
 export interface QualiRow {
   driverId: string;
+  /** Constructor name — lets a weekend whose race hasn't run yet still pair teammates. */
+  team?: string;
   position: number | null;
   q1: string | null;
   q2: string | null;
@@ -75,13 +77,25 @@ export function teamRoundVerdicts(
   const verdicts: RoundVerdict[] = [];
   for (const race of races) {
     const teamRows = race.results.filter((r) => r.team === team);
-    const mine = teamRows.find((r) => r.driverId === primaryId);
-    const partner = teamRows.find((r) => r.driverId !== primaryId);
-    if (!mine || !partner) continue;
+    let mine: { driverId: string; position: number | null; positionText: string } | undefined =
+      teamRows.find((r) => r.driverId === primaryId);
+    let partner: typeof mine = teamRows.find((r) => r.driverId !== primaryId);
+    let raceRun = true;
+    if (!mine || !partner) {
+      // Race not run yet (weekend in progress): pair teammates from qualifying.
+      if (race.results.length > 0) continue;
+      const qTeam = race.qualifying.filter((q) => q.team === team);
+      const qMine = qTeam.find((q) => q.driverId === primaryId);
+      const qPartner = qTeam.find((q) => q.driverId !== primaryId);
+      if (!qMine || !qPartner) continue;
+      mine = { driverId: qMine.driverId, position: null, positionText: '' };
+      partner = { driverId: qPartner.driverId, position: null, positionText: '' };
+      raceRun = false;
+    }
 
     const classified = (row: { positionText: string }) => /^\d+$/.test(row.positionText);
     const raceAheadId =
-      classified(mine) && classified(partner)
+      raceRun && classified(mine) && classified(partner)
         ? (mine.position ?? 99) < (partner.position ?? 99)
           ? primaryId
           : partner.driverId

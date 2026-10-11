@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-10-10T16:40:25.295Z",
+  "generated_at": "2026-10-11T09:06:06.724Z",
   "based_on_round": 16,
   "note": "Gaps compare the deepest qualifying session both cars set a time in; race record counts only races where both cars were classified.",
   "teams": [
@@ -9,7 +9,7 @@
         "driverId": "antonelli",
         "code": "ANT",
         "name": "Andrea Kimi Antonelli",
-        "points": 320
+        "points": 325
       },
       "partners": [
         {
@@ -17,22 +17,22 @@
           "code": "RUS",
           "name": "George Russell",
           "points": 236,
-          "rounds": 16,
-          "qualiWins": 9,
+          "rounds": 17,
+          "qualiWins": 10,
           "qualiLosses": 7,
           "raceWins": 9,
           "raceLosses": 5,
-          "medianGapMs": -231,
-          "comparableLaps": 16
+          "medianGapMs": -222,
+          "comparableLaps": 17
         }
       ],
       "overall": {
-        "qualiWins": 9,
+        "qualiWins": 10,
         "qualiLosses": 7,
         "raceWins": 9,
         "raceLosses": 5,
-        "medianGapMs": -231,
-        "comparableLaps": 16
+        "medianGapMs": -222,
+        "comparableLaps": 17
       },
       "trend": [
         {
@@ -162,6 +162,14 @@
           "session": "Q3",
           "partnerId": "russell",
           "partnerCode": "RUS"
+        },
+        {
+          "round": 17,
+          "locality": "Marina Bay",
+          "gapMs": -185,
+          "session": "Q3",
+          "partnerId": "russell",
+          "partnerCode": "RUS"
         }
       ]
     },
@@ -171,30 +179,30 @@
         "driverId": "hamilton",
         "code": "HAM",
         "name": "Lewis Hamilton",
-        "points": 214
+        "points": 221
       },
       "partners": [
         {
           "driverId": "leclerc",
           "code": "LEC",
           "name": "Charles Leclerc",
-          "points": 191,
-          "rounds": 16,
+          "points": 197,
+          "rounds": 17,
           "qualiWins": 8,
-          "qualiLosses": 8,
+          "qualiLosses": 9,
           "raceWins": 7,
           "raceLosses": 6,
-          "medianGapMs": 4.5,
-          "comparableLaps": 16
+          "medianGapMs": 7,
+          "comparableLaps": 17
         }
       ],
       "overall": {
         "qualiWins": 8,
-        "qualiLosses": 8,
+        "qualiLosses": 9,
         "raceWins": 7,
         "raceLosses": 6,
-        "medianGapMs": 4.5,
-        "comparableLaps": 16
+        "medianGapMs": 7,
+        "comparableLaps": 17
       },
       "trend": [
         {
@@ -324,6 +332,14 @@
           "session": "Q3",
           "partnerId": "leclerc",
           "partnerCode": "LEC"
+        },
+        {
+          "round": 17,
+          "locality": "Marina Bay",
+          "gapMs": 69,
+          "session": "Q3",
+          "partnerId": "leclerc",
+          "partnerCode": "LEC"
         }
       ]
     },
@@ -333,7 +349,7 @@
         "driverId": "norris",
         "code": "NOR",
         "name": "Lando Norris",
-        "points": 188
+        "points": 189
       },
       "partners": [
         {
@@ -341,22 +357,22 @@
           "code": "PIA",
           "name": "Oscar Piastri",
           "points": 128,
-          "rounds": 16,
-          "qualiWins": 10,
+          "rounds": 17,
+          "qualiWins": 11,
           "qualiLosses": 6,
           "raceWins": 6,
           "raceLosses": 4,
-          "medianGapMs": -30.5,
-          "comparableLaps": 16
+          "medianGapMs": -52,
+          "comparableLaps": 17
         }
       ],
       "overall": {
-        "qualiWins": 10,
+        "qualiWins": 11,
         "qualiLosses": 6,
         "raceWins": 6,
         "raceLosses": 4,
-        "medianGapMs": -30.5,
-        "comparableLaps": 16
+        "medianGapMs": -52,
+        "comparableLaps": 17
       },
       "trend": [
         {
@@ -486,6 +502,14 @@
           "session": "Q3",
           "partnerId": "piastri",
           "partnerCode": "PIA"
+        },
+        {
+          "round": 17,
+          "locality": "Marina Bay",
+          "gapMs": -148,
+          "session": "Q3",
+          "partnerId": "piastri",
+          "partnerCode": "PIA"
         }
       ]
     },
@@ -495,7 +519,7 @@
         "driverId": "max_verstappen",
         "code": "VER",
         "name": "Max Verstappen",
-        "points": 188
+        "points": 196
       },
       "partners": [
         {
@@ -503,8 +527,8 @@
           "code": "HAD",
           "name": "Isack Hadjar",
           "points": 96,
-          "rounds": 13,
-          "qualiWins": 9,
+          "rounds": 14,
+          "qualiWins": 10,
           "qualiLosses": 3,
           "raceWins": 8,
           "raceLosses": 1,
@@ -515,7 +539,7 @@
           "driverId": "lawson",
           "code": "LAW",
           "name": "Liam Lawson",
-          "points": 65,
+          "points": 69,
           "rounds": 3,
           "qualiWins": 3,
           "qualiLosses": 0,
@@ -526,7 +550,7 @@
         }
       ],
       "overall": {
-        "qualiWins": 12,
+        "qualiWins": 13,
         "qualiLosses": 3,
         "raceWins": 10,
         "raceLosses": 1,
@@ -659,6 +683,14 @@
           "locality": "Kuala Lumpur",
           "gapMs": -428,
           "session": "Q3",
+          "partnerId": "hadjar",
+          "partnerCode": "HAD"
+        },
+        {
+          "round": 17,
+          "locality": "Marina Bay",
+          "gapMs": null,
+          "session": null,
           "partnerId": "hadjar",
           "partnerCode": "HAD"
         }

@@ -28,7 +28,9 @@ export default function ClinchPanel({ clinch }: { clinch: ClinchFile }) {
       <div className="panel-head">
         <h2 className="panel-title">Clinch scenarios</h2>
         <p className="panel-sub num">
-          After round {clinch.based_on_round} · {clinch.points_available} points still on the
+          After round {clinch.based_on_round}
+          {clinch.in_progress?.sprintDone ? ` + the ${clinch.in_progress.locality ?? clinch.in_progress.name} Sprint` : ''}{' '}
+          · {clinch.points_available} points still on the
           table across {clinch.remaining_races} races ({clinch.remaining_sprints} sprint
           {clinch.remaining_sprints === 1 ? '' : 's'})
         </p>

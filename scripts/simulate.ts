@@ -13,7 +13,11 @@ const RECENT_WINDOW = 5;
 const RECENT_WEIGHT = 2;
 
 interface SeasonFile {
-  races: { round: number; results: { driverId: string; positionText: string }[] }[];
+  races: {
+    round: number;
+    results: { driverId: string; positionText: string }[];
+    sprintResults?: unknown[];
+  }[];
 }
 interface ScheduleFile {
   races: { round: number; name: string; date: string; hasSprint: boolean }[];
@@ -40,9 +44,14 @@ if (!season || !schedule || !standings) {
 const completedRounds = new Set(
   season.races.filter((r) => r.results.length > 0).map((r) => r.round),
 );
+// A sprint already run this weekend is in the standings — don't simulate it again.
+const sprintDone = new Set(
+  season.races.filter((r) => r.results.length === 0 && (r.sprintResults?.length ?? 0) > 0).map((r) => r.round),
+);
 const remaining = schedule.races
   .filter((r) => !completedRounds.has(r.round))
-  .map((r) => ({ round: r.round, hasSprint: r.hasSprint }));
+  .map((r) => ({ round: r.round, hasSprint: r.hasSprint && !sprintDone.has(r.round) }));
+const lastCompletedRound = Math.max(0, ...completedRounds);
 
 const models = buildModels(season.races, standings.standings, RECENT_WINDOW, RECENT_WEIGHT);
 console.log(
@@ -84,7 +93,7 @@ writeJson('data/derived/simulations.json', {
     seed,
     recent_window: RECENT_WINDOW,
     recent_weight: RECENT_WEIGHT,
-    based_on_rounds: standings.round,
+    based_on_rounds: lastCompletedRound,
     remaining_races: remaining.length,
     remaining_sprints: remaining.filter((r) => r.hasSprint).length,
     notes:

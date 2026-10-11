@@ -85,6 +85,13 @@ export interface SimulationsFile {
 export interface ClinchFile {
   generated_at: string;
   based_on_round: number;
+  in_progress?: {
+    round: number;
+    name: string;
+    locality: string | null;
+    sprintDone: boolean;
+    qualifyingDone: boolean;
+  } | null;
   remaining_races: number;
   remaining_sprints: number;
   points_available: number;

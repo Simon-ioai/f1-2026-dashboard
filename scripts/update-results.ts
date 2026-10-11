@@ -87,24 +87,32 @@ export async function updateResults(): Promise<void> {
       season: SEASON,
       fetched_at: new Date().toISOString(),
       source: 'jolpica',
-      races: results.map((r) => ({
-        round: Number(r.round),
-        name: r.raceName,
-        date: r.date,
-        results: (r.Results ?? []).map(compactResult),
-        sprintResults:
-          (sprints.find((s) => s.round === r.round)?.SprintResults ?? []).map(compactResult),
-        qualifying: (qualifying.find((q) => q.round === r.round)?.QualifyingResults ?? []).map(
-          (q) => ({
-            position: Number(q.position),
-            driverId: q.Driver.driverId,
-            code: q.Driver.code ?? null,
-            q1: q.Q1 ?? null,
-            q2: q.Q2 ?? null,
-            q3: q.Q3 ?? null,
-          }),
-        ),
-      })),
+      // A round appears as soon as ANY session has results — so a weekend in
+      // progress (sprint and/or qualifying done, race not yet run) is kept
+      // with results: [] and consumers treat it as partially complete.
+      races: schedule
+        .filter((r) =>
+          [results, sprints, qualifying].some((list) => list.some((x) => x.round === r.round)),
+        )
+        .map((r) => ({
+          round: Number(r.round),
+          name: r.raceName,
+          date: r.date,
+          results: (results.find((x) => x.round === r.round)?.Results ?? []).map(compactResult),
+          sprintResults:
+            (sprints.find((s) => s.round === r.round)?.SprintResults ?? []).map(compactResult),
+          qualifying: (qualifying.find((q) => q.round === r.round)?.QualifyingResults ?? []).map(
+            (q) => ({
+              position: Number(q.position),
+              driverId: q.Driver.driverId,
+              code: q.Driver.code ?? null,
+              team: q.Constructor.name,
+              q1: q.Q1 ?? null,
+              q2: q.Q2 ?? null,
+              q3: q.Q3 ?? null,
+            }),
+          ),
+        })),
     });
 
     if (standings) {
