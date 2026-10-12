@@ -1,7 +1,7 @@
 {
   "season": 2026,
   "round": 17,
-  "fetched_at": "2026-10-11T15:36:37.265Z",
+  "fetched_at": "2026-10-12T10:33:09.402Z",
   "standings": [
     {
       "position": 1,
@@ -210,6 +210,5 @@
       "points": 0,
       "wins": 0
     }
-  ],
-  "provisional": true
+  ]
 }

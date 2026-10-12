@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-10-11T17:06:11.559Z",
+  "generated_at": "2026-10-12T10:33:10.565Z",
   "based_on_round": 17,
   "note": "Gaps compare the deepest qualifying session both cars set a time in; race record counts only races where both cars were classified.",
   "teams": [
@@ -527,10 +527,10 @@
           "code": "HAD",
           "name": "Isack Hadjar",
           "points": 97,
-          "rounds": 13,
-          "qualiWins": 9,
+          "rounds": 14,
+          "qualiWins": 10,
           "qualiLosses": 3,
-          "raceWins": 8,
+          "raceWins": 9,
           "raceLosses": 1,
           "medianGapMs": -119,
           "comparableLaps": 11
@@ -540,13 +540,13 @@
           "code": "LAW",
           "name": "Liam Lawson",
           "points": 75,
-          "rounds": 4,
-          "qualiWins": 4,
+          "rounds": 3,
+          "qualiWins": 3,
           "qualiLosses": 0,
-          "raceWins": 3,
+          "raceWins": 2,
           "raceLosses": 0,
-          "medianGapMs": -492.5,
-          "comparableLaps": 4
+          "medianGapMs": -352,
+          "comparableLaps": 3
         }
       ],
       "overall": {
@@ -554,8 +554,8 @@
         "qualiLosses": 3,
         "raceWins": 11,
         "raceLosses": 1,
-        "medianGapMs": -131,
-        "comparableLaps": 15
+        "medianGapMs": -125,
+        "comparableLaps": 14
       },
       "trend": [
         {
@@ -689,10 +689,10 @@
         {
           "round": 17,
           "locality": "Marina Bay",
-          "gapMs": -996,
-          "session": "Q3",
-          "partnerId": "lawson",
-          "partnerCode": "LAW"
+          "gapMs": null,
+          "session": null,
+          "partnerId": "hadjar",
+          "partnerCode": "HAD"
         }
       ]
     }
