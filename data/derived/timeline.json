@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-10-25T15:19:28.328Z",
+  "generated_at": "2026-10-26T08:44:13.553Z",
   "snapshot_days": 320,
   "points": [
     {
@@ -16267,7 +16267,12 @@
       "country": "USA",
       "date": "2026-10-25",
       "hasSprint": false,
-      "winner": null
+      "winner": {
+        "driverId": "antonelli",
+        "code": "ANT",
+        "name": "Andrea Kimi Antonelli",
+        "team": "Mercedes"
+      }
     },
     {
       "round": 19,

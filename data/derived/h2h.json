@@ -1,6 +1,6 @@
 {
-  "generated_at": "2026-10-25T15:19:28.339Z",
-  "based_on_round": 17,
+  "generated_at": "2026-10-26T08:44:13.605Z",
+  "based_on_round": 18,
   "note": "Gaps compare the deepest qualifying session both cars set a time in; race record counts only races where both cars were classified.",
   "teams": [
     {
@@ -9,30 +9,30 @@
         "driverId": "antonelli",
         "code": "ANT",
         "name": "Andrea Kimi Antonelli",
-        "points": 340
+        "points": 365
       },
       "partners": [
         {
           "driverId": "russell",
           "code": "RUS",
           "name": "George Russell",
-          "points": 238,
-          "rounds": 17,
-          "qualiWins": 10,
+          "points": 242,
+          "rounds": 18,
+          "qualiWins": 11,
           "qualiLosses": 7,
-          "raceWins": 10,
+          "raceWins": 11,
           "raceLosses": 5,
-          "medianGapMs": -222,
-          "comparableLaps": 17
+          "medianGapMs": -231,
+          "comparableLaps": 18
         }
       ],
       "overall": {
-        "qualiWins": 10,
+        "qualiWins": 11,
         "qualiLosses": 7,
-        "raceWins": 10,
+        "raceWins": 11,
         "raceLosses": 5,
-        "medianGapMs": -222,
-        "comparableLaps": 17
+        "medianGapMs": -231,
+        "comparableLaps": 18
       },
       "trend": [
         {
@@ -170,6 +170,14 @@
           "session": "Q3",
           "partnerId": "russell",
           "partnerCode": "RUS"
+        },
+        {
+          "round": 18,
+          "locality": "Austin",
+          "gapMs": -441,
+          "session": "Q3",
+          "partnerId": "russell",
+          "partnerCode": "RUS"
         }
       ]
     },
@@ -179,30 +187,30 @@
         "driverId": "hamilton",
         "code": "HAM",
         "name": "Lewis Hamilton",
-        "points": 229
+        "points": 241
       },
       "partners": [
         {
           "driverId": "leclerc",
           "code": "LEC",
           "name": "Charles Leclerc",
-          "points": 215,
-          "rounds": 17,
+          "points": 233,
+          "rounds": 18,
           "qualiWins": 8,
-          "qualiLosses": 9,
+          "qualiLosses": 10,
           "raceWins": 7,
-          "raceLosses": 7,
-          "medianGapMs": 7,
-          "comparableLaps": 17
+          "raceLosses": 8,
+          "medianGapMs": 25.5,
+          "comparableLaps": 18
         }
       ],
       "overall": {
         "qualiWins": 8,
-        "qualiLosses": 9,
+        "qualiLosses": 10,
         "raceWins": 7,
-        "raceLosses": 7,
-        "medianGapMs": 7,
-        "comparableLaps": 17
+        "raceLosses": 8,
+        "medianGapMs": 25.5,
+        "comparableLaps": 18
       },
       "trend": [
         {
@@ -340,6 +348,14 @@
           "session": "Q3",
           "partnerId": "leclerc",
           "partnerCode": "LEC"
+        },
+        {
+          "round": 18,
+          "locality": "Austin",
+          "gapMs": 44,
+          "session": "Q3",
+          "partnerId": "leclerc",
+          "partnerCode": "LEC"
         }
       ]
     },
@@ -349,30 +365,30 @@
         "driverId": "norris",
         "code": "NOR",
         "name": "Lando Norris",
-        "points": 201
+        "points": 211
       },
       "partners": [
         {
           "driverId": "piastri",
           "code": "PIA",
           "name": "Oscar Piastri",
-          "points": 138,
-          "rounds": 17,
+          "points": 144,
+          "rounds": 18,
           "qualiWins": 11,
-          "qualiLosses": 6,
-          "raceWins": 7,
+          "qualiLosses": 7,
+          "raceWins": 8,
           "raceLosses": 4,
-          "medianGapMs": -52,
-          "comparableLaps": 17
+          "medianGapMs": -30.5,
+          "comparableLaps": 18
         }
       ],
       "overall": {
         "qualiWins": 11,
-        "qualiLosses": 6,
-        "raceWins": 7,
+        "qualiLosses": 7,
+        "raceWins": 8,
         "raceLosses": 4,
-        "medianGapMs": -52,
-        "comparableLaps": 17
+        "medianGapMs": -30.5,
+        "comparableLaps": 18
       },
       "trend": [
         {
@@ -510,6 +526,14 @@
           "session": "Q3",
           "partnerId": "piastri",
           "partnerCode": "PIA"
+        },
+        {
+          "round": 18,
+          "locality": "Austin",
+          "gapMs": 246,
+          "session": "Q3",
+          "partnerId": "piastri",
+          "partnerCode": "PIA"
         }
       ]
     },
@@ -519,27 +543,27 @@
         "driverId": "max_verstappen",
         "code": "VER",
         "name": "Max Verstappen",
-        "points": 221
+        "points": 236
       },
       "partners": [
         {
           "driverId": "hadjar",
           "code": "HAD",
           "name": "Isack Hadjar",
-          "points": 97,
-          "rounds": 14,
-          "qualiWins": 10,
+          "points": 105,
+          "rounds": 15,
+          "qualiWins": 11,
           "qualiLosses": 3,
-          "raceWins": 9,
+          "raceWins": 10,
           "raceLosses": 1,
-          "medianGapMs": -119,
-          "comparableLaps": 11
+          "medianGapMs": -87.5,
+          "comparableLaps": 12
         },
         {
           "driverId": "lawson",
           "code": "LAW",
           "name": "Liam Lawson",
-          "points": 75,
+          "points": 77,
           "rounds": 3,
           "qualiWins": 3,
           "qualiLosses": 0,
@@ -550,12 +574,12 @@
         }
       ],
       "overall": {
-        "qualiWins": 13,
+        "qualiWins": 14,
         "qualiLosses": 3,
-        "raceWins": 11,
+        "raceWins": 12,
         "raceLosses": 1,
-        "medianGapMs": -125,
-        "comparableLaps": 14
+        "medianGapMs": -119,
+        "comparableLaps": 15
       },
       "trend": [
         {
@@ -691,6 +715,14 @@
           "locality": "Marina Bay",
           "gapMs": null,
           "session": null,
+          "partnerId": "hadjar",
+          "partnerCode": "HAD"
+        },
+        {
+          "round": 18,
+          "locality": "Austin",
+          "gapMs": -36,
+          "session": "Q3",
           "partnerId": "hadjar",
           "partnerCode": "HAD"
         }
