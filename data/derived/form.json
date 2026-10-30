@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-10-29T17:49:55.092Z",
+  "generated_at": "2026-10-30T17:30:29.239Z",
   "based_on_round": 18,
   "window": 3,
   "note": "Rolling 3-weekend averages (race + sprint points; qualifying position). A weekend is marked when the rolling points average is more than one standard deviation from the season baseline.",
