@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-11-01T17:26:42.124Z",
+  "generated_at": "2026-11-02T10:49:44.943Z",
   "snapshot_days": 327,
   "points": [
     {
@@ -16632,7 +16632,12 @@
       "country": "Mexico",
       "date": "2026-11-01",
       "hasSprint": false,
-      "winner": null
+      "winner": {
+        "driverId": "max_verstappen",
+        "code": "VER",
+        "name": "Max Verstappen",
+        "team": "Red Bull"
+      }
     },
     {
       "round": 20,

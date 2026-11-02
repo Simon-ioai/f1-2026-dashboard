@@ -1,7 +1,7 @@
 {
   "season": 2026,
-  "round": 18,
-  "fetched_at": "2026-10-26T08:44:12.698Z",
+  "round": 19,
+  "fetched_at": "2026-11-02T10:49:43.888Z",
   "standings": [
     {
       "position": 1,
@@ -9,16 +9,16 @@
       "code": "ANT",
       "name": "Andrea Kimi Antonelli",
       "team": "Mercedes",
-      "points": 365,
+      "points": 380,
       "wins": 9
     },
     {
       "position": 2,
-      "driverId": "russell",
-      "code": "RUS",
-      "name": "George Russell",
-      "team": "Mercedes",
-      "points": 242,
+      "driverId": "max_verstappen",
+      "code": "VER",
+      "name": "Max Verstappen",
+      "team": "Red Bull",
+      "points": 261,
       "wins": 3
     },
     {
@@ -27,17 +27,17 @@
       "code": "HAM",
       "name": "Lewis Hamilton",
       "team": "Ferrari",
-      "points": 241,
+      "points": 259,
       "wins": 1
     },
     {
       "position": 4,
-      "driverId": "max_verstappen",
-      "code": "VER",
-      "name": "Max Verstappen",
-      "team": "Red Bull",
-      "points": 236,
-      "wins": 2
+      "driverId": "russell",
+      "code": "RUS",
+      "name": "George Russell",
+      "team": "Mercedes",
+      "points": 250,
+      "wins": 3
     },
     {
       "position": 5,
@@ -45,7 +45,7 @@
       "code": "LEC",
       "name": "Charles Leclerc",
       "team": "Ferrari",
-      "points": 233,
+      "points": 245,
       "wins": 1
     },
     {
@@ -54,7 +54,7 @@
       "code": "NOR",
       "name": "Lando Norris",
       "team": "McLaren",
-      "points": 211,
+      "points": 221,
       "wins": 2
     },
     {
@@ -63,7 +63,7 @@
       "code": "PIA",
       "name": "Oscar Piastri",
       "team": "McLaren",
-      "points": 144,
+      "points": 150,
       "wins": 0
     },
     {
@@ -81,7 +81,7 @@
       "code": "LAW",
       "name": "Liam Lawson",
       "team": "Red Bull",
-      "points": 77,
+      "points": 79,
       "wins": 0
     },
     {
@@ -90,7 +90,7 @@
       "code": "GAS",
       "name": "Pierre Gasly",
       "team": "Alpine F1 Team",
-      "points": 42,
+      "points": 43,
       "wins": 0
     },
     {
@@ -108,7 +108,7 @@
       "code": "COL",
       "name": "Franco Colapinto",
       "team": "Alpine F1 Team",
-      "points": 27,
+      "points": 31,
       "wins": 0
     },
     {
@@ -203,6 +203,15 @@
     },
     {
       "position": 23,
+      "driverId": "ryo_hirakawa",
+      "code": "HIR",
+      "name": "Ryo Hirakawa",
+      "team": "Haas F1 Team",
+      "points": 0,
+      "wins": 0
+    },
+    {
+      "position": 24,
       "driverId": "perez",
       "code": "PER",
       "name": "Sergio Pérez",

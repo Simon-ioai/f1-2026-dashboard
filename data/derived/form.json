@@ -1,6 +1,6 @@
 {
-  "generated_at": "2026-11-01T17:26:42.145Z",
-  "based_on_round": 18,
+  "generated_at": "2026-11-02T10:49:44.968Z",
+  "based_on_round": 19,
   "window": 3,
   "note": "Rolling 3-weekend averages (race + sprint points; qualifying position). A weekend is marked when the rolling points average is more than one standard deviation from the season baseline.",
   "drivers": [
@@ -8,9 +8,9 @@
       "driverId": "antonelli",
       "code": "ANT",
       "name": "Andrea Kimi Antonelli",
-      "baselinePoints": 20.27777777777778,
-      "baselineQuali": 3.2222222222222223,
-      "pointsSd": 7.907841084473308,
+      "baselinePoints": 20,
+      "baselineQuali": 3.3157894736842106,
+      "pointsSd": 7.786628214276601,
       "rounds": [
         {
           "round": 1,
@@ -54,7 +54,7 @@
           "qualiPos": 2,
           "pointsAvg": 28,
           "qualiAvg": 1.3333333333333333,
-          "diverged": false,
+          "diverged": true,
           "locality": "Montreal"
         },
         {
@@ -63,7 +63,7 @@
           "qualiPos": 1,
           "pointsAvg": 28,
           "qualiAvg": 1.3333333333333333,
-          "diverged": false,
+          "diverged": true,
           "locality": "Monte Carlo"
         },
         {
@@ -173,6 +173,15 @@
           "qualiAvg": 3,
           "diverged": false,
           "locality": "Austin"
+        },
+        {
+          "round": 19,
+          "points": 15,
+          "qualiPos": 5,
+          "pointsAvg": 20,
+          "qualiAvg": 3.3333333333333335,
+          "diverged": false,
+          "locality": "Mexico City"
         }
       ]
     },
@@ -180,9 +189,9 @@
       "driverId": "leclerc",
       "code": "LEC",
       "name": "Charles Leclerc",
-      "baselinePoints": 12.944444444444445,
-      "baselineQuali": 4.277777777777778,
-      "pointsSd": 7.80649460543536,
+      "baselinePoints": 12.894736842105264,
+      "baselineQuali": 4.2105263157894735,
+      "pointsSd": 7.601209992613055,
       "rounds": [
         {
           "round": 1,
@@ -345,6 +354,15 @@
           "qualiAvg": 3.6666666666666665,
           "diverged": false,
           "locality": "Austin"
+        },
+        {
+          "round": 19,
+          "points": 12,
+          "qualiPos": 3,
+          "pointsAvg": 18,
+          "qualiAvg": 3,
+          "diverged": false,
+          "locality": "Mexico City"
         }
       ]
     },
@@ -352,9 +370,9 @@
       "driverId": "russell",
       "code": "RUS",
       "name": "George Russell",
-      "baselinePoints": 13.444444444444445,
-      "baselineQuali": 3.611111111111111,
-      "pointsSd": 9.592950086288612,
+      "baselinePoints": 13.157894736842104,
+      "baselineQuali": 3.526315789473684,
+      "pointsSd": 9.415905680198444,
       "rounds": [
         {
           "round": 1,
@@ -517,6 +535,15 @@
           "qualiAvg": 6.666666666666667,
           "diverged": true,
           "locality": "Austin"
+        },
+        {
+          "round": 19,
+          "points": 8,
+          "qualiPos": 2,
+          "pointsAvg": 4.666666666666667,
+          "qualiAvg": 4.666666666666667,
+          "diverged": false,
+          "locality": "Mexico City"
         }
       ]
     },
@@ -524,9 +551,9 @@
       "driverId": "norris",
       "code": "NOR",
       "name": "Lando Norris",
-      "baselinePoints": 11.722222222222221,
-      "baselineQuali": 4.833333333333333,
-      "pointsSd": 8.581670101349449,
+      "baselinePoints": 11.631578947368421,
+      "baselineQuali": 4.894736842105263,
+      "pointsSd": 8.361632466625474,
       "rounds": [
         {
           "round": 1,
@@ -689,6 +716,15 @@
           "qualiAvg": 6.333333333333333,
           "diverged": false,
           "locality": "Austin"
+        },
+        {
+          "round": 19,
+          "points": 10,
+          "qualiPos": 6,
+          "pointsAvg": 11,
+          "qualiAvg": 6.333333333333333,
+          "diverged": false,
+          "locality": "Mexico City"
         }
       ]
     },
@@ -696,9 +732,9 @@
       "driverId": "hamilton",
       "code": "HAM",
       "name": "Lewis Hamilton",
-      "baselinePoints": 13.38888888888889,
-      "baselineQuali": 4.222222222222222,
-      "pointsSd": 6.0473951131310235,
+      "baselinePoints": 13.631578947368421,
+      "baselineQuali": 4.052631578947368,
+      "pointsSd": 5.975480833467357,
       "rounds": [
         {
           "round": 1,
@@ -861,6 +897,15 @@
           "qualiAvg": 3.3333333333333335,
           "diverged": false,
           "locality": "Austin"
+        },
+        {
+          "round": 19,
+          "points": 18,
+          "qualiPos": 1,
+          "pointsAvg": 15,
+          "qualiAvg": 3,
+          "diverged": false,
+          "locality": "Mexico City"
         }
       ]
     },
@@ -868,9 +913,9 @@
       "driverId": "max_verstappen",
       "code": "VER",
       "name": "Max Verstappen",
-      "baselinePoints": 13.11111111111111,
-      "baselineQuali": 4.823529411764706,
-      "pointsSd": 8.556277025857092,
+      "baselinePoints": 13.736842105263158,
+      "baselineQuali": 4.777777777777778,
+      "pointsSd": 8.740962883628095,
       "rounds": [
         {
           "round": 1,
@@ -1033,6 +1078,15 @@
           "qualiAvg": 1.3333333333333333,
           "diverged": true,
           "locality": "Austin"
+        },
+        {
+          "round": 19,
+          "points": 25,
+          "qualiPos": 4,
+          "pointsAvg": 24.333333333333332,
+          "qualiAvg": 2.3333333333333335,
+          "diverged": true,
+          "locality": "Mexico City"
         }
       ]
     }

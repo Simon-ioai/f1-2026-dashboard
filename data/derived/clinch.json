@@ -1,10 +1,10 @@
 {
-  "generated_at": "2026-11-01T17:26:42.138Z",
-  "based_on_round": 18,
+  "generated_at": "2026-11-02T10:49:44.958Z",
+  "based_on_round": 19,
   "in_progress": null,
-  "remaining_races": 5,
+  "remaining_races": 4,
   "remaining_sprints": 0,
-  "points_available": 125,
+  "points_available": 100,
   "drivers": [
     {
       "driverId": "antonelli",
@@ -12,61 +12,13 @@
       "name": "Andrea Kimi Antonelli",
       "team": "Mercedes",
       "position": 1,
-      "points": 365,
-      "status": "alive",
-      "clinch": {
+      "points": 380,
+      "status": "clinched",
+      "clinch": null,
+      "clinchedAt": {
         "round": 19,
-        "raceName": "Mexico City Grand Prix",
-        "locality": "Mexico City",
-        "country": "Mexico",
-        "date": "2026-11-01",
-        "gapNeeded": 0,
-        "chiefRivalId": "russell",
-        "chiefRivalName": "George Russell"
+        "raceName": "Mexico City Grand Prix"
       },
-      "clinchedAt": null,
-      "eliminatedAt": null
-    },
-    {
-      "driverId": "russell",
-      "code": "RUS",
-      "name": "George Russell",
-      "team": "Mercedes",
-      "position": 2,
-      "points": 242,
-      "status": "alive",
-      "clinch": {
-        "round": 23,
-        "raceName": "Abu Dhabi Grand Prix",
-        "locality": "Abu Dhabi",
-        "country": "UAE",
-        "date": "2026-12-06",
-        "gapNeeded": 124,
-        "chiefRivalId": "antonelli",
-        "chiefRivalName": "Andrea Kimi Antonelli"
-      },
-      "clinchedAt": null,
-      "eliminatedAt": null
-    },
-    {
-      "driverId": "hamilton",
-      "code": "HAM",
-      "name": "Lewis Hamilton",
-      "team": "Ferrari",
-      "position": 3,
-      "points": 241,
-      "status": "alive",
-      "clinch": {
-        "round": 23,
-        "raceName": "Abu Dhabi Grand Prix",
-        "locality": "Abu Dhabi",
-        "country": "UAE",
-        "date": "2026-12-06",
-        "gapNeeded": 125,
-        "chiefRivalId": "antonelli",
-        "chiefRivalName": "Andrea Kimi Antonelli"
-      },
-      "clinchedAt": null,
       "eliminatedAt": null
     },
     {
@@ -74,8 +26,8 @@
       "code": "VER",
       "name": "Max Verstappen",
       "team": "Red Bull",
-      "position": 4,
-      "points": 236,
+      "position": 2,
+      "points": 261,
       "status": "eliminated",
       "clinch": null,
       "clinchedAt": null,
@@ -87,12 +39,46 @@
       }
     },
     {
+      "driverId": "hamilton",
+      "code": "HAM",
+      "name": "Lewis Hamilton",
+      "team": "Ferrari",
+      "position": 3,
+      "points": 259,
+      "status": "eliminated",
+      "clinch": null,
+      "clinchedAt": null,
+      "eliminatedAt": {
+        "round": 19,
+        "raceName": "Mexico City Grand Prix",
+        "country": "Mexico",
+        "date": "2026-11-01"
+      }
+    },
+    {
+      "driverId": "russell",
+      "code": "RUS",
+      "name": "George Russell",
+      "team": "Mercedes",
+      "position": 4,
+      "points": 250,
+      "status": "eliminated",
+      "clinch": null,
+      "clinchedAt": null,
+      "eliminatedAt": {
+        "round": 19,
+        "raceName": "Mexico City Grand Prix",
+        "country": "Mexico",
+        "date": "2026-11-01"
+      }
+    },
+    {
       "driverId": "leclerc",
       "code": "LEC",
       "name": "Charles Leclerc",
       "team": "Ferrari",
       "position": 5,
-      "points": 233,
+      "points": 245,
       "status": "eliminated",
       "clinch": null,
       "clinchedAt": null,
@@ -109,7 +95,7 @@
       "name": "Lando Norris",
       "team": "McLaren",
       "position": 6,
-      "points": 211,
+      "points": 221,
       "status": "eliminated",
       "clinch": null,
       "clinchedAt": null,
@@ -126,7 +112,7 @@
       "name": "Oscar Piastri",
       "team": "McLaren",
       "position": 7,
-      "points": 144,
+      "points": 150,
       "status": "eliminated",
       "clinch": null,
       "clinchedAt": null,
@@ -160,7 +146,7 @@
       "name": "Liam Lawson",
       "team": "Red Bull",
       "position": 9,
-      "points": 77,
+      "points": 79,
       "status": "eliminated",
       "clinch": null,
       "clinchedAt": null,
@@ -177,7 +163,7 @@
       "name": "Pierre Gasly",
       "team": "Alpine F1 Team",
       "position": 10,
-      "points": 42,
+      "points": 43,
       "status": "eliminated",
       "clinch": null,
       "clinchedAt": null,
@@ -211,7 +197,7 @@
       "name": "Franco Colapinto",
       "team": "Alpine F1 Team",
       "position": 12,
-      "points": 27,
+      "points": 31,
       "status": "eliminated",
       "clinch": null,
       "clinchedAt": null,
@@ -393,11 +379,28 @@
       }
     },
     {
+      "driverId": "ryo_hirakawa",
+      "code": "HIR",
+      "name": "Ryo Hirakawa",
+      "team": "Haas F1 Team",
+      "position": 23,
+      "points": 0,
+      "status": "eliminated",
+      "clinch": null,
+      "clinchedAt": null,
+      "eliminatedAt": {
+        "round": 13,
+        "raceName": "Italian Grand Prix",
+        "country": "Italy",
+        "date": "2026-09-06"
+      }
+    },
+    {
       "driverId": "perez",
       "code": "PER",
       "name": "Sergio Pérez",
       "team": "Cadillac F1 Team",
-      "position": 23,
+      "position": 24,
       "points": 0,
       "status": "eliminated",
       "clinch": null,
