@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-11-08T17:25:52.965Z",
+  "generated_at": "2026-11-09T11:13:35.532Z",
   "snapshot_days": 334,
   "points": [
     {
@@ -16997,7 +16997,12 @@
       "country": "Brazil",
       "date": "2026-11-08",
       "hasSprint": false,
-      "winner": null
+      "winner": {
+        "driverId": "norris",
+        "code": "NOR",
+        "name": "Lando Norris",
+        "team": "McLaren"
+      }
     },
     {
       "round": 21,

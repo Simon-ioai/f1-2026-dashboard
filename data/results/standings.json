@@ -1,7 +1,7 @@
 {
   "season": 2026,
-  "round": 19,
-  "fetched_at": "2026-11-02T10:49:43.888Z",
+  "round": 20,
+  "fetched_at": "2026-11-09T11:13:34.529Z",
   "standings": [
     {
       "position": 1,
@@ -9,7 +9,7 @@
       "code": "ANT",
       "name": "Andrea Kimi Antonelli",
       "team": "Mercedes",
-      "points": 380,
+      "points": 390,
       "wins": 9
     },
     {
@@ -18,26 +18,26 @@
       "code": "VER",
       "name": "Max Verstappen",
       "team": "Red Bull",
-      "points": 261,
+      "points": 279,
       "wins": 3
     },
     {
       "position": 3,
-      "driverId": "hamilton",
-      "code": "HAM",
-      "name": "Lewis Hamilton",
-      "team": "Ferrari",
-      "points": 259,
-      "wins": 1
-    },
-    {
-      "position": 4,
       "driverId": "russell",
       "code": "RUS",
       "name": "George Russell",
       "team": "Mercedes",
-      "points": 250,
+      "points": 262,
       "wins": 3
+    },
+    {
+      "position": 4,
+      "driverId": "hamilton",
+      "code": "HAM",
+      "name": "Lewis Hamilton",
+      "team": "Ferrari",
+      "points": 261,
+      "wins": 1
     },
     {
       "position": 5,
@@ -45,7 +45,7 @@
       "code": "LEC",
       "name": "Charles Leclerc",
       "team": "Ferrari",
-      "points": 245,
+      "points": 249,
       "wins": 1
     },
     {
@@ -54,8 +54,8 @@
       "code": "NOR",
       "name": "Lando Norris",
       "team": "McLaren",
-      "points": 221,
-      "wins": 2
+      "points": 246,
+      "wins": 3
     },
     {
       "position": 7,
@@ -63,7 +63,7 @@
       "code": "PIA",
       "name": "Oscar Piastri",
       "team": "McLaren",
-      "points": 150,
+      "points": 152,
       "wins": 0
     },
     {
@@ -72,7 +72,7 @@
       "code": "HAD",
       "name": "Isack Hadjar",
       "team": "Red Bull",
-      "points": 105,
+      "points": 122,
       "wins": 0
     },
     {
@@ -81,7 +81,7 @@
       "code": "LAW",
       "name": "Liam Lawson",
       "team": "Red Bull",
-      "points": 79,
+      "points": 89,
       "wins": 0
     },
     {
@@ -90,7 +90,7 @@
       "code": "GAS",
       "name": "Pierre Gasly",
       "team": "Alpine F1 Team",
-      "points": 43,
+      "points": 42,
       "wins": 0
     },
     {
@@ -108,7 +108,7 @@
       "code": "COL",
       "name": "Franco Colapinto",
       "team": "Alpine F1 Team",
-      "points": 31,
+      "points": 27,
       "wins": 0
     },
     {
@@ -122,20 +122,20 @@
     },
     {
       "position": 14,
-      "driverId": "hulkenberg",
-      "code": "HUL",
-      "name": "Nico Hülkenberg",
-      "team": "Audi",
-      "points": 13,
-      "wins": 0
-    },
-    {
-      "position": 15,
       "driverId": "bortoleto",
       "code": "BOR",
       "name": "Gabriel Bortoleto",
       "team": "Audi",
-      "points": 10,
+      "points": 14,
+      "wins": 0
+    },
+    {
+      "position": 15,
+      "driverId": "hulkenberg",
+      "code": "HUL",
+      "name": "Nico Hülkenberg",
+      "team": "Audi",
+      "points": 14,
       "wins": 0
     },
     {
@@ -185,6 +185,15 @@
     },
     {
       "position": 21,
+      "driverId": "ryo_hirakawa",
+      "code": "HIR",
+      "name": "Ryo Hirakawa",
+      "team": "Haas F1 Team",
+      "points": 1,
+      "wins": 0
+    },
+    {
+      "position": 22,
       "driverId": "stroll",
       "code": "STR",
       "name": "Lance Stroll",
@@ -193,20 +202,11 @@
       "wins": 0
     },
     {
-      "position": 22,
+      "position": 23,
       "driverId": "bottas",
       "code": "BOT",
       "name": "Valtteri Bottas",
       "team": "Cadillac F1 Team",
-      "points": 0,
-      "wins": 0
-    },
-    {
-      "position": 23,
-      "driverId": "ryo_hirakawa",
-      "code": "HIR",
-      "name": "Ryo Hirakawa",
-      "team": "Haas F1 Team",
       "points": 0,
       "wins": 0
     },
@@ -216,6 +216,15 @@
       "code": "PER",
       "name": "Sergio Pérez",
       "team": "Cadillac F1 Team",
+      "points": 0,
+      "wins": 0
+    },
+    {
+      "position": 25,
+      "driverId": "rafael_camara",
+      "code": null,
+      "name": "Rafael Camara",
+      "team": "Haas F1 Team",
       "points": 0,
       "wins": 0
     }
