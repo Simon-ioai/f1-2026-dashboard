@@ -1,6 +1,6 @@
 {
-  "generated_at": "2026-11-09T11:13:35.532Z",
-  "snapshot_days": 334,
+  "generated_at": "2026-11-09T21:47:02.854Z",
+  "snapshot_days": 335,
   "points": [
     {
       "date": "2025-12-10",
@@ -16655,6 +16655,56 @@
     {
       "date": "2026-11-08",
       "fetched_at": "2026-11-08T17:25:52.689Z",
+      "source": "polymarket",
+      "bookmakers": 1,
+      "byId": {
+        "norris": {
+          "median": 0,
+          "min": 0,
+          "max": 0.001,
+          "books": 1
+        },
+        "russell": {
+          "median": 0,
+          "min": 0,
+          "max": 0.001,
+          "books": 1
+        },
+        "antonelli": {
+          "median": 1,
+          "min": 0.999,
+          "max": 1,
+          "books": 1
+        },
+        "max_verstappen": {
+          "median": 0,
+          "min": 0,
+          "max": 0.001,
+          "books": 1
+        },
+        "leclerc": {
+          "median": 0,
+          "min": 0,
+          "max": 0.001,
+          "books": 1
+        },
+        "hamilton": {
+          "median": 0,
+          "min": 0,
+          "max": 0.001,
+          "books": 1
+        },
+        "field": {
+          "median": 0,
+          "min": 0,
+          "max": 0.016000000000000007,
+          "books": 1
+        }
+      }
+    },
+    {
+      "date": "2026-11-09",
+      "fetched_at": "2026-11-09T21:47:02.525Z",
       "source": "polymarket",
       "bookmakers": 1,
       "byId": {
